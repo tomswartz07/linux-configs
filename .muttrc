@@ -1,0 +1,39 @@
+set imap_user="tom"
+set imap_pass="password"
+set from="tom@pennmanor.net"
+set hostname="pennmanor.net"
+set sendmail="/usr/bin/msmtp"
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set header_cache="/home/tom/Mail/headercache"
+unset confirmappend
+set sig_on_top
+
+macro index ga "<save-message>=Archives/2013<enter>" "Archive message to 2013 folder"
+bind index "\Ca" 'imap-fetch-mail'
+
+set folder={mail.pennmanor.net}
+set spoolfile={mail.pennmanor.net}INBOX
+fcc-hook ~A {mail.pennmanor.net}"Sent Items"
+set copy=yes
+set mail_check=3
+
+mailboxes =INBOX ="Filtered/Git Messages" ="Filtered/Voicemails"
+
+set query_command = "~/ldap.pl '%s'"
+bind editor "\t" complete-query
+
+set forward_quote
+set include
+set indent_str="> "
+set check_new=yes
+set sort='threads'
+set help=no
+set sort_aux='reverse-last-date-received'
+set editor="vim -c 'set spell spelllang=en_us'"
+unset imap_passive
+
+color status brightwhite blue
+color tree brightred default
+color markers blue default
+color indicator brightyellow blue
