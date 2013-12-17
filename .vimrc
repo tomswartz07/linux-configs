@@ -7,6 +7,9 @@ nmap <F12> :Tabularize /=>/l1<CR>
 match ErrorMsg '\s\+$'
 match ErrorMsg '/ \+\ze\t'
 
+" Change Tab settings
+autocmd FileType puppet set tabstop=2|set shiftwidth=2|set expandtab
+
 set laststatus=2
 set encoding=utf-8
 set t_Co=256
