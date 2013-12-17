@@ -181,10 +181,3 @@ assign [class="Thunderbird"] 3
 for_window [window_role="Msgcompose"] floating enable
 for_window [class="Cssh"] floating enable
 for_window [class="cssh"] floating enable
-
-# i3-gnome config
-#* use 'exec gnome-session-quit --logout'    : logout dialog
-#* use 'exec gnome-session-quit --power-off' : shutdown menu
-#If you have gnome-screensaver installed and want to use it:
-#* use 'exec gnome-screensaver-command -l'   : locks the screen
-
