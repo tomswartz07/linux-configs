@@ -164,6 +164,7 @@ bar {
 }
 
 exec --no-startup-id sh ~/.fehbg
+exec --no-startup-id xcompmgr -f -D 1
 exec parcellite
 #exec synergy
 exec --no-startup-id thunar --daemon
