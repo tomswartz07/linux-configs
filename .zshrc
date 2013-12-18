@@ -26,6 +26,7 @@ bindkey '^[OF' end-of-line
 bindkey '^[[3~' delete-char
 #[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
+alias pacman='sudo pacman'
 alias ls='ls --color=auto'
 #alias pdflatex-watch='while true; do inotifywait -e modify $*.tex; pdflatex $*.tex; done'
 function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex "$1"; done;}
