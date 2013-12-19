@@ -1,6 +1,7 @@
 syndaemon -t -k -i 2 -d &
 synclient TouchpadOff=1
 setxkbmap -option compose:ralt
+setxkbmap -option caps:escape
 export EDITOR=/usr/bin/vim
 #exec awesome
 #exec openbox-session
