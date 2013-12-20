@@ -6,7 +6,7 @@ clusters = 101lab 228lab old101lab tech mnrlnx01cart mnrlnx02cart mmslnx260
 
 old101lab = mnrlnx101lab01 mnrlnx101lab02 mnrlnx101lab03 mnrlnx101lab04 mnrlnx101lab05 mnrlnx101lab06 mnrlnx101lab07 mnrlnx101lab08 mnrlnx101lab09 mnrlnx101lab10 mnrlnx101lab11 mnrlnx101lab12 mnrlnx101lab13 mnrlnx101lab14 mnrlnx101lab15 mnrlnx101lab16 mnrlnx101lab17 mnrlnx101lab18 mnrlnx101lab19 mnrlnx101lab20 mnrlnx101lab21 mnrlnx101lab22 mnrlnx101lab23 mnrlnx101lab24 mnrlnx101lab25 mnrlnx101lab26 mnrlnx101lab27 mnrlnx101lab28 mnrlnx101lab29 mnrlnx101lab30
 
-tech = arcturus raspi zaphod
+tech = arcturus raspi zaphod manortechoff
 
 mnrlnx01cart = mnrlnx01cart01 mnrlnx01cart02 mnrlnx01cart03 mnrlnx01cart04 mnrlnx01cart05 mnrlnx01cart06 mnrlnx01cart07 mnrlnx01cart08 mnrlnx01cart09 mnrlnx01cart10 mnrlnx01cart11 mnrlnx01cart12 mnrlnx01cart13 mnrlnx01cart14 mnrlnx01cart15 mnrlnx01cart16 mnrlnx01cart17 mnrlnx01cart18 mnrlnx01cart19 mnrlnx01cart20 mnrlnx01cart21 mnrlnx01cart22 mnrlnx01cart23 mnrlnx01cart24 mnrlnx01cart25 mnrlnx01cart26 mnrlnx01cart27 mnrlnx01cart28 mnrlnx01cart29 mnrlnx01cart30
 
