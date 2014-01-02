@@ -9,6 +9,8 @@ match ErrorMsg '\s\+$'
 match ErrorMsg '/ \+\ze\t'
 
 " Change Tab settings
+autocmd FileType commitmsg set textwidth=72
+autocmd FileType mail set textwidth=0
 autocmd FileType puppet set tabstop=2|set shiftwidth=2|set expandtab
 
 set laststatus=2
