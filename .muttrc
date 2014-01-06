@@ -9,7 +9,7 @@ set header_cache="/home/tom/Mail/headercache"
 unset confirmappend
 set sig_on_top
 
-macro index ga "<save-message>=Archives/2013<enter>" "Archive message to 2013 folder"
+macro index ga "<save-message>=Archives/2014<enter>" "Archive message to 2014 Archive folder"
 bind index "\Ca" 'imap-fetch-mail'
 
 set folder={mail.pennmanor.net}
