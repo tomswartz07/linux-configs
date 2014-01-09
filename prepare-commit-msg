@@ -14,4 +14,4 @@
 DATE=$(date +"%d %b %Y")
 HOSTNAME=$HOSTNAME
 TestedMSG="Tested-on: $HOSTNAME <$DATE>"
-grep -qs "^TestedMSG" "$1" || echo "$TestedMSG" >> "$1"
+grep -qs "$TestedMSG" "$1" || echo "$TestedMSG" >> "$1"
