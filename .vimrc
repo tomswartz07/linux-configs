@@ -9,9 +9,12 @@ match ErrorMsg '\s\+$'
 match ErrorMsg '/ \+\ze\t'
 
 " Change Tab settings
-autocmd FileType commitmsg set textwidth=72
-autocmd FileType mail set textwidth=0
-autocmd FileType puppet set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType commitmsg setlocal textwidth=72
+autocmd FileType mail setlocal textwidth=0
+autocmd FileType puppet setlocal tabstop=2|set shiftwidth=2|set expandtab
+
+" Override Filetype settings
+autocmd BufNewFile,BufRead *.md setfiletype markdown
 
 set laststatus=2
 set encoding=utf-8
