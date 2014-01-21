@@ -19,7 +19,14 @@ set $mod Mod4
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
- font pango:DroidSansMono 10
+font pango:DroidSansMono 10
+
+# Add keys to toggle window borders
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+
+# Disable Titlebars and set window borders to 1 pixel.
+new_window 1pixel
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
