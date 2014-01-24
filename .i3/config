@@ -168,6 +168,19 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 # finds out, if available)
 bar {
         status_command i3status
+#	position top
+	mode dock
+	font pango:DroidSansMono 10
+	colors {
+		background #000000
+		statusline #ffffff
+		separator #4c7899
+
+		focused_workspace  #4c7899 #285577 #ffffff
+		active_workspace   #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+		urgent_workspace   #2f343a #900000 #ffffff
+	}
 }
 
 exec --no-startup-id sh ~/.fehbg
