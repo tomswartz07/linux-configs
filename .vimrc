@@ -1,12 +1,9 @@
 syntax enable
+set background=dark
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :%s/\s\+$//<CR>
 nmap <F12> :Tabularize /=>/l1<CR>
 filetype plugin indent on
-
-" Highlight whitespace errors
-match ErrorMsg '\s\+$'
-match ErrorMsg '/ \+\ze\t'
 
 " Change Tab settings
 autocmd FileType commitmsg setlocal textwidth=72
@@ -25,6 +22,13 @@ set relativenumber
 " Make 81st column stand out
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
+
+" Highlight whitespace errors
+match ErrorMsg '\s\+$'
+match ErrorMsg '/ \+\ze\t'
+
+" Custom Colorscheme options
+highlight SpellBad cterm=underline,bold ctermfg=red
 
 " Use different theme for VimDiff
 if &diff
