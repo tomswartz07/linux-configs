@@ -7,7 +7,7 @@ filetype plugin indent on
 
 " Change Tab settings
 autocmd FileType commitmsg setlocal textwidth=72
-autocmd FileType mail setlocal textwidth=0
+autocmd FileType mail setlocal textwidth=0 spell
 autocmd FileType puppet setlocal tabstop=2|set shiftwidth=2|set expandtab
 
 " Override Filetype settings
