@@ -23,12 +23,12 @@ set relativenumber
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
-" Highlight whitespace errors
-match ErrorMsg '\s\+$'
-match ErrorMsg '/ \+\ze\t'
+" Make tabs and trailing whitespace visible
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
 
 " Custom Colorscheme options
-highlight SpellBad cterm=underline,bold ctermfg=red
+highlight SpellBad cterm=underline,bold ctermfg=lightgreen ctermbg=darkred
 
 " Use different theme for VimDiff
 if &diff
