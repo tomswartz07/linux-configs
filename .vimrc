@@ -1,8 +1,5 @@
 syntax enable
 set background=dark
-nmap <F8> :TagbarToggle<CR>
-nmap <F9> :%s/\s\+$//<CR>
-nmap <F12> :Tabularize /=>/l1<CR>
 filetype plugin indent on
 
 " Change Tab settings
@@ -23,9 +20,18 @@ set relativenumber
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
-" Make tabs and trailing whitespace visible
+" Make tabs and trailing whitespace visible, use <leader>+l to toggle
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
-set list
+
+" Custom commands
+" Enable tabs and trailing whitespace visiblity
+nnoremap <Leader>l :set list!<CR>
+" Toggle Tagbar plugin
+nmap <F8> :TagbarToggle<CR>
+" Find and replace trailing whitespace
+nmap <F9> :%s/\s\+$//<CR>
+" Use Tabular Plugin to align elemnts with Puppet Styleguide
+nmap <F12> :Tabularize /=>/l1<CR>
 
 " Custom Colorscheme options
 highlight SpellBad cterm=underline,bold ctermfg=lightgreen ctermbg=darkred
