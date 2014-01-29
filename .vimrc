@@ -26,6 +26,8 @@ exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 " Custom commands
 " Enable tabs and trailing whitespace visiblity
 nnoremap <Leader>l :set list!<CR>
+" Toggle search highlighting
+nnoremap <Leader>s :set hlsearch!<CR>
 " Toggle Tagbar plugin
 nmap <F8> :TagbarToggle<CR>
 " Find and replace trailing whitespace
