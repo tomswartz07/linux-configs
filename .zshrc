@@ -57,7 +57,7 @@ precmd () {
 
 setopt prompt_subst
 PROMPT="┌──[%n@%m]──[%*]
-└─> %~:%# "
+└─▶ %~:%# "
 RPROMPT='${vcs_info_msg_0_}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
 
 archey
