@@ -12,4 +12,6 @@ Using the code
 --------------
 Clone the repository and unpack the various .files to the appropriate location
 
-The vast majority of the files can be stored in the `$HOME` folder.
+I have included a file `metadata.common` to help map the default locations for each dotfile.
+
+The vast majority of the files should be stored in the `$HOME` folder.
