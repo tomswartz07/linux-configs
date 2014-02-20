@@ -26,6 +26,9 @@ call matchadd('ColorColumn', '\%81v', 100)
 " Make tabs and trailing whitespace visible, use <leader>+l to toggle
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 
+" Enable par as external formatter, for pretty paragraphs
+set formatprg=par\ -w50eq
+
 " Custom commands
 " Enable tabs and trailing whitespace visiblity
 nnoremap <Leader>l :set list!<CR>
