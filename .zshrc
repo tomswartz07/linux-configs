@@ -15,8 +15,11 @@ promptinit
 autoload -U colors
 colors
 
+# Export Env Variables
 PATH="/opt/android-sdk/platform-tools:${PATH}"
 export PATH
+export EDITOR=/usr/bin/vim
+export TERM=screen-256color
 
 setopt CORRECT
 bindkey '^r' history-incremental-search-backward
@@ -33,8 +36,6 @@ function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex 
 alias dusize="sudo du -hs * | sort -nr | head -10"
 function bbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations & Local lcl";do break;done;s=($s);mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
 function cvbbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations & Local lcl";do break;done;s=($s);cvlc "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
-
-export EDITOR=/usr/bin/vim
 
 autoload -Uz vcs_info
 
@@ -60,4 +61,4 @@ PROMPT="┌──[%n@%m]──[%*]
 └─▶ %~:%# "
 RPROMPT='${vcs_info_msg_0_}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
 
-archey
+archey3
