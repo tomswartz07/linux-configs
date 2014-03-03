@@ -34,6 +34,8 @@ set formatprg=par\ -w50eq
 nnoremap <Leader>l :set list!<CR>
 " Toggle search highlighting
 nnoremap <Leader>s :set hlsearch!<CR>
+" Create a new tab
+nnoremap <Leader>t :tabnew<CR>
 " Toggle Tagbar plugin
 nmap <F8> :TagbarToggle<CR>
 " Find and replace trailing whitespace
@@ -81,3 +83,6 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#tab_min_count = 2
