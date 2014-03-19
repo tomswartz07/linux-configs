@@ -18,6 +18,16 @@ set number
 set relativenumber
 set cursorline
 set wildmenu
+colorscheme wombat
+
+" Use different theme for VimDiff
+if &diff
+	colorscheme evening
+endif
+
+" Custom Colorscheme options
+highlight SpellBad cterm=underline,bold ctermfg=lightgreen ctermbg=darkred
+highlight CursorLine cterm=none ctermbg=236
 
 " Make 81st column stand out
 highlight ColorColumn ctermbg=magenta
@@ -42,15 +52,6 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F9> :%s/\s\+$//<CR>
 " Use Tabular Plugin to align elemnts with Puppet Styleguide
 nmap <F12> :Tabularize /=>/l1<CR>
-
-" Use different theme for VimDiff
-if &diff
-	colorscheme evening
-endif
-
-" Custom Colorscheme options
-highlight SpellBad cterm=underline,bold ctermfg=lightgreen ctermbg=darkred
-highlight CursorLine cterm=none ctermbg=black
 
 set iskeyword=-,:,@,48-57,_,192-255
 
