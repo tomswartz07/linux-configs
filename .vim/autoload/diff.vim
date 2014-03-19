@@ -1,10 +1,11 @@
 let s:grep_available = executable('grep')
-let s:grep_command = ' | ' . (g:gitgutter_escape_grep ? '\grep' : 'grep') . ' -e "^@@ "'
+let s:grep_command = ' | ' . (g:gitgutter_escape_grep ? '\grep' : 'grep') . ' -e ' . utility#shellescape('^@@ ')
 let s:hunk_re = '^@@ -\(\d\+\),\?\(\d*\) +\(\d\+\),\?\(\d*\) @@'
 
 
 function! diff#run_diff(realtime, use_external_grep)
-  let cmd = 'git ls-files --error-unmatch ' . utility#shellescape(utility#file()) . ' && ('
+  " Wrap compound command in parentheses to make Windows happy.
+  let cmd = '(git ls-files --error-unmatch ' . utility#shellescape(utility#filename()) . ' && ('
 
   if a:realtime
     let blob_name = ':' . utility#shellescape(utility#file_relative_to_repo_root())
@@ -12,17 +13,22 @@ function! diff#run_diff(realtime, use_external_grep)
     let cmd .= 'git show ' . blob_name . ' > ' . blob_file .
           \ ' && diff -U0 ' . g:gitgutter_diff_args . ' ' . blob_file . ' - '
   else
-    let cmd .= 'git diff --no-ext-diff --no-color -U0 ' . g:gitgutter_diff_args . ' ' . utility#shellescape(utility#file())
+    let cmd .= 'git diff --no-ext-diff --no-color -U0 ' . g:gitgutter_diff_args . ' ' . utility#shellescape(utility#filename())
   endif
 
   if a:use_external_grep && s:grep_available
-    " grep exits with 1 when no matches are found.  However we want to treat
-    " non-matches as non-erroneous behaviour; so we OR the command with one
-    " which always returns true.
-    let cmd .= s:grep_command . ' || true'
+    let cmd .= s:grep_command
   endif
 
-  let cmd .= ')'
+  if (a:use_external_grep && s:grep_available) || a:realtime
+    " grep exits with 1 when no matches are found; diff exits with 1 when
+    " differences are found.  However we want to treat non-matches and
+    " differences as non-erroneous behaviour; so we OR the command with one
+    " which always exits with success (0).
+    let cmd.= ' || exit 0'
+  endif
+
+  let cmd .= '))'
 
   if a:realtime
     let diff = system(utility#command_in_directory_of_file(cmd), utility#buffer_contents())
