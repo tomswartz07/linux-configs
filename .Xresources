@@ -23,8 +23,8 @@
 ! URxvt*fading:                         number
 ! URxvt*fadeColor:                      color
 ! URxvt*utmpInhibit:                    boolean
-! URxvt*urgentOnBell:                   boolean
-! URxvt*visualBell:                     boolean
+ URxvt*urgentOnBell:                   false
+ URxvt*visualBell:                     false
 ! URxvt*mapAlert:                       boolean
 ! URxvt*meta8:                          boolean
 ! URxvt*mouseWheelScrollPage:           boolean
@@ -66,10 +66,10 @@
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
- URxvt*font:                           xft:DroidSansMono:size=14
- URxvt*boldFont:                       xft:DroidSansMono:size=14:bold
- URxvt*italicFont:                     xft:DroidSansMono:size=14:italic
- URxvt*boldItalicFont:                 xft:DroidSansMono:size=14:italic:bold
+ URxvt*font:                           xft:DroidSansMono:size=10
+ URxvt*boldFont:                       xft:DroidSansMono:size=10:bold
+ URxvt*italicFont:                     xft:DroidSansMono:size=10:italic
+ URxvt*boldItalicFont:                 xft:DroidSansMono:size=10:italic:bold
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name
 ! URxvt*preeditType:                    style

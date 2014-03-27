@@ -35,8 +35,11 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec gnome-terminal
+
+# Allow Screen Lock
+bindsym $mod+Control+l exec slimlock
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -190,6 +193,7 @@ exec parcellite
 exec --no-startup-id thunar --daemon
 exec owncloud
 exec nm-applet
+exec xautolock -time 10 -locker 'slimlock'
 
 # Workspace assignments
 assign [class="chromium"] 1
