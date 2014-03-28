@@ -1,3 +1,6 @@
+xset s activate
+xset b off
+xrdb -load .Xresources
 syndaemon -t -k -i 2 -d &
 synclient TouchpadOff=1
 setxkbmap -option compose:ralt
