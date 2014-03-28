@@ -53,7 +53,7 @@
  URxvt*color15:                        #EEEEEC
  URxvt*colorBD:                        #729FCF
  URxvt*colorIT:                        #D3D7CF
-! URxvt*colorUL:                        color
+ URxvt*colorUL:                        #D3D7CF
 ! URxvt*colorRV:                        color
 ! URxvt*underlineColor:                 color
 ! URxvt*scrollColor:                    color
@@ -66,10 +66,10 @@
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
- URxvt*font:                           xft:DroidSansMono:size=10
- URxvt*boldFont:                       xft:DroidSansMono:size=10:bold
- URxvt*italicFont:                     xft:DroidSansMono:size=10:italic
- URxvt*boldItalicFont:                 xft:DroidSansMono:size=10:italic:bold
+ URxvt*font:                           xft:DroidSansMono:size=9
+ URxvt*boldFont:                       xft:DroidSansMono:size=9:bold
+ URxvt*italicFont:                     xft:DroidSansMono:size=9:italic
+ URxvt*boldItalicFont:                 xft:DroidSansMono:size=9:italic:bold
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name
 ! URxvt*preeditType:                    style
