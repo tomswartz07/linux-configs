@@ -1,4 +1,4 @@
-xset s activate
+xset s on
 xset b off
 xrdb -load .Xresources
 syndaemon -t -k -i 2 -d &
@@ -6,6 +6,7 @@ synclient TouchpadOff=1
 setxkbmap -option compose:ralt
 setxkbmap -option caps:escape
 export EDITOR=/usr/bin/vim
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 #exec awesome
 #exec openbox-session
 #exec gnome-session
