@@ -10,6 +10,7 @@ unset confirmappend
 set sig_on_top
 
 macro index ga "<save-message>=Archives/2014<enter>" "Archive message to 2014 Archive folder"
+macro index gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
 bind index "\Ca" 'imap-fetch-mail'
 
 set folder={mail.pennmanor.net}
