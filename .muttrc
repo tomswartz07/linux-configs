@@ -26,13 +26,18 @@ bind editor "\t" complete-query
 
 set forward_quote
 set include
+set beep_new
 set indent_str="> "
 set check_new=yes
 set sort='threads'
-set help=no
 set sort_aux='reverse-last-date-received'
+set help=no
+set fast_reply
 set editor="vim -c 'set spell spelllang=en_us'"
+set recall=ask-no
 unset imap_passive
+unset suspend
+unset read_only
 
 color status brightwhite blue
 color tree brightred default
