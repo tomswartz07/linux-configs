@@ -68,7 +68,7 @@ let g:tagbar_type_puppet = {
     \}
 
 "Config for vim-airline
-let g:airline_theme='luna'
+let g:airline_theme='wombat'
 let g:airline_powerline_fonts=1
 set ttimeoutlen=50
 if !exists('g:airline_symbols')
