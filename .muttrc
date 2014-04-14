@@ -6,18 +6,20 @@ set sendmail="/usr/bin/msmtp"
 set ssl_starttls=yes
 set ssl_force_tls=yes
 set header_cache="/home/tom/Mail/headercache"
+set mailcap_path="~/.mutt/mailcap"
 unset confirmappend
 set sig_on_top
 
-macro index ga "<save-message>=Archives/2014<enter>" "Archive message to 2014 Archive folder"
-macro index gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
+macro index,pager ga "<save-message>=Archives/2014<enter>" "Archive message to 2014 Archive folder"
+macro index,pager gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
+macro index,pager gg "<group-reply>" "Group Reply- to all recipients"
 bind index "\Ca" 'imap-fetch-mail'
 
 set folder={mail.pennmanor.net}
 set spoolfile={mail.pennmanor.net}INBOX
 fcc-hook ~A {mail.pennmanor.net}"Sent Items"
 set copy=yes
-set mail_check=3
+set mail_check=30
 
 mailboxes =INBOX ="Filtered/Git Messages" ="Filtered/Voicemails"
 
@@ -39,7 +41,12 @@ unset imap_passive
 unset suspend
 unset read_only
 
-color status brightwhite blue
+color status brightwhite black
 color tree brightred default
 color markers blue default
-color indicator brightyellow blue
+color indicator brightwhite black
+color body brightgreen default "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+color body brightgreen default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body black default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
