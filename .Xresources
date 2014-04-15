@@ -1,5 +1,4 @@
 Xcursor.size:                          16
-URxvt*termName:                       rxvt-256color
 ! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
 URxvt*reverseVideo:                   false
@@ -36,7 +35,7 @@ URxvt*cursorBlink:                    true
 ! URxvt*pointerBlank:                   boolean
 URxvt*background:                     #242424
 URxvt*foreground:                     #e3e0d7
-URxvt*color0:                         #1E2F41
+URxvt*color0:                         #080808
 URxvt*color1:                         #e5786d
 URxvt*color2:                         #95e454
 URxvt*color3:                         #cae982
