@@ -35,21 +35,37 @@ URxvt*cursorBlink:                    true
 ! URxvt*pointerBlank:                   boolean
 URxvt*background:                     #242424
 URxvt*foreground:                     #e3e0d7
+! black
 URxvt*color0:                         #080808
-URxvt*color1:                         #e5786d
-URxvt*color2:                         #95e454
-URxvt*color3:                         #cae982
-URxvt*color4:                         #776ce4
-URxvt*color5:                         #d787ff
+! red
+URxvt*color1:                         #ff2026
+! green
+URxvt*color2:                         #4E9A06
+! yellow
+URxvt*color3:                         #C4A000
+! blue
+URxvt*color4:                         #3465A4
+! magenta
+URxvt*color5:                         #75507B
+! cyan
 URxvt*color6:                         #06989A
+! white
 URxvt*color7:                         #D3D7CF
+! bright black
 URxvt*color8:                         #555753
+! bright red
 URxvt*color9:                         #EF2929
+! bright green
 URxvt*color10:                        #6ce478
+! bright yellow
 URxvt*color11:                        #FCE94F
+! bright blue
 URxvt*color12:                        #88b8f6
+! bright magenta
 URxvt*color13:                        #AD7FA8
+! bright cyan
 URxvt*color14:                        #34E2E2
+! bright white
 URxvt*color15:                        #EEEEEC
 URxvt*colorBD:                        #729FCF
 URxvt*colorIT:                        #D3D7CF
