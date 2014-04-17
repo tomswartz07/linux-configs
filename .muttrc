@@ -9,6 +9,10 @@ set header_cache="/home/tom/Mail/headercache"
 set mailcap_path="~/.mutt/mailcap"
 unset confirmappend
 set sig_on_top
+# view html automatically
+auto_view text/html
+# save html for last
+alternative_order text/plain text/enriched text/html
 
 macro index,pager ga "<save-message>=Archives/2014<enter>" "Archive message to 2014 Archive folder"
 macro index,pager gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
@@ -44,9 +48,11 @@ unset read_only
 color status brightwhite black
 color tree brightred default
 color markers blue default
-color indicator brightwhite black
+color indicator brightyellow blue
+# Highlight web addresses
 color body brightgreen default "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
-color body brightgreen default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-color body black default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
 mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+# Highlight email addresses
+color body brightgreen default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body brightgreen default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
