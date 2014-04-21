@@ -82,10 +82,10 @@ URxvt*colorUL:                        #87afd7
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt*font:                           xft:DroidSansMono:size=9
-URxvt*boldFont:                       xft:DroidSansMono:size=9:bold
-URxvt*italicFont:                     xft:DroidSansMono:size=9:italic
-URxvt*boldItalicFont:                 xft:DroidSansMono:size=9:italic:bold
+URxvt*font:                           xft:Droid Sans Mono for Powerline:size=9
+URxvt*boldFont:                       xft:Droid Sans Mono for Powerline:size=9:bold
+URxvt*italicFont:                     xft:Droid Sans Mono for Powerline:size=9:italic
+URxvt*boldItalicFont:                 xft:Droid Sans Mono for Powerline:size=9:italic:bold
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name
 ! URxvt*preeditType:                    style
