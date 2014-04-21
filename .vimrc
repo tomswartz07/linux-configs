@@ -27,6 +27,13 @@ if &diff
 	colorscheme evening
 endif
 
+" Remove menu options for GVim
+if has("gui_running")
+    set guioptions -=m
+    set guioptions -=T
+    set guioptions -=r
+endif
+
 " Custom Colorscheme options
 highlight SpellBad cterm=underline,bold ctermfg=lightgreen ctermbg=darkred
 highlight CursorLine cterm=none ctermbg=236
@@ -57,15 +64,15 @@ nmap <F12> :Tabularize /=>/l1<CR>
 
 set iskeyword=-,:,@,48-57,_,192-255
 
-let g:tagbar_type_puppet = {
-    \ 'ctagstype': 'puppet',
-    \ 'kinds': [
-        \'c:class',
-        \'s:site',
-        \'n:node',
-        \'d:definition'
-      \]
-    \}
+"let g:tagbar_type_puppet = {
+"    \ 'ctagstype': 'puppet',
+"    \ 'kinds': [
+"        \'c:class',
+"        \'s:site',
+"        \'n:node',
+"        \'d:definition'
+"      \]
+"    \}
 
 "Config for vim-airline
 let g:airline_theme='wombat'
@@ -74,14 +81,15 @@ set ttimeoutlen=50
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_left_sep = '»'
+let g:airline_symbols.space = "\ua0"
+"let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
+"let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
@@ -89,3 +97,8 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#left_sep = '▶'
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = '◀'
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#close_symbol = 'vim'
