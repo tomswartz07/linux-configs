@@ -1,0 +1,92 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<enter>",
+        "<wait10><wait10>",
+        "echo \"sshd: ALL\" > /etc/hosts.allow<enter>",
+        "passwd<enter><wait>",
+        "vagrant<enter>",
+        "vagrant<enter>",
+        "systemctl start sshd.service<enter><wait>"
+      ],
+      "disk_size": 10140,
+      "guest_os_type": "freebsd-64",
+      "iso_checksum": "c0de9cde5f3c8f765a8fad06a07c5f6db3a93b15",
+      "iso_checksum_type": "sha1",
+      "iso_url": "http://mirrors.kernel.org/archlinux/iso/2013.10.01/archlinux-2013.10.01-dual.iso",
+      "shutdown_command": "/usr/bin/sleep 5 \u0026\u0026 umount /mnt \u0026\u0026 systemctl --no-block poweroff",
+      "ssh_password": "vagrant",
+      "ssh_username": "root",
+      "ssh_wait_timeout": "10000s",
+      "tools_upload_flavor": "linux",
+      "type": "vmware-iso",
+      "vm_name": "arch201310",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "1",
+        "memsize": "512",
+        "numvcpus": "1"
+      }
+    },
+    {
+      "boot_command": [
+        "<enter>",
+        "<wait10><wait10>",
+        "echo \"sshd: ALL\" > /etc/hosts.allow<enter>",
+        "passwd<enter><wait>",
+        "vagrant<enter>",
+        "vagrant<enter>",
+        "systemctl start sshd.service<enter><wait>"
+      ],
+      "disk_size": 10140,
+      "guest_os_type": "ArchLinux_64",
+      "iso_checksum": "c0de9cde5f3c8f765a8fad06a07c5f6db3a93b15",
+      "iso_checksum_type": "sha1",
+      "iso_url": "http://mirrors.kernel.org/archlinux/iso/2013.10.01/archlinux-2013.10.01-dual.iso",
+      "shutdown_command": "/usr/bin/sleep 3 \u0026\u0026 umount /mnt \u0026\u0026 systemctl --no-block poweroff",
+      "ssh_password": "vagrant",
+      "ssh_username": "root",
+      "ssh_wait_timeout": "10000s",
+      "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{ .Name }}",
+          "--memory",
+          "512"
+        ],
+        [
+          "modifyvm",
+          "{{ .Name }}",
+          "--cpus",
+          "1"
+        ]
+      ],
+      "vm_name": "arch201310"
+    }
+  ],
+  "post-processors": [
+    {
+      "keep_input_artifact": false,
+      "output": "../../{{.Provider}}/arch201310.box",
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "override": {
+        "virtualbox-iso": {
+          "execute_command": "echo 'vagrant'|{{.Vars}} bash '{{.Path}}'"
+        }
+      },
+      "scripts": [
+        "script/base.sh",
+        "script/host.sh",
+        "script/ssh.sh",
+        "script/vagrant.sh",
+        "script/vmtools.sh"
+      ],
+      "type": "shell"
+    }
+  ]
+}
