@@ -3,6 +3,7 @@ set background=dark
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menu
+set splitright
 
 " Change Tab settings
 autocmd FileType commitmsg setlocal textwidth=72
