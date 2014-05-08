@@ -92,5 +92,6 @@ hi Todo			ctermfg=101		cterm=italic	guifg=#857b6f	gui=italic
 hi! link FoldColumn		Folded
 hi! link CursorColumn	CursorLine
 hi! link NonText		LineNr
+hi! link SignColumn		LineNr
 
 " vim:set ts=4 sw=4 noet:

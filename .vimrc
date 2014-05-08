@@ -47,7 +47,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 
 " Enable par as external formatter, for pretty paragraphs
-set formatprg=par\ -w50eq
+set formatprg=par\ -w80eq
 
 " Custom commands
 " Enable tabs and trailing whitespace visiblity
