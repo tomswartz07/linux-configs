@@ -191,11 +191,11 @@ settings = {
     hostname = "";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "defacto"; };
 };
 ignores = (
   { mask = "help"; level = "ALL"; },
+  { mask = "JOINS"; level = "ALL"; },
   {
-    level = "CRAP SNOTES JOINS PARTS QUITS CTCPS KICKS MODES WALLOPS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS";
+    level = "CRAP SNOTES CTCPS JOINS PARTS QUITS KICKS MODES WALLOPS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS";
   }
 );
