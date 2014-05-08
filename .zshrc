@@ -48,8 +48,8 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' enable git svn
 precmd () {
 #    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats "[%b%c%u]"
-        zstyle ':vcs_info:*' actionformats "[%b%c%u] %a"
+        zstyle ':vcs_info:*' formats " [%b%c%u]"
+        zstyle ':vcs_info:*' actionformats " [%b%c%u] %a"
 #    } else {
 #        zstyle ':vcs_info:*' formats "[%b%c%u]"
 #    }
@@ -60,6 +60,12 @@ precmd () {
 setopt prompt_subst
 PROMPT="┌──[%n@%m]──[%*]
 └─▶ %~:%# "
-RPROMPT='${vcs_info_msg_0_}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
+
+# Notify if in SSH session
+if [[ -z "$SSH_CLIENT" ]]; then
+	RPROMPT='${vcs_info_msg_0_}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
+else
+	RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
+fi
 
 archey3
