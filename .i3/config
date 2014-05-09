@@ -161,6 +161,7 @@ bindsym $mod+r mode "resize"
 # Custom Launchers
 bindsym $mod+c exec chromium
 bindsym $mod+m exec thunderbird
+bindsym $mod+b exec dwb
 
 # Multimedia Keys
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
@@ -201,6 +202,7 @@ exec xautolock -time 10 -locker 'slimlock'
 
 # Workspace assignments
 assign [class="chromium"] 1
+assign [class="dwb"] 1
 assign [window_role="browser"] 1
 assign [class="Gnome-terminal"] 2
 assign [class="Thunderbird"] 3
