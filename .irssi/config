@@ -13,7 +13,6 @@ chatnets = {
   PennManor = {
     type = "IRC";
     nick = "tom";
-    autosendcmd = "/msg nickserv identify tom5805 ;wait 2000";
   };
 };
 
