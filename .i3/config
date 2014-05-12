@@ -177,6 +177,7 @@ bar {
         status_command i3status
 #	position top
 	mode dock
+	tray_output primary
 	font pango:DroidSansMono 10
 	colors {
 		background #000000
