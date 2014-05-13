@@ -1,4 +1,10 @@
 Xcursor.size:                          16
+Xft.autohint:                          0
+Xft.lcdfilter:                         lcddefault
+Xft.hintstyle:                         hintfull
+Xft.hinting:                           1
+Xft.antialias:                         1
+Xft.rgba:                              rgb
 ! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
 URxvt*reverseVideo:                   false
