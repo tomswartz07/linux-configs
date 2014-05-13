@@ -1,87 +1,109 @@
-let g:airline_theme = 'dark'
-call airline#init#bootstrap()
-call airline#init#sections()
-source plugin/airline.vim
+" MIT License. Copyright (c) 2013-2014 Bailey Ling.
+" vim: et ts=2 sts=2 sw=2
 
-function! MyFuncref(...)
-  call a:1.add_raw('hello world')
-  return 1
+if &cp || v:version < 702 || (exists('g:loaded_airline') && g:loaded_airline)
+  finish
+endif
+let g:loaded_airline = 1
+
+" autocmd VimEnter * call airline#deprecation#check()
+
+let s:airline_initialized = 0
+let s:airline_theme_defined = 0
+function! s:init()
+  if !s:airline_initialized
+    let s:airline_initialized = 1
+
+    call airline#init#bootstrap()
+    call airline#extensions#load()
+    call airline#init#sections()
+
+    let s:airline_theme_defined = exists('g:airline_theme')
+    if s:airline_theme_defined || !airline#switch_matching_theme()
+      let g:airline_theme = get(g:, 'airline_theme', 'dark')
+      call airline#switch_theme(g:airline_theme)
+    endif
+  endif
 endfunction
 
-function! MyIgnoreFuncref(...)
-  return -1
+function! s:on_window_changed()
+  if pumvisible()
+    return
+  endif
+  call <sid>init()
+  call airline#update_statusline()
 endfunction
 
-function! MyAppend1(...)
-  call a:1.add_raw('hello')
+function! s:on_colorscheme_changed()
+  call <sid>init()
+  if !s:airline_theme_defined
+    if airline#switch_matching_theme()
+      return
+    endif
+  endif
+
+  " couldn't find a match, or theme was defined, just refresh
+  call airline#load_theme()
 endfunction
 
-function! MyAppend2(...)
-  call a:1.add_raw('world')
+function airline#cmdwinenter(...)
+  call airline#extensions#apply_left_override('Command Line', '')
 endfunction
 
-describe 'airline'
-  before
-    let g:airline_statusline_funcrefs = []
-  end
+function! s:airline_toggle()
+  if exists("#airline")
+    augroup airline
+      au!
+    augroup END
+    augroup! airline
 
-  it 'should run user funcrefs first'
-    call airline#add_statusline_func('MyFuncref')
-    let &statusline = ''
-    call airline#update_statusline()
-    Expect airline#statusline(1) =~ 'hello world'
-  end
+    if exists("s:stl")
+      let &stl = s:stl
+    endif
 
-  it 'should not change the statusline with -1'
-    call airline#add_statusline_funcref(function('MyIgnoreFuncref'))
-    let &statusline = 'foo'
-    call airline#update_statusline()
-    Expect &statusline == 'foo'
-  end
+    silent doautocmd User AirlineToggledOff
+  else
+    let s:stl = &statusline
+    augroup airline
+      autocmd!
 
-  it 'should support multiple chained funcrefs'
-    call airline#add_statusline_func('MyAppend1')
-    call airline#add_statusline_func('MyAppend2')
-    call airline#update_statusline()
-    Expect airline#statusline(1) =~ 'helloworld'
-  end
+      autocmd CmdwinEnter *
+            \ call airline#add_statusline_func('airline#cmdwinenter')
+            \ | call <sid>on_window_changed()
+      autocmd CmdwinLeave * call airline#remove_statusline_func('airline#cmdwinenter')
 
-  it 'should allow users to redefine sections'
-    let g:airline_section_a = airline#section#create(['mode', 'mode'])
-    call airline#update_statusline()
-    Expect airline#statusline(1) =~ '%{airline#util#wrap(airline#parts#mode(),0)}%#airline_a#%#airline_a_bold#%{airline#util#wrap(airline#parts#mode(),0)}%#airline_a#'
-  end
+      autocmd ColorScheme * call <sid>on_colorscheme_changed()
+      autocmd VimEnter,WinEnter,BufWinEnter,FileType,BufUnload,VimResized *
+            \ call <sid>on_window_changed()
 
-  it 'should remove funcrefs properly'
-    let c = len(g:airline_statusline_funcrefs)
-    call airline#add_statusline_func('MyIgnoreFuncref')
-    call airline#remove_statusline_func('MyIgnoreFuncref')
-    Expect len(g:airline_statusline_funcrefs) == c
-  end
+      autocmd BufWritePost */autoload/airline/themes/*.vim
+            \ exec 'source '.split(globpath(&rtp, 'autoload/airline/themes/'.g:airline_theme.'.vim', 1), "\n")[0]
+            \ | call airline#load_theme()
+    augroup END
 
-  it 'should overwrite the statusline with active and inactive splits'
-    wincmd s
-    Expect airline#statusline(1) !~ 'inactive'
-    Expect airline#statusline(2) =~ 'inactive'
-    wincmd c
-  end
+    silent doautocmd User AirlineToggledOn
 
-  it 'should collapse the inactive split if the variable is set true'
-    let g:airline_inactive_collapse = 1
-    wincmd s
-    Expect getwinvar(2, '&statusline') !~ 'airline#parts#mode'
-    wincmd c
-  end
+    if s:airline_initialized
+      call <sid>on_window_changed()
+    endif
+  endif
+endfunction
 
-  it 'should not collapse the inactive split if the variable is set false'
-    let g:airline_inactive_collapse = 0
-    wincmd s
-    Expect getwinvar(2, '&statusline') != 'airline#parts#mode'
-    wincmd c
-  end
+function! s:get_airline_themes(a, l, p)
+  let files = split(globpath(&rtp, 'autoload/airline/themes/'.a:a.'*'), "\n")
+  return map(files, 'fnamemodify(v:val, ":t:r")')
+endfunction
+function! s:airline_theme(...)
+  if a:0
+    call airline#switch_theme(a:1)
+  else
+    echo g:airline_theme
+  endif
+endfunction
+command! -nargs=? -complete=customlist,<sid>get_airline_themes AirlineTheme call <sid>airline_theme(<f-args>)
+command! AirlineToggleWhitespace call airline#extensions#whitespace#toggle()
+command! AirlineToggle call <sid>airline_toggle()
+command! AirlineRefresh call airline#load_theme()
 
-  it 'should include check_mode'
-    Expect airline#statusline(1) =~ 'airline#check_mode'
-  end
-end
+call <sid>airline_toggle()
 

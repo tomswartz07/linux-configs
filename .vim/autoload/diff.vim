@@ -178,18 +178,13 @@ function! diff#process_modified_and_removed(modifications, from_count, to_count,
   let a:modifications[-1] = [a:to_line + offset - 1, 'modified_removed']
 endfunction
 
-function! diff#generate_diff_for_hunk(hunk, keep_header)
-  let diff = diff#discard_hunks(diff#run_diff(0, 0), a:hunk, a:keep_header)
-  if !a:keep_header
-    " Discard summary line
-    let diff = join(split(diff, '\n')[1:-1], "\n")
-  endif
-  return diff
+function! diff#generate_diff_for_hunk(hunk)
+  return diff#discard_hunks(diff#run_diff(0, 0), a:hunk)
 endfunction
 
-function! diff#discard_hunks(diff, hunk_to_keep, keep_header)
+function! diff#discard_hunks(diff, hunk_to_keep)
   let modified_diff = []
-  let keep_line = a:keep_header
+  let keep_line = 1  " start by keeping header
   for line in split(a:diff, '\n')
     let hunk_info = diff#parse_hunk(line)
     if len(hunk_info) == 4  " start of new hunk

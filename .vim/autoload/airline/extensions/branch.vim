@@ -42,7 +42,7 @@ function! airline#extensions#branch#head()
     let b:airline_head = fugitive#head()
 
     if empty(b:airline_head) && !exists('b:git_dir')
-      let b:airline_head = s:get_git_branch(expand("%:p:h"))
+      let b:airline_head = s:get_git_branch(getcwd())
     endif
   endif
 
