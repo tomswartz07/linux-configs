@@ -13,6 +13,7 @@ URxvt*reverseVideo:                   false
 ! URxvt*skipScroll:                     boolean
 ! URxvt*pastableTabs:                   boolean
 ! URxvt*scrollstyle:                    mode
+URxvt*iso14755:                       false
 URxvt*scrollBar:                      false
 ! URxvt*scrollBar_right:                boolean
 ! URxvt*scrollBar_floating:             boolean
