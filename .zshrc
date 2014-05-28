@@ -57,15 +57,27 @@ precmd () {
     vcs_info
 }
 
+# Vim Mode Settings
+bindkey -v
+vim_insert_mode="%{$fg[cyan]%} [INS]%{$reset_color%}"
+vim_command_mode="%{$fg[yellow]%} [CMD]%{$reset_color%}"
+
+function zle-line-init zle-keymap-select {
+	vim_mode="${${KEYMAP/vicmd/${vim_command_mode}}/(main|viins)/${vim_insert_mode}}"
+	zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
 setopt prompt_subst
 PROMPT="┌──[%n@%m]──[%*]
 └─▶ %~:%# "
 
 # Notify if in SSH session
 if [[ -z "$SSH_CLIENT" ]]; then
-	RPROMPT='${vcs_info_msg_0_}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
+	RPROMPT='${vcs_info_msg_0_}${NEWLINE}${vim_mode}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
 else
-	RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
+	RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
 fi
 
 archey3
