@@ -58,8 +58,15 @@ precmd () {
 }
 
 # Vim Mode Settings
+#
+# `vim_insert_mode` is normal input. Can contain message, or be blank
+# `vim_command_mode` is displayed when Vi command mode is activated.
+#
+# If only command mode is set, then message will only appear if cmd mode is activated.
+
 bindkey -v
-vim_insert_mode="%{$fg[cyan]%} [INS]%{$reset_color%}"
+#vim_insert_mode="%{$fg[cyan]%} [INS]%{$reset_color%}"
+vim_insert_mode=""
 vim_command_mode="%{$fg[yellow]%} [CMD]%{$reset_color%}"
 
 function zle-line-init zle-keymap-select {
@@ -75,7 +82,7 @@ PROMPT="┌──[%n@%m]──[%*]
 
 # Notify if in SSH session
 if [[ -z "$SSH_CLIENT" ]]; then
-	RPROMPT='${vcs_info_msg_0_}${NEWLINE}${vim_mode}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
+	RPROMPT='${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
 else
 	RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
 fi
