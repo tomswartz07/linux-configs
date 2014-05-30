@@ -178,11 +178,11 @@ bar {
 #	position top
 	mode dock
 	tray_output primary
-	font pango:DroidSansMono 10
+	font pango:Droid Sans Mono for Powerline 10
 	colors {
-		background #000000
-		statusline #ffffff
-		separator #4c7899
+		background #080808
+		statusline #D3D7CF
+		separator #3465A4
 
 		focused_workspace  #4c7899 #285577 #ffffff
 		active_workspace   #333333 #5f676a #ffffff
