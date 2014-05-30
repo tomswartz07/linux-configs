@@ -56,6 +56,8 @@ nnoremap <Leader>l :set list!<CR>
 nnoremap <Leader>s :set hlsearch!<CR>
 " Create a new tab
 nnoremap <Leader>t :tabnew<CR>
+" Toggle NERDTree plugin
+nmap <F7> :NERDTreeToggle<CR>
 " Toggle Tagbar plugin
 nmap <F8> :TagbarToggle<CR>
 " Find and replace trailing whitespace
