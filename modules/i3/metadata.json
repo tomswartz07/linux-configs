@@ -1,0 +1,17 @@
+{
+  "name": "i3",
+  "version": "0.1.0",
+  "author": "Tom Swartz",
+  "summary": "Installs and configures i3 Window Manager",
+  "license": "Apache 2.0",
+  "source": "https://github.com/tomswartz07/linux-configs",
+  "project_page": "https://github.com/tomswartz07/linux-configs",
+  "issues_url": "https://github.com/tomswartz07/linux-configs/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
