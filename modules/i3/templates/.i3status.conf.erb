@@ -19,34 +19,34 @@ general {
 order += "disk /"
 order += "disk /home"
 order += "run_watch SSH"
-#order += "run_watch DHCP"
+<% if @disableDHCP -%>#<% end -%>order += "run_watch DHCP"
 #order += "run_watch VPN"
-order += "wireless wlan0"
-order += "ethernet eth0"
+<% if @disableWireless -%>#<% end -%>order += "wireless <%= @wlan %>"
+<% if @disableEthernet -%>#<% end -%>order += "ethernet <%= @eth -%>"
 order += "cpu_temperature 0"
-order += "battery 1"
+<% if @disableBattery -%>#<% end -%>order += "battery <%= @battery %>"
 order += "load"
 order += "volume master"
 order += "tztime local"
 
 cpu_temperature 0 {
 	format = "❄ %degrees°C"
-	max_threshold = 55
+	max_threshold = 65 # 149°F
 	path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
 
-wireless wlan0 {
+wireless <%= @wlan -%> {
         format_up = "⎇ (%quality @ %essid) %ip"
         format_down = "⎇ down"
 }
 
-ethernet eth0 {
+ethernet <%= @eth -%> {
         # if you use %speed, i3status requires root privileges
         format_up = "⎇ %ip"
         format_down = "⎇ down"
 }
 
-battery 1 {
+battery <%= @battery %> {
         format = "%status %percentage %remaining"
 }
 
