@@ -1,21 +1,15 @@
-node default {
+# Work Nodes
+#
+# Defines all nodes used at work.
+#
+node heimdall {
   stage { 'first' : before => Stage['main']}
-  class { 'i3' :}
-  class { 'mutt' :}
   class { 'zsh' :
     stage => 'first',
   }
-  class { 'vim' :}
   class { 'accounts' :
     stage => 'first',
   }
-  class { 'pacman' :
-    iLoveCandy => true,
-  }
-}
-
-node heimdall {
-  stage { 'first' : before => Stage['main']}
   class { 'i3' :
     disableDHCP     => true,
     disableWireless => false,
@@ -26,13 +20,7 @@ node heimdall {
     battery         => '0',
   }
   class { 'mutt' :}
-  class { 'zsh' :
-    stage => 'first',
-  }
   class { 'vim' :}
-  class { 'accounts' :
-    stage => 'first',
-  }
   class { 'pacman' :
     iLoveCandy => true,
   }
