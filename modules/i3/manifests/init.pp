@@ -31,6 +31,10 @@
 #   Defines the number of the battery.
 #   Typically is '0' but some devices list main battery as '1'
 #
+# [*tempDevice*]
+#   Defines the path to the thermal sensor.
+#   Typically is listed in /sys/class/devices/
+#
 # === Examples
 #
 #  class { i3:
@@ -54,6 +58,7 @@ class i3 (
   $wlan = 'wlp2s0',
   $eth = 'eth0',
   $battery = '0',
+  $tempDevice = 'empty',
 )
 {
   case $::operatingsystem {

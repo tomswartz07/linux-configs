@@ -19,7 +19,7 @@ colors
 PATH="/opt/android-sdk/platform-tools:${PATH}"
 export PATH
 export EDITOR=/usr/bin/vim
-export TERM=rxvt-unicode-256color
+#export TERM=screen-256color
 
 setopt CORRECT
 bindkey '^r' history-incremental-search-backward

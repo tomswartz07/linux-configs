@@ -3,8 +3,9 @@ class mutt
   package { 'mutt' :
     ensure => latest,
   }
-  file { '/home/tom/.muttrc' :
-    ensure  => present,
-    source  => 'puppet:///modules/mutt/.muttrc',
+  file { 'muttrc file' :
+    ensure => present,
+    path   => '/home/tom/.muttrc',
+    source => 'puppet:///modules/mutt/.muttrc',
   }
 }
