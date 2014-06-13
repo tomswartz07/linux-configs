@@ -35,7 +35,7 @@ node magrathea {
     stage => 'first',
   }
   class { 'i3' :
-    disableDHCP     => false,
+    disableDHCP     => true,
     disableWireless => true,
     disableEthernet => false,
     disableBattery  => true,
