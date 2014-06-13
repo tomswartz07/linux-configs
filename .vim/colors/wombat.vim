@@ -73,7 +73,7 @@ hi DiffChange					ctermbg=237										guibg=#382a37
 "hi WildMenu
 
 " Custom Formatting
-hi SpellBad		ctermfg=203				cterm=underline,bold	   guifg=#ff5f55			gui=underline,bold
+hi SpellBad		ctermfg=203		ctermbg=234		cterm=underline,bold	   guifg=#ff5f55		gui=underline,bold
 
 " Syntax highlighting
 hi Keyword		ctermfg=111		cterm=none		guifg=#88b8f6	gui=none
