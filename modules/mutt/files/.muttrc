@@ -27,8 +27,10 @@ set mail_check=30
 
 mailboxes =INBOX ="Filtered/Git Messages" ="Filtered/Voicemails"
 
-set query_command = "~/ldap.pl '%s'"
-bind editor "\t" complete-query
+#set query_command = "~/ldap.pl '%s'"
+#bind editor "\t" complete-query
+set alias_file= ~/.mutt/aliases
+source $alias_file
 
 set forward_quote
 set include
@@ -41,14 +43,19 @@ set help=no
 set fast_reply
 set editor="vim -c 'set spell spelllang=en_us'"
 set recall=ask-no
+set pager_stop=yes
+set delete=ask-no
 unset imap_passive
 unset suspend
 unset read_only
 
-color status brightwhite black
+color status white black
 color tree brightred default
 color markers blue default
 color indicator brightyellow blue
+# Highlight From/To/Subject lines
+color header brightblue default "^(From|To|Subject|Cc|Date|[u|U]ser-[a|A]gent):"
+mono header bold "^(From|To|Subject|Cc|Date|[u|U]ser-[a|A]gent):"
 # Highlight web addresses
 color body brightgreen default "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
@@ -56,3 +63,7 @@ mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 color body brightgreen default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 color body brightgreen default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color body brightblue default "(From|To|Subject|Cc|Date|Sent):"
+mono body bold "(From|To|Subject|Cc|Date|Sent):"
+# Highlight flagged/tagged messages
+color index brightred default "!~N ~D"
