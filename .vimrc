@@ -1,6 +1,6 @@
+filetype plugin indent on
 syntax enable
 set background=dark
-filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menu
 set splitright
@@ -11,7 +11,7 @@ autocmd FileType mail setlocal textwidth=0 spell
 autocmd FileType puppet setlocal tabstop=2|set shiftwidth=2|set expandtab
 
 " Override Filetype settings
-autocmd BufNewFile,BufRead *.md setfiletype markdown
+autocmd BufNewFile,BufRead *.md,*.markdown set filetype=ghmarkdown
 
 " UI settings
 set laststatus=2
@@ -26,6 +26,7 @@ colorscheme wombat
 " Use different theme for VimDiff
 if &diff
 	colorscheme evening
+	highlight CursorLine cterm=none ctermbg=236
 endif
 
 " Remove menu options for GVim
@@ -35,12 +36,8 @@ if has("gui_running")
     set guioptions -=r
 endif
 
-" Custom Colorscheme options
-highlight SpellBad cterm=underline,bold ctermfg=lightgreen ctermbg=darkred
-highlight CursorLine cterm=none ctermbg=236
-
 " Make 81st column stand out
-highlight ColorColumn ctermbg=magenta
+highlight ColorColumn ctermbg=232
 call matchadd('ColorColumn', '\%81v', 100)
 
 " Make tabs and trailing whitespace visible, use <leader>+l to toggle

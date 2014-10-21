@@ -16,7 +16,7 @@ if version > 580
 	endif
 endif
 
-let colors_name = "wombat256mod"
+let colors_name = "wombat"
 
 
 " General colors
@@ -72,6 +72,8 @@ hi DiffChange					ctermbg=237										guibg=#382a37
 "hi User9
 "hi WildMenu
 
+" Custom Formatting
+hi SpellBad		ctermfg=203				cterm=underline,bold	   guifg=#ff5f55			gui=underline,bold
 
 " Syntax highlighting
 hi Keyword		ctermfg=111		cterm=none		guifg=#88b8f6	gui=none

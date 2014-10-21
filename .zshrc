@@ -66,7 +66,7 @@ precmd () {
 
 bindkey -v
 #vim_insert_mode="%{$fg[cyan]%} [INS]%{$reset_color%}"
-vim_insert_mode=""
+vim_insert_mode=" "
 vim_command_mode="%{$fg[yellow]%} [CMD]%{$reset_color%}"
 
 function zle-line-init zle-keymap-select {
@@ -84,7 +84,7 @@ PROMPT="┌──[%n@%m]──[%*]
 if [[ -z "$SSH_CLIENT" ]]; then
 	RPROMPT='${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
 else
-	RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
+	RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
 fi
 
 archey3
