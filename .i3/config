@@ -82,7 +82,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+f fullscreen global
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -195,6 +195,8 @@ bar {
 exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id xcompmgr -f -D 1
 exec parcellite
+exec unclutter
+exec volti
 #exec synergy
 exec --no-startup-id thunar --daemon
 exec owncloud
