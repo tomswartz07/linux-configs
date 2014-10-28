@@ -4,6 +4,7 @@ set background=dark
 set omnifunc=syntaxcomplete#Complete
 set completeopt=menu
 set splitright
+set splitbelow
 
 " Change Tab settings
 autocmd FileType commitmsg setlocal textwidth=72
@@ -11,7 +12,7 @@ autocmd FileType mail setlocal textwidth=0 spell
 autocmd FileType puppet setlocal tabstop=2|set shiftwidth=2|set expandtab
 
 " Override Filetype settings
-autocmd BufNewFile,BufRead *.md,*.markdown set filetype=ghmarkdown
+autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
 
 " UI settings
 set laststatus=2
@@ -24,10 +25,10 @@ set wildmenu
 colorscheme wombat
 
 " Use different theme for VimDiff
-if &diff
-	colorscheme evening
-	highlight CursorLine cterm=none ctermbg=236
-endif
+"if &diff
+"	colorscheme evening
+"	highlight CursorLine cterm=none ctermbg=236
+"endif
 
 " Remove menu options for GVim
 if has("gui_running")
@@ -50,7 +51,9 @@ set formatprg=par\ -w80eq
 " Enable tabs and trailing whitespace visiblity
 nnoremap <Leader>l :set list!<CR>
 " Toggle search highlighting
-nnoremap <Leader>s :set hlsearch!<CR>
+nnoremap <Leader>S :set hlsearch!<CR>
+" Toggle spell check
+nnoremap <Leader>s :set spell!<CR>
 " Create a new tab
 nnoremap <Leader>t :tabnew<CR>
 " Toggle NERDTree plugin
@@ -102,3 +105,4 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = '◀'
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#close_symbol = 'vim'
+let g:syntastic_puppet_puppetlint_args = "--no-autoloader_layout-check"
