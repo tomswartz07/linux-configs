@@ -14,6 +14,9 @@ autocmd FileType puppet setlocal tabstop=2|set shiftwidth=2|set expandtab
 " Override Filetype settings
 autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
 
+" Automatically reload .vimrc files
+autocmd BufWritePost .vimrc source %
+
 " UI settings
 set laststatus=2
 set encoding=utf-8
@@ -41,7 +44,7 @@ endif
 highlight ColorColumn ctermbg=232
 call matchadd('ColorColumn', '\%81v', 100)
 
-" Make tabs and trailing whitespace visible, use <leader>+l to toggle
+" Make tabs and trailing whitespace visible, use <Leader>+l to toggle
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 
 " Enable par as external formatter, for pretty paragraphs
@@ -64,6 +67,14 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F9> :%s/\s\+$//<CR>
 " Use Tabular Plugin to align elemnts with Puppet Styleguide
 nmap <F12> :Tabularize /=>/l1<CR>
+" Auto-complete braces
+inoremap { {}<Esc>i
+inoremap [ []<Esc>i
+inoremap ( ()<Esc>i
+" Allow <Leader>+Brace to insert regular brace
+inoremap <Leader>{ {
+inoremap <Leader>[ [
+inoremap <Leader>( (
 
 set iskeyword=-,:,@,48-57,_,192-255
 
