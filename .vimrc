@@ -25,7 +25,25 @@ set number
 set relativenumber
 set cursorline
 set wildmenu
+set smarttab
+set expandtab
+set autoread
+set noshowmode
 colorscheme wombat
+
+" Write swap and backup files in the event of a crash or accident
+set swapfile
+set directory=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
+set backup
+set backupdir=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
+"
+" Extend undoable steps and preserve over restart (if available)
+if has('persistent_undo')
+	set undodir=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
+	set undofile
+	set undoreload=10000
+end
+set undolevels=10000
 
 " Use different theme for VimDiff
 "if &diff
@@ -68,13 +86,18 @@ nmap <F9> :%s/\s\+$//<CR>
 " Use Tabular Plugin to align elemnts with Puppet Styleguide
 nmap <F12> :Tabularize /=>/l1<CR>
 " Auto-complete braces
-inoremap { {}<Esc>i
-inoremap [ []<Esc>i
-inoremap ( ()<Esc>i
-" Allow <Leader>+Brace to insert regular brace
-inoremap <Leader>{ {
-inoremap <Leader>[ [
-inoremap <Leader>( (
+"inoremap { {}<Esc>i
+"inoremap [ []<Esc>i
+"inoremap ( ()<Esc>i
+"" Allow <Leader>+Brace to insert regular brace
+"inoremap <Leader>{ {
+"inoremap <Leader>[ [
+"inoremap <Leader>( (
+
+" Bind :Q and :W to :q and :w
+command! Q q
+command! W w
+command! WQ wq
 
 set iskeyword=-,:,@,48-57,_,192-255
 
@@ -88,7 +111,7 @@ set iskeyword=-,:,@,48-57,_,192-255
 "      \]
 "    \}
 
-"Config for vim-airline
+" Config for vim-airline
 let g:airline_theme='wombat'
 let g:airline_powerline_fonts=1
 set ttimeoutlen=50
@@ -116,4 +139,7 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = '◀'
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#close_symbol = 'vim'
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '▶'
+let g:syntastic_full_redraws = 1
 let g:syntastic_puppet_puppetlint_args = "--no-autoloader_layout-check"
