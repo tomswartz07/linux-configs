@@ -61,6 +61,7 @@ zstyle ':completion:*' file-list list=20 insert=10
 zstyle ':completion:*' file-sort modification=time
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:processes' command 'ps -au $USER'
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=29=34"
 
 autoload -Uz vcs_info
 #zstyle ':vcs_info:*' branchformat '%F{green}%b%f'
@@ -70,6 +71,7 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' formats " [%b%c%u]"
 zstyle ':vcs_info:*' actionformats " [%b%c%u] %a"
+zstyle ':vcs_info:*' actionformats " [%b%c%u %F{yellow}%a%f]"
 precmd () {
     vcs_info
 }
@@ -98,7 +100,7 @@ PROMPT="┌──[%n@%m]──[%*]
 
 # Notify if in SSH session
 if [[ -z "$SSH_CLIENT" ]]; then
-	RPROMPT='${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%} [Error: %?]%{$reset_color%})%f'
+	RPROMPT='${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
 else
 	RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
 fi
