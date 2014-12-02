@@ -2,3 +2,4 @@ g https://www.google.com/search?safe=off&output=search&sclient=psy-ab&q=XXX&oq=&
 aw https://wiki.archlinux.org/index.php?title=Special:Search&search=XXX
 wiki https://en.wikipedia.org/w/index.php?search=XXX&title=Special:Search
 yt https://www.youtube.com/results?search_query=XXX
+aur https://aur.archlinux.org/packages/?O=0&K=XXX
