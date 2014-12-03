@@ -3,3 +3,5 @@ dwb/default/*
 !dwb/default/bookmarks
 !dwb/default/custom_keys
 !dwb/default/plugin*
+.vim/tmp/*
+!.vim/tmp/
