@@ -1,5 +1,5 @@
 [default]
-cookies-store-policy=persistent
+cookies-store-policy=session
 font=DroidSansMono 8
 font-hidden-statusbar=normal 10px DroidSansMono
 monospace-font-family=DroidSansMono
@@ -105,7 +105,7 @@ enable-dom-paste=false
 javascript-can-open-windows-automatically=false
 max-visible-completions=11
 hint-border=1px solid #000000
-widget-packing=dtws
+widget-packing=dtwS
 ssl-trusted-color=#00ff00
 enable-java-applet=true
 hints-key-lock=250
