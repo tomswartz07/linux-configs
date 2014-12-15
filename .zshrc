@@ -46,10 +46,11 @@ bindkey '^[[3~' delete-char
 alias pacman='sudo pacman'
 alias ls='ls --color'
 alias tmux='tmux attach'
-function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex "$1"; done;}
 alias dusize="sudo du -hs * | sort -nr | head -10"
+function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex "$1"; done;}
 function bbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations & Local lcl";do break;done;s=($s);mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
 function cvbbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations & Local lcl";do break;done;s=($s);cvlc "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
+function macaddr() { echo "$1" | sed -e 's/\([0-9A-Fa-f]\{2\}\)/\1:/g' -e 's/\(.*\):$/\1/' }
 
 eval "$(dircolors -b)"
 zstyle ':completion:*' menu select=2
