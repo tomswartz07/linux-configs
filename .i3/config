@@ -197,6 +197,7 @@ exec --no-startup-id xcompmgr -f -D 1
 exec parcellite
 exec unclutter
 exec volti
+exec x11vnc
 #exec synergy
 exec --no-startup-id thunar --daemon
 exec owncloud
@@ -204,9 +205,9 @@ exec nm-applet
 exec xautolock -time 10 -locker 'slimlock'
 
 # Workspace assignments
-assign [class="chromium"] 1
 assign [class="dwb"] 1
 assign [window_role="browser"] 1
+assign [class="chromium"] 10
 assign [class="Gnome-terminal"] 2
 assign [class="Thunderbird"] 3
 
