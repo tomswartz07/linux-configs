@@ -85,5 +85,5 @@ set pgp_list_pubring_command="gpg --no-verbose --batch --with-colons --list-keys
 set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secret-keys %r"
 set pgp_autosign=yes
 set pgp_replyencrypt=yes
-set pgp_timeout=86400
+set pgp_timeout=28800
 set pgp_good_sign="^gpg: Good signature from"
