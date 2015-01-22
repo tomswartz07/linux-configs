@@ -69,7 +69,7 @@ exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set formatprg=par\ -w80eq
 
 " Custom commands
-" Enable tabs and trailing whitespace visiblity
+" Enable tabs and trailing whitespace visibility
 nnoremap <Leader>l :set list!<CR>
 " Toggle search highlighting
 nnoremap <Leader>S :set hlsearch!<CR>
@@ -83,7 +83,7 @@ nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 " Find and replace trailing whitespace
 nmap <F9> :%s/\s\+$//<CR>
-" Use Tabular Plugin to align elemnts with Puppet Styleguide
+" Use Tabular Plugin to align elements with Puppet Styleguide
 nmap <F12> :Tabularize /=>/l1<CR>
 " Auto-complete braces
 "inoremap { {}<Esc>i
