@@ -75,6 +75,8 @@ nnoremap <Leader>l :set list!<CR>
 nnoremap <Leader>S :set hlsearch!<CR>
 " Toggle spell check
 nnoremap <Leader>s :set spell!<CR>
+" Use pop-up window for spell check: hit <C-c> to select option
+nnoremap z= ea<C-X><C-S>
 " Create a new tab
 nnoremap <Leader>t :tabnew<CR>
 " Toggle NERDTree plugin
