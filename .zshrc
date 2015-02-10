@@ -44,7 +44,7 @@ bindkey '^[[3~' delete-char
 #[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
 alias pacman='sudo pacman'
-alias ls='ls --color -lA --group-directories-first'
+alias ls='ls --color -lhA --group-directories-first'
 alias tmux='tmux attach'
 alias dusize="sudo du -hs * | sort -nr | head -10"
 function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex "$1"; done;}
