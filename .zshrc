@@ -7,7 +7,7 @@ setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt share_history
 setopt autocd
-setopt beep
+unsetopt beep
 setopt correct
 setopt complete_in_word
 setopt always_to_end
@@ -44,7 +44,7 @@ bindkey '^[[3~' delete-char
 #[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
 alias pacman='sudo pacman'
-alias ls='ls --color'
+alias ls='ls --color -lA --group-directories-first'
 alias tmux='tmux attach'
 alias dusize="sudo du -hs * | sort -nr | head -10"
 function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex "$1"; done;}
