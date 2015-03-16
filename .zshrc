@@ -52,7 +52,8 @@ function bbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 
 function cvbbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations & Local lcl";do break;done;s=($s);cvlc "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
 function macaddr() { echo "$1" | sed -e 's/\([0-9A-Fa-f]\{2\}\)/\1:/g' -e 's/\(.*\):$/\1/' }
 
-eval "$(dircolors -b)"
+#eval "$(dircolors -b)"
+eval "$(dircolors ~/.dircolors)"
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' group-name ''
