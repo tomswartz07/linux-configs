@@ -60,7 +60,7 @@ ${fs_bar /home}
 Swap usage:$alignr$swap/$swapmax
 ${swapbar}
 CPU usage:$alignr${cpu cpu0}%
-${cpugraph cpu0 cpu1 aa0001 aa0001}
+${cpugraph cpu0 cpu1 black black}
 
 ${color aa0001}${font Roboto-Regular:bold:size=9}NETWORK INFO ${hr 2}${color black}
 ${font Roboto-Regular:normal:size=9}Total Download Data:$alignr${totaldown enp2s0}
