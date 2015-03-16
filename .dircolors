@@ -104,11 +104,13 @@ EXEC 01;32
 # executable bit actually set.
 .sh 01;32
 .csh 01;32
+# config files/rc files
+.conf 00;33
+.cfg 00;33
+*rc 00;33
 # various files
 .bak 45;31;01
 .md 03;32
-.conf 00;33
-.cfg 00;33
 .apk 00;34
 .xml 01;35
 .log 00;36
