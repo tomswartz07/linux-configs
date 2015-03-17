@@ -65,7 +65,7 @@ TERM xterm-debian
 # Below are the color init strings for the basic file types. A color init
 # string consists of one or more of the following numeric codes:
 # Attribute codes:
-# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# 00=none 01=bold 03=emph 04=underscore 05=blink 07=reverse 08=concealed
 # Text color codes:
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # Background color codes:
@@ -104,18 +104,33 @@ EXEC 01;32
 # executable bit actually set.
 .sh 01;32
 .csh 01;32
+.py 01;32
 # config files/rc files
 .conf 00;33
 .cfg 00;33
 *rc 00;33
 # various files
 .bak 45;31;01
-.md 03;32
-.apk 00;34
-.xml 01;35
-.log 00;36
+.txt 00;32
 .pp 00;34
- # archives or compressed (bright red)
+.apk 00;34
+.pdf 00;34
+.json 00;32
+.log 00;36
+#  Markup/Markdown
+.css 03;32
+.xml 00;32
+.html 00;32
+.md 03;32
+.markdown 03;32
+.yml 00;32
+#  LaTeX files
+.tex 00;32
+.cls 04;32
+.toc 03;32
+.aux 03;32
+.out 03;32
+# archives or compressed (bright red)
 .tar 01;31
 .tgz 01;31
 .arc 01;31
@@ -157,6 +172,7 @@ EXEC 01;32
 .7z 01;31
 .rz 01;31
 .cab 01;31
+.iso 01;31
 # image formats
 .jpg 01;35
 .jpeg 01;35
