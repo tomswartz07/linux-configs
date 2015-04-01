@@ -13,6 +13,7 @@ autocmd FileType puppet setlocal tabstop=2|set shiftwidth=2|set expandtab
 
 " Override Filetype settings
 autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
+autocmd BufNewFile,BufRead *.ps1,*.ps set filetype=powershell
 
 " Automatically reload .vimrc files
 autocmd BufWritePost .vimrc source %
@@ -142,7 +143,10 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = '◀'
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#close_symbol = 'vim'
+let g:syntastic_check_on_open = 1
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '▶'
 let g:syntastic_full_redraws = 1
 let g:syntastic_puppet_puppetlint_args = "--no-autoloader_layout-check"
+let g:syntastic_html_checkers = "w3"
