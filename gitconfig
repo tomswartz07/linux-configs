@@ -15,3 +15,11 @@
 	whitespace = warn
 [branch]
 	autosetuprebase = always
+[gui]
+	fontui = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	spellingdictionary = none
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = false
