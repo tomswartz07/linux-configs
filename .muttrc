@@ -3,6 +3,7 @@ set imap_pass="password"
 set from="tom@pennmanor.net"
 set hostname="pennmanor.net"
 set sendmail="/usr/bin/msmtp"
+set wait_key=no
 set ssl_starttls=yes
 set ssl_force_tls=yes
 set header_cache="/home/tom/Mail/headercache"
@@ -17,6 +18,9 @@ alternative_order text/plain text/enriched text/html
 macro index,pager ga "<save-message>=Archives/2015<enter>" "Archive message to 2015 Archive folder"
 macro index,pager gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
 macro index,pager gg "<group-reply>" "Group Reply- to all recipients"
+# Macro for MD to HTML needs gh-markdown-cli from NodeJS: `sudo npm install gh-markdown-cli -g`
+# https://github.com/millermedeiros/gh-markdown-cli
+macro compose md "F mdown \ny^T^Utext/html; charset=us-ascii\n" "Convert message from Markdown to HTML"
 bind index "\Ca" 'imap-fetch-mail'
 
 set folder={mail.pennmanor.net}
@@ -59,7 +63,7 @@ color indicator brightyellow blue
 color header brightblue default "^(From|To|Subject|Cc|Date|[u|U]ser-[a|A]gent):"
 mono header bold "^(From|To|Subject|Cc|Date|[u|U]ser-[a|A]gent):"
 # Highlight web addresses
-color body brightgreen default "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+color body brightgreen default "(http|https|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 # Highlight email addresses
 color body brightgreen default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
