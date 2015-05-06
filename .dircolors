@@ -100,6 +100,7 @@ EXEC 01;32
 .com 01;32
 .btm 01;32
 .bat 01;32
+.ps1 01;32
 # Or if you want to colorize scripts even if they do not have the
 # executable bit actually set.
 .sh 01;32
