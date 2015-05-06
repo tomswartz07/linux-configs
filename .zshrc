@@ -39,7 +39,9 @@ bindkey -v
 bindkey '^r' history-incremental-pattern-search-backward
 bindkey '^[.' insert-last-word
 bindkey '^[OH' beginning-of-line
+bindkey '^[[7~' beginning-of-line
 bindkey '^[OF' end-of-line
+bindkey '^[[8~' end-of-line
 bindkey '^[[3~' delete-char
 #[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
