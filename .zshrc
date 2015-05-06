@@ -31,6 +31,7 @@ zmodload -i zsh/complist
 
 # Export Env Variables
 PATH="/opt/android-sdk/platform-tools:${PATH}"
+PATH="/home/tom/.gem/ruby/2.2.0/bin:${PATH}"
 export PATH
 export EDITOR=/usr/bin/vim
 #export TERM=rxvt-unicode-256color
