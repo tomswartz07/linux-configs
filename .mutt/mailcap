@@ -1,1 +1,2 @@
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/html; w3m -v -F -I %{charset} -T text/html; copiousoutput; needsterminal
+application/pdf; pdftotext %s -; copiousoutput;
