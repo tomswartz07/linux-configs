@@ -74,6 +74,8 @@ set formatprg=par\ -w80eq
 nnoremap <Leader>l :set list!<CR>
 " Toggle search highlighting
 nnoremap <Leader>S :set hlsearch!<CR>
+" Ignore whitespace during VimDiff, only affects current session
+nnoremap <Leader>w :set diffopt+=iwhite<CR>
 " Toggle spell check
 nnoremap <Leader>s :set spell!<CR>
 " Use pop-up window for spell check: hit <C-c> to select option
