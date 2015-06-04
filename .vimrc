@@ -103,7 +103,10 @@ nmap <F12> :Tabularize /=>/l1<CR>
 command! Q q
 command! W w
 command! WQ wq
-command! Sw w !sudo tee %
+
+" Command Sw will 'sudo write' the file
+" Useful when you forget to open the file as root
+command! Sw silent w !sudo tee %
 
 set iskeyword=-,:,@,48-57,_,192-255
 
