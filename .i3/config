@@ -34,6 +34,9 @@ floating_modifier $mod
 # Disable Mouse Focus Follow
 focus_follows_mouse no
 
+# Disable Mouse Warping
+mouse_warping none
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec gnome-terminal
@@ -160,7 +163,7 @@ bindsym $mod+r mode "resize"
 
 # Custom Launchers
 bindsym $mod+c exec chromium
-bindsym $mod+m exec thunderbird
+bindsym $mod+m exec thunar
 bindsym $mod+b exec dwb
 
 # Multimedia Keys
@@ -201,6 +204,7 @@ exec volti
 exec x11vnc
 #exec synergy
 exec --no-startup-id thunar --daemon
+exec --no-startup-id udiskie -2
 exec owncloud
 exec nm-applet
 exec xautolock -time 10 -locker 'slimlock'
