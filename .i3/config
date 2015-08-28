@@ -186,7 +186,7 @@ bar {
 		background #080808
 		statusline #D3D7CF
 		separator #3465A4
-
+#                                  border  bg      text
 		focused_workspace  #4c7899 #285577 #ffffff
 		active_workspace   #333333 #5f676a #ffffff
 		inactive_workspace #333333 #222222 #888888
