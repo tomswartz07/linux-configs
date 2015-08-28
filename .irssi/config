@@ -18,7 +18,9 @@ chatnets = {
 
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "#helpdesk"; chatnet = "PennManor"; autojoin = "Yes"; }
+  { name = "#helpdesk"; chatnet = "PennManor"; autojoin = "Yes"; },
+  { name = "#puppet"; chatnet = "PennManor"; autojoin = "Yes"; },
+  { name = "#swimmingpool"; chatnet = "PennManor"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -195,6 +197,8 @@ settings = {
 ignores = (
   { mask = "help"; level = "ALL"; },
   {
-    level = "CRAP SNOTES JOINS PARTS QUITS CTCPS KICKS MODES WALLOPS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS";
-  }
+    level = "CRAP SNOTES PARTS JOINS QUITS CTCPS KICKS MODES WALLOPS DCC DCCMSGS CLIENTNOTICES CLIENTCRAP CLIENTERRORS";
+  },
+  { level = "ALL"; pattern = "oc_data"; regexp = "yes"; }
 );
+logs = { };
