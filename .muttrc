@@ -8,8 +8,10 @@ set ssl_starttls=yes
 set ssl_force_tls=yes
 set header_cache="/home/tom/Mail/headercache"
 set mailcap_path="~/.mutt/mailcap"
+set index_format="%4C %Z %{%b %d} %-15.15L (%4c) %s"
 unset confirmappend
 set sig_on_top
+set sendmail_wait=-1
 # view html automatically
 auto_view text/html
 # save html for last
