@@ -22,6 +22,7 @@ autocmd BufWritePost .vimrc source %
 set laststatus=2
 set encoding=utf-8
 set t_Co=256
+set updatetime=100
 set number
 set relativenumber
 set cursorline
@@ -57,6 +58,10 @@ if has("gui_running")
     set guioptions -=m
     set guioptions -=T
     set guioptions -=r
+    set guioptions -=L
+    set guioptions -=l
+    set guioptions -=b
+    set guifont=Hack\ 8
 endif
 
 " Make 81st column stand out
