@@ -64,10 +64,6 @@ if has("gui_running")
     set guifont=Hack\ 8
 endif
 
-" Make 81st column stand out
-highlight ColorColumn ctermbg=232
-call matchadd('ColorColumn', '\%81v', 100)
-
 " Make tabs and trailing whitespace visible, use <Leader>+l to toggle
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 

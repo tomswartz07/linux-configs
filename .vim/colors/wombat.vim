@@ -1,11 +1,12 @@
 " Vim color file
 " Original Maintainer:  Lars H. Nielsen (dengmao@gmail.com)
-" Last Change:  2010-07-23
+" Last Change:  2015-12-15
 "
 " Modified version of wombat for 256-color terminals by
 "   David Liang (bmdavll@gmail.com)
 " based on version by
 "   Danila Bespalov (danila.bespalov@gmail.com)
+" Further modified by Tom Swartz (tom@tswartz.net)
 
 set background=dark
 
@@ -48,6 +49,10 @@ hi DiffAdd						ctermbg=17										guibg=#2a0d6a
 hi DiffDelete	ctermfg=234		ctermbg=60		cterm=none		guifg=#242424	guibg=#3e3969	gui=none
 hi DiffText						ctermbg=53		cterm=none						guibg=#73186e	gui=none
 hi DiffChange					ctermbg=237										guibg=#382a37
+
+" Color Column, highlight the 81st column
+call matchadd('ColorColumn', '\%81v', 100)
+hi ColorColumn					ctermbg=52										guibg=#5f0000
 
 "hi CursorIM
 "hi Directory
