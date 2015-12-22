@@ -12,8 +12,8 @@ set index_format="%4C %Z %{%b %d} %-15.15L (%4c) %s"
 unset confirmappend
 set sig_on_top
 set sendmail_wait=-1
-# view html automatically
-auto_view text/html
+# view certain filetypes automatically
+auto_view text/html application/pdf image/* application/msword
 # save html for last
 alternative_order text/plain text/enriched text/html
 
