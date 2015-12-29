@@ -207,6 +207,7 @@ exec --no-startup-id thunar --daemon
 exec --no-startup-id udiskie -2
 exec owncloud
 exec nm-applet
+exec --no-startup-id dunst
 exec xautolock -time 10 -locker 'slimlock'
 
 # Workspace assignments
