@@ -17,7 +17,7 @@ auto_view text/html application/pdf image/* application/msword
 # save html for last
 alternative_order text/plain text/enriched text/html
 
-macro index,pager ga "<save-message>=Archives/2015<enter>" "Archive message to 2015 Archive folder"
+macro index,pager ga "<save-message>=Archives/2016<enter>" "Archive message to 2016 Archive folder"
 macro index,pager gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
 macro index,pager g1 "<save-message>=Filtered/1to1<enter>" "Archive message to 1:1 Archive folder"
 macro index,pager gg "<group-reply>" "Group Reply- to all recipients"
