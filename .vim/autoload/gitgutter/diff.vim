@@ -9,27 +9,70 @@ if s:grep_available
 endif
 let s:hunk_re = '^@@ -\(\d\+\),\?\(\d*\) +\(\d\+\),\?\(\d*\) @@'
 
+let s:fish = &shell =~# 'fish'
 
+let s:temp_index = tempname()
+let s:temp_buffer = tempname()
+
+" Returns a diff of the buffer.
+"
+" The way to get the diff depends on whether the buffer is saved or unsaved.
+"
+" * Saved: the buffer contents is the same as the file on disk in the working
+"   tree so we simply do:
+"
+"       git diff myfile
+"
+" * Unsaved: the buffer contents is not the same as the file on disk so we
+"   need to pass two instances of the file to git-diff:
+"
+"       git diff myfileA myfileB
+"
+"   The first instance is the file in the index which we obtain with:
+"
+"       git show :myfile > myfileA
+"
+"   The second instance is the buffer contents.  Ideally we would pass this to
+"   git-diff on stdin via the second argument to vim's system() function.
+"   Unfortunately git-diff does not do CRLF conversion for input received on
+"   stdin, and git-show never performs CRLF conversion, so repos with CRLF
+"   conversion report that every line is modified due to mismatching EOLs.
+"
+"   Instead, we write the buffer contents to a temporary file - myfileB in this
+"   example.  Note the file extension must be preserved for the CRLF
+"   conversion to work.
+"
+" Before diffing a buffer for the first time, we check whether git knows about
+" the file:
+"
+"     git ls-files --error-unmatch myfile
+"
+" After running the diff we pass it through grep where available to reduce
+" subsequent processing by the plugin.  If grep is not available the plugin
+" does the filtering instead.
 function! gitgutter#diff#run_diff(realtime, use_external_grep)
   " Wrap compound commands in parentheses to make Windows happy.
-  let cmd = '('
+  " bash doesn't mind the parentheses; fish doesn't want them.
+  let cmd = s:fish ? '' : '('
 
   let bufnr = gitgutter#utility#bufnr()
   let tracked = getbufvar(bufnr, 'gitgutter_tracked')  " i.e. tracked by git
   if !tracked
-    let cmd .= 'git ls-files --error-unmatch '.gitgutter#utility#shellescape(gitgutter#utility#filename()).' && ('
+    let cmd .= 'git ls-files --error-unmatch '.gitgutter#utility#shellescape(gitgutter#utility#filename())
+    let cmd .= s:fish ? '; and ' : ' && ('
   endif
 
   if a:realtime
     let blob_name = ':'.gitgutter#utility#shellescape(gitgutter#utility#file_relative_to_repo_root())
-    let blob_file = tempname()
-    let buff_file = tempname()
+    let blob_file = s:temp_index
+    let buff_file = s:temp_buffer
     let extension = gitgutter#utility#extension()
     if !empty(extension)
       let blob_file .= '.'.extension
       let buff_file .= '.'.extension
     endif
-    let cmd .= 'git show '.blob_name.' > '.blob_file.' && '
+    let cmd .= 'git show '.blob_name.' > '.blob_file
+    let cmd .= s:fish ? '; and ' : ' && '
 
     " Writing the whole buffer resets the '[ and '] marks and also the
     " 'modified' flag (if &cpoptions includes '+').  These are unwanted
@@ -38,7 +81,7 @@ function! gitgutter#diff#run_diff(realtime, use_external_grep)
     let op_mark_start = getpos("'[")
     let op_mark_end   = getpos("']")
 
-    execute 'keepalt silent write' buff_file
+    execute 'keepalt noautocmd silent write!' buff_file
 
     call setbufvar(bufnr, "&mod", modified)
     call setpos("'[", op_mark_start)
@@ -61,14 +104,17 @@ function! gitgutter#diff#run_diff(realtime, use_external_grep)
     " differences are found.  However we want to treat non-matches and
     " differences as non-erroneous behaviour; so we OR the command with one
     " which always exits with success (0).
-    let cmd.= ' || exit 0'
+    let cmd .= s:fish ? '; or ' : ' || '
+    let cmd .= 'exit 0'
   endif
 
-  let cmd .= ')'
-
-  if !tracked
+  if !s:fish
     let cmd .= ')'
-  endif
+
+    if !tracked
+      let cmd .= ')'
+    endif
+  end
 
   let diff = gitgutter#utility#system(gitgutter#utility#command_in_directory_of_file(cmd))
 

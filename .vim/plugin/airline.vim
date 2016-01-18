@@ -1,4 +1,4 @@
-" MIT License. Copyright (c) 2013-2015 Bailey Ling.
+" MIT License. Copyright (c) 2013-2016 Bailey Ling.
 " vim: et ts=2 sts=2 sw=2
 
 if &cp || v:version < 702 || (exists('g:loaded_airline') && g:loaded_airline)
@@ -102,10 +102,10 @@ function! s:airline_theme(...)
   endif
 endfunction
 
-command! -nargs=? -complete=customlist,<sid>get_airline_themes AirlineTheme call <sid>airline_theme(<f-args>)
-command! AirlineToggleWhitespace call airline#extensions#whitespace#toggle()
-command! AirlineToggle call s:airline_toggle()
-command! AirlineRefresh call airline#load_theme() | call airline#update_statusline()
+command! -bar -nargs=? -complete=customlist,<sid>get_airline_themes AirlineTheme call <sid>airline_theme(<f-args>)
+command! -bar AirlineToggleWhitespace call airline#extensions#whitespace#toggle()
+command! -bar AirlineToggle call s:airline_toggle()
+command! -bar AirlineRefresh call airline#load_theme() | call airline#update_statusline()
 
 call airline#init#bootstrap()
 call s:airline_toggle()
