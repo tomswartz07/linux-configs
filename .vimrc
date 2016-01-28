@@ -91,6 +91,9 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F9> :%s/\s\+$//<CR>
 " Use Tabular Plugin to align elements with Puppet Styleguide
 nmap <F12> :Tabularize /=>/l1<CR>
+" Easier shifting, keep selection on shift
+xnoremap < <gv
+xnoremap > >gv
 " Auto-complete braces
 "inoremap { {}<Esc>i
 "inoremap [ []<Esc>i
