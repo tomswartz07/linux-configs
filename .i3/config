@@ -42,7 +42,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec gnome-terminal
 
 # Allow Screen Lock
-bindsym $mod+Control+l exec slimlock
+bindsym $mod+Control+l exec ~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -208,7 +208,7 @@ exec --no-startup-id udiskie -2
 exec owncloud
 exec nm-applet
 exec --no-startup-id dunst
-exec xautolock -time 10 -locker 'slimlock'
+exec xautolock -time 10 -locker '~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png'
 
 # Workspace assignments
 assign [class="dwb"] 1
