@@ -33,6 +33,8 @@ set copy=yes
 set mail_check=30
 
 mailboxes =INBOX ="Filtered/Git Messages" ="Filtered/Voicemails"
+# imap_check_subscribed requires Mutt v1.6+
+#set imap_check_subscribed
 
 #set query_command = "~/ldap.pl '%s'"
 #bind editor "\t" complete-query
@@ -94,3 +96,5 @@ set pgp_autosign=yes
 set pgp_replyencrypt=yes
 set pgp_timeout=28800
 set pgp_good_sign="^gpg: Good signature from"
+# postpone_encrypt requires Mutt v1.6+
+#set postpone_encrypt
