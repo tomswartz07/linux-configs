@@ -32,7 +32,9 @@ zmodload -i zsh/complist
 # Export Env Variables
 PATH="/opt/android-sdk/platform-tools:${PATH}"
 PATH="/home/tom/.gem/ruby/2.2.0/bin:${PATH}"
+GOPATH="/home/tom/.go/"
 export PATH
+export GOPATH
 export EDITOR=/usr/bin/vim
 #export TERM=rxvt-unicode-256color
 
@@ -47,6 +49,7 @@ bindkey '^[[3~' delete-char
 #[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
 alias pacman='sudo pacman'
+alias packer='pacaur'
 alias ls='ls --color -lhSAv --group-directories-first'
 alias tmux='tmux attach'
 alias dusize="sudo du -hs * | sort -nr | head -10"
