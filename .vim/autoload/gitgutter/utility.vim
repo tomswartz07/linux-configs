@@ -2,6 +2,7 @@ let s:file = ''
 let s:using_xolox_shell = -1
 let s:exit_code = 0
 let s:fish = &shell =~# 'fish'
+let s:jobs = {}
 
 function! gitgutter#utility#warn(message)
   echohl WarningMsg
@@ -23,15 +24,19 @@ endfunction
 " Returns truthy when the buffer's file should be processed; and falsey when it shouldn't.
 " This function does not and should not make any system calls.
 function! gitgutter#utility#is_active()
-  return g:gitgutter_enabled && gitgutter#utility#exists_file() && gitgutter#utility#not_git_dir() && !gitgutter#utility#help_file()
+  return g:gitgutter_enabled &&
+        \ !pumvisible() &&
+        \ gitgutter#utility#is_file_buffer() &&
+        \ gitgutter#utility#exists_file() &&
+        \ gitgutter#utility#not_git_dir()
 endfunction
 
 function! gitgutter#utility#not_git_dir()
   return gitgutter#utility#full_path_to_directory_of_file() !~ '[/\\]\.git\($\|[/\\]\)'
 endfunction
 
-function! gitgutter#utility#help_file()
-  return getbufvar(s:bufnr, '&filetype') ==# 'help' && getbufvar(s:bufnr, '&buftype') ==# 'help'
+function! gitgutter#utility#is_file_buffer()
+  return empty(getbufvar(s:bufnr, '&buftype'))
 endfunction
 
 " A replacement for the built-in `shellescape(arg)`.
@@ -161,4 +166,28 @@ endfunction
 
 function! gitgutter#utility#strip_trailing_new_line(line)
   return substitute(a:line, '\n$', '', '')
+endfunction
+
+function! gitgutter#utility#pending_job(job_id)
+  let s:jobs[a:job_id] = 1
+endfunction
+
+function! gitgutter#utility#is_pending_job(job_id)
+  return has_key(s:jobs, a:job_id)
+endfunction
+
+function! gitgutter#utility#job_output_received(job_id, event)
+  if has_key(s:jobs, a:job_id)
+    unlet s:jobs[a:job_id]
+  endif
+endfunction
+
+function! gitgutter#utility#git_version()
+  return matchstr(system('git --version'), '[0-9.]\+')
+endfunction
+
+" True for git v1.7.2+.
+function! gitgutter#utility#git_supports_command_line_config_override()
+  let [major, minor, patch; _] = split(gitgutter#utility#git_version(), '\.')
+  return major > 1 || (major == 1 && minor > 7) || (minor == 7 && patch > 1)
 endfunction

@@ -157,5 +157,5 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '▶'
 let g:syntastic_full_redraws = 1
-let g:syntastic_puppet_puppetlint_args = "--no-autoloader_layout-check"
+let g:syntastic_puppet_puppetlint_args = "--no-autoloader_layout-check --no-80chars-check --no-class_inherits_from_params_class-check"
 let g:syntastic_html_checkers = "w3"

@@ -117,9 +117,10 @@ You can customise:
 - The sign column's colours
 - The signs' colours and symbols
 - Line highlights
+- The base of the diff
 - Extra arguments for git-diff
 - Key mappings
-- Whether or not to escape grep (defaults to no)
+- The grep executable used
 - Whether or not vim-gitgutter is on initially (defaults to on)
 - Whether or not signs are shown (defaults to yes)
 - Whether or not line highlighting is on initially (defaults to off)
@@ -185,6 +186,14 @@ colorscheme or |vimrc|:
   GitGutterChangeDeleteLine " default: links to GitGutterChangeLineDefault
 <
 
+THE BASE OF THE DIFF
+
+By default buffers are diffed against the index.  To diff against a commit
+instead:
+>
+  let g:gitgutter_diff_base = '<commit SHA>'
+<
+
 EXTRA ARGUMENTS FOR GIT-DIFF
 
 To pass extra arguments to git-diff, add this to your |vimrc|:
@@ -212,11 +221,11 @@ To change the hunk-staging/reverting/previewing maps (defaults shown):
   nmap <Leader>hp <Plug>GitGutterPreviewHunk
 <
 
-TO ESCAPE GREP
+TO USE A CUSTOM GREP COMMAND
 
-To avoid any alias you have for grep, use this:
+To use a custom invocation for grep, use this:
 >
-  let g:gitgutter_escape_grep = 1
+  let g:gitgutter_grep_command = 'grep --color=never -e'
 <
 
 TO TURN OFF VIM-GITGUTTER BY DEFAULT
