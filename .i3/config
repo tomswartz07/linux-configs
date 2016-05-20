@@ -19,7 +19,7 @@ set $mod Mod4
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
-font pango:DroidSansMono 10
+font pango:Hack 10
 
 # Add keys to toggle window borders
 bindsym $mod+t border normal
@@ -185,7 +185,7 @@ bar {
 #	position top
 	mode dock
 	tray_output primary
-	font pango:Droid Sans Mono for Powerline 10
+	font pango:Hack 10
 	colors {
 		background #080808
 		statusline #D3D7CF
