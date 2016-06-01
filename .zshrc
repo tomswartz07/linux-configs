@@ -69,7 +69,9 @@ zstyle ':completion:*' file-list list=20 insert=10
 zstyle ':completion:*' file-sort modification=time
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:processes' command 'ps -au $USER'
+zstyle ':completion:*:processes-names' command 'ps -e -o comm='
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=29=34"
+zstyle ':completion:*:*:killall' force-list always
 
 autoload -Uz vcs_info
 #zstyle ':vcs_info:*' branchformat '%F{green}%b%f'
