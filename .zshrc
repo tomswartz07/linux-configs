@@ -94,7 +94,7 @@ precmd () {
 # If only command mode is set, then message will only appear if cmd mode is activated.
 
 #vim_insert_mode="%{$fg[cyan]%} [INS]%{$reset_color%}"
-vim_insert_mode=" "
+vim_insert_mode=""
 vim_command_mode="%{$fg[yellow]%} [CMD]%{$reset_color%}"
 
 function zle-line-init zle-keymap-select {
