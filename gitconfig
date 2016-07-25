@@ -1,25 +1,34 @@
 [user]
-	name = Tom Swartz
-	email = tom.swartz07@gmail.com
+        name = Tom Swartz
+        email = tom.swartz07@gmail.com
+        signingkey = 4D957D39
 [push]
-	default = simple
+        default = current
 [help]
-	autocorrect = 10
+        autocorrect = 10
 [color]
-	ui = auto
+        ui = auto
 [credential]
-	helper = cache
+        helper = cache
+[blame]
+        date=relative
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [apply]
-	whitespace = warn
+        whitespace = warn
 [branch]
-	autosetuprebase = always
+        autosetuprebase = always
+        autosetupmerge = always
 [gui]
-	fontui = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
-	spellingdictionary = none
+        fontui = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+        fontdiff = -family \"Droid Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+        spellingdictionary = none
 [merge]
-	tool = vimdiff
+        tool = vimdiff
 [mergetool]
-	prompt = false
+        prompt = false
+[url "https://github.com/"]
+        insteadOf = http://github.com/
+        insteadOf = git://github.com/
+[rebase]
+	autoStash = true
