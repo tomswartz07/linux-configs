@@ -79,9 +79,9 @@ zstyle ':vcs_info:*' stagedstr ' %F{green}staged%f'
 zstyle ':vcs_info:*' unstagedstr ' %F{red}unstaged%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:*' formats " [%b%c%u]"
-zstyle ':vcs_info:*' actionformats " [%b%c%u] %a"
-zstyle ':vcs_info:*' actionformats " [%b%c%u %F{yellow}%a%f]"
+zstyle ':vcs_info:*' formats "[%b%c%u%m]"
+zstyle ':vcs_info:*' actionformats "[%b%c%u] %a"
+zstyle ':vcs_info:*' actionformats "[%b%c%u %F{yellow}%a%f]"
 precmd () {
     vcs_info
 }
@@ -94,12 +94,12 @@ precmd () {
 # If only command mode is set, then message will only appear if cmd mode is activated.
 
 #vim_insert_mode="%{$fg[cyan]%} [INS]%{$reset_color%}"
-vim_insert_mode=" "
-vim_command_mode="%{$fg[yellow]%} [CMD]%{$reset_color%}"
+vim_insert_mode=""
+vim_command_mode="%{$fg[yellow]%}[CMD]%{$reset_color%}"
 
 function zle-line-init zle-keymap-select {
-	vim_mode="${${KEYMAP/vicmd/${vim_command_mode}}/(main|viins)/${vim_insert_mode}}"
-	zle reset-prompt
+        vim_mode="${${KEYMAP/vicmd/${vim_command_mode}}/(main|viins)/${vim_insert_mode}}"
+        zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -110,9 +110,9 @@ PROMPT="┌──[%n@%m]──[%*]
 
 # Notify if in SSH session
 if [[ -z "$SSH_CLIENT" ]]; then
-	RPROMPT='${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
+        RPROMPT='${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
 else
-	RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
+        RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
 fi
 
 # Highlight brackets, requires zsh-syntax-highlighting package
