@@ -3,6 +3,8 @@
 
 " http://got-ravings.blogspot.com/2008/10/vim-pr0n-statusline-whitespace-flags.html
 
+scriptencoding utf-8
+
 let s:show_message = get(g:, 'airline#extensions#whitespace#show_message', 1)
 let s:symbol = get(g:, 'airline#extensions#whitespace#symbol', g:airline_symbols.whitespace)
 let s:default_checks = ['indent', 'trailing', 'mixed-indent-file']
@@ -15,7 +17,7 @@ let s:indent_algo = get(g:, 'airline#extensions#whitespace#mixed_indent_algo', 0
 let s:skip_check_ft = {'make': ['indent', 'mixed-indent-file'] }
 let s:max_lines = get(g:, 'airline#extensions#whitespace#max_lines', 20000)
 let s:enabled = get(g:, 'airline#extensions#whitespace#enabled', 1)
-let s:c_like_langs = get(g:, 'airline#extensions#c_like_langs', [ 'c', 'cpp', 'cuda', 'javascript', 'ld', 'php' ])
+let s:c_like_langs = get(g:, 'airline#extensions#c_like_langs', [ 'c', 'cpp', 'cuda', 'go', 'javascript', 'ld', 'php' ])
 
 function! s:check_mixed_indent()
   if s:indent_algo == 1
@@ -51,12 +53,13 @@ endfunction
 
 function! airline#extensions#whitespace#check()
   if &readonly || !&modifiable || !s:enabled || line('$') > s:max_lines
+          \ || get(b:, 'airline_whitespace_disabled', 0)
     return ''
   endif
 
   if !exists('b:airline_whitespace_check')
     let b:airline_whitespace_check = ''
-    let checks = get(g:, 'airline#extensions#whitespace#checks', s:default_checks)
+    let checks = get(b:, 'airline_whitespace_checks', get(g:, 'airline#extensions#whitespace#checks', s:default_checks))
 
     let trailing = 0
     if index(checks, 'trailing') > -1
@@ -105,7 +108,7 @@ function! airline#extensions#whitespace#check()
       endif
     endif
   endif
-  return b:airline_whitespace_check
+  return airline#util#shorten(b:airline_whitespace_check, 120, 9)
 endfunction
 
 function! airline#extensions#whitespace#toggle()
@@ -136,6 +139,13 @@ function! airline#extensions#whitespace#init(...)
   unlet! b:airline_whitespace_check
   augroup airline_whitespace
     autocmd!
-    autocmd CursorHold,BufWritePost * unlet! b:airline_whitespace_check
+    autocmd CursorHold,BufWritePost * call <sid>ws_refresh()
   augroup END
+endfunction
+
+function! s:ws_refresh()
+  unlet! b:airline_whitespace_check
+  if get(g:, 'airline_skip_empty_sections', 0)
+    exe ':AirlineRefresh'
+  endif
 endfunction

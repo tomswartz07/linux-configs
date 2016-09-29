@@ -1,6 +1,8 @@
 " MIT License. Copyright (c) 2013-2016 Bailey Ling.
 " vim: et ts=2 sts=2 sw=2
 
+scriptencoding utf-8
+
 let s:parts = {}
 
 " PUBLIC API {{{
@@ -82,10 +84,9 @@ function! airline#parts#readonly()
 endfunction
 
 function! airline#parts#filetype()
-  return &filetype
+  return winwidth(0) < 100 && strlen(&filetype) > 3 ? matchstr(&filetype, '...'). (&encoding is? 'utf-8' ? '…' : '>') : &filetype
 endfunction
 
 function! airline#parts#ffenc()
   return printf('%s%s%s', &fenc, &l:bomb ? '[BOM]' : '', strlen(&ff) > 0 ? '['.&ff.']' : '')
 endfunction
-

@@ -1,6 +1,8 @@
 " MIT License. Copyright (c) 2013-2016 Bailey Ling.
 " vim: et ts=2 sts=2 sw=2
 
+scriptencoding utf-8
+
 let s:has_fugitive = exists('*fugitive#head')
 let s:has_lawrencium = exists('*lawrencium#statusline')
 let s:has_vcscommand = get(g:, 'airline#extensions#branch#use_vcscommand', 0) && exists('*VCSCommandGetStatusLine')
@@ -73,7 +75,7 @@ function! s:get_git_untracked(file)
   if has_key(s:untracked_git, a:file)
     let untracked = s:untracked_git[a:file]
   else
-    let output    = system('git status --porcelain -- '. a:file)
+    let output    = system('git status --porcelain -- '. shellescape(a:file))
     if output[0:1] is# '??' && output[3:-2] is? a:file
       let untracked = get(g:, 'airline#extensions#branch#notexists', g:airline_symbols.notexists)
     endif
@@ -92,7 +94,7 @@ function! s:get_hg_untracked(file)
     if has_key(s:untracked_hg, a:file)
       let untracked = s:untracked_hg[a:file]
     else
-      let untracked = (system('hg status -u -- '. a:file)[0] is# '?'  ?
+      let untracked = (system('hg status -u -- '. shellescape(a:file))[0] is# '?'  ?
             \ get(g:, 'airline#extensions#branch#notexists', g:airline_symbols.notexists) : '')
       let s:untracked_hg[a:file] = untracked
     endif
@@ -117,7 +119,11 @@ function! airline#extensions#branch#head()
   let l:vcs_priority = get(g:, "airline#extensions#branch#vcs_priority", ["git", "mercurial"])
   let found_fugitive_head = 0
 
-  let l:git_head = s:get_git_branch(expand("%:p:h"))
+  if exists("*fnamemodify")
+    let l:git_head = s:get_git_branch(fnamemodify(resolve(@%), ":p:h"))
+  else
+    let l:git_head = s:get_git_branch(expand("%:p:h"))
+  endif
   let l:hg_head = s:get_hg_branch()
 
   if !empty(l:git_head)
@@ -141,6 +147,7 @@ function! airline#extensions#branch#head()
       endif
     endif
   else
+    let b:airline_head = get(b:, 'airline_head', '')
     for vcs in l:vcs_priority
       if has_key(l:heads, vcs)
         if !empty(b:airline_head)
@@ -161,6 +168,8 @@ function! airline#extensions#branch#head()
   if empty(b:airline_head) || !found_fugitive_head && !s:check_in_path()
     let b:airline_head = ''
   endif
+  let minwidth = empty(get(b:, 'airline_hunks', '')) ? 14 : 7
+  let b:airline_head = airline#util#shorten(b:airline_head, 120, minwidth)
   return b:airline_head
 endfunction
 
@@ -196,7 +205,16 @@ function! s:check_in_path()
   return b:airline_file_in_root
 endfunction
 
-function! s:reset_untracked_cache()
+function! s:reset_untracked_cache(shellcmdpost)
+  if a:shellcmdpost
+    " function called after executing a shell command,
+    " only clear cache, if there was no error, else the
+    " system() command from get_git_untracked() would
+    " overwrite the v:shell_error status
+    if v:shell_error
+      return
+    endif
+  endif
   if exists("s:untracked_git")
     let s:untracked_git={}
   endif
@@ -211,5 +229,6 @@ function! airline#extensions#branch#init(ext)
   autocmd BufReadPost * unlet! b:airline_file_in_root
   autocmd CursorHold,ShellCmdPost,CmdwinLeave * unlet! b:airline_head
   autocmd User AirlineBeforeRefresh unlet! b:airline_head
-  autocmd BufWritePost,ShellCmdPost * call s:reset_untracked_cache()
+  autocmd BufWritePost * call s:reset_untracked_cache(0)
+  autocmd ShellCmdPost * call s:reset_untracked_cache(1)
 endfunction
