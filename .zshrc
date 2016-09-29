@@ -57,6 +57,17 @@ function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex 
 function bbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations & Local lcl";do break;done;s=($s);mplayer -playlist "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
 function cvbbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations & Local lcl";do break;done;s=($s);cvlc "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
 function macaddr() { echo "$1" | sed -e 's/\([0-9A-Fa-f]\{2\}\)/\1:/g' -e 's/\(.*\):$/\1/' }
+# Colors for man pages
+man() {
+  env \
+    LESS_TERMCAP_md=$'\e[1;31m' \
+    LESS_TERMCAP_us=$'\e[1;35m' \
+    LESS_TERMCAP_so=$'\e[1;44;32m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    man "$@"
+}
 
 #eval "$(dircolors -b)"
 eval "$(dircolors ~/.dircolors)"
