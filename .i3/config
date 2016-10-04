@@ -209,8 +209,8 @@ exec x11vnc
 #exec synergy
 exec --no-startup-id thunar --daemon
 exec --no-startup-id udiskie -2
-exec owncloud
-exec nm-applet
+exec --no-startup-id owncloud
+exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec xautolock -time 10 -locker '~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png'
 
