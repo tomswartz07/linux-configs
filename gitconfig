@@ -31,4 +31,6 @@
         insteadOf = http://github.com/
         insteadOf = git://github.com/
 [rebase]
-	autoStash = true
+        autostash = true
+[pull]
+        rebase = true
