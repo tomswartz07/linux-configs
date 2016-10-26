@@ -167,9 +167,10 @@ bindsym $mod+m exec thunar
 bindsym $mod+b exec dwb
 
 # Multimedia Keys
-bindsym XF86AudioRaiseVolume exec amixer -q -c 0 set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q -c 0 set Master 2dB- unmute
+bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
+# bindsyn XF86AudioPlay exec
 
 # Capture Screenshot
 bindsym $mod+Print exec scrot
