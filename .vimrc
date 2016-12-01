@@ -134,9 +134,9 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 "let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
+"let g:airline_left_sep = '▶'
 "let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
+"let g:airline_right_sep = '◀'
 "let g:airline_symbols.linenr = '␊'
 "let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
@@ -148,9 +148,9 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
-let g:airline#extensions#tabline#left_sep = '▶'
+"let g:airline#extensions#tabline#left_sep = '▶'
 let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = '◀'
+"let g:airline#extensions#tabline#right_sep = '◀'
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#close_symbol = 'vim'
 let g:syntastic_check_on_open = 1
