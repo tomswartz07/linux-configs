@@ -172,6 +172,10 @@ bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 # bindsyn XF86AudioPlay exec
 
+# Brightness Keys
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
 # Capture Screenshot
 bindsym $mod+Print exec scrot
 
@@ -201,10 +205,11 @@ bar {
 
 # Autolaunch applications
 exec --no-startup-id sh ~/.fehbg
-exec --no-startup-id xcompmgr -f -D 1
+#exec --no-startup-id xcompmgr -f -D 1
+exec --no-startup-id compton -bC
 exec parcellite
 exec conky
-exec unclutter
+exec unclutter -keystroke
 exec volti
 exec x11vnc
 #exec synergy
@@ -213,6 +218,9 @@ exec --no-startup-id udiskie -2
 exec --no-startup-id owncloud
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
+exec --no-startup-id seahorse --no-window
+exec --no-startup-id gpg-agent --homedir /home/tom/.gnupg --use-standard-socket --daemon
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec xautolock -time 10 -locker '~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png'
 
 # Workspace assignments
