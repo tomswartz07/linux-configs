@@ -94,6 +94,11 @@ nmap <F12> :Tabularize /=>/l1<CR>
 " Easier shifting, keep selection on shift
 xnoremap < <gv
 xnoremap > >gv
+" Move between splits easier
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+noremap <C-k> <C-W>k
+noremap <C-j> <C-W>j
 " Auto-complete braces
 "inoremap { {}<Esc>i
 "inoremap [ []<Esc>i
@@ -139,7 +144,11 @@ let g:airline_symbols.space = "\ua0"
 "let g:airline_right_sep = '◀'
 "let g:airline_symbols.linenr = '␊'
 "let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.linenr = '№'
+"let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.linenr = ''
+"let g:airline_symbols.maxlinenr = '№'
+let g:airline_symbols.maxlinenr = ''
 "let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
@@ -156,8 +165,9 @@ let g:airline#extensions#tabline#close_symbol = 'vim'
 let g:syntastic_check_on_open = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '▶'
+"let g:syntastic_warning_symbol = '▶'
 let g:syntastic_full_redraws = 1
 let g:syntastic_puppet_puppetlint_args = "--no-autoloader_layout-check --no-80chars-check --no-class_inherits_from_params_class-check"
-let g:syntastic_html_checkers = "w3"
-let g:syntastic_yaml_checkers = "yaml-lint"
+let g:syntastic_html_checkers = ["w3"]
+let g:syntastic_yaml_checkers = ["yamllint"]
+let g:syntastic_yaml_yamllint_args = "-d relaxed"
