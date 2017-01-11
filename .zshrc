@@ -31,7 +31,7 @@ zmodload -i zsh/complist
 
 # Export Env Variables
 PATH="/opt/android-sdk/platform-tools:${PATH}"
-PATH="/home/tom/.gem/ruby/*/bin:${PATH}"
+PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:${PATH}
 GOPATH="/home/tom/.go/"
 export PATH
 export GOPATH
@@ -46,10 +46,13 @@ bindkey '^[[7~' beginning-of-line
 bindkey '^[OF' end-of-line
 bindkey '^[[8~' end-of-line
 bindkey '^[[3~' delete-char
+bindkey '^b' backward-word
+bindkey '^f' forward-word
 #[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
 alias pacman='sudo pacman'
 alias packer='pacaur'
+alias gist='gist -c -p'
 alias ls='ls --color -lhSAv --group-directories-first'
 alias tmux='tmux attach'
 alias dusize="sudo du -hs * | sort -nr | head -10"
@@ -104,7 +107,7 @@ precmd () {
 #
 # If only command mode is set, then message will only appear if cmd mode is activated.
 
-#vim_insert_mode="%{$fg[cyan]%} [INS]%{$reset_color%}"
+#vim_insert_mode="%{$fg[cyan]%}[INS]%{$reset_color%}"
 vim_insert_mode=""
 vim_command_mode="%{$fg[yellow]%}[CMD]%{$reset_color%}"
 
