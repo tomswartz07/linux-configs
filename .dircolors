@@ -103,9 +103,9 @@ EXEC 01;32
 .ps1 01;32
 # Or if you want to colorize scripts even if they do not have the
 # executable bit actually set.
-.sh 01;32
-.csh 01;32
-.py 01;32
+#.sh 01;32
+#.csh 01;32
+#.py 01;32
 # config files/rc files
 .conf 00;33
 .cfg 00;33
@@ -175,6 +175,7 @@ EXEC 01;32
 .cab 01;31
 .iso 01;31
 .box 01;31
+.gpg 07;31
 # image formats
 .jpg 01;35
 .jpeg 01;35
