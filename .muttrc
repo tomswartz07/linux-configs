@@ -1,46 +1,40 @@
-set imap_user="tom"
-set imap_pass="password"
-set from="tom@pennmanor.net"
-set hostname="pennmanor.net"
-set sendmail="/usr/bin/msmtp"
-set wait_key=no
+# Account info is saved in a user-specific muttrc file.
+# (See .mutt/accounts/
+#
+# This muttrc should be sourced after the other
+# user-specific settings are applied.
 set ssl_starttls=yes
 set ssl_force_tls=yes
-set header_cache="/home/tom/Mail/headercache"
 set mailcap_path="~/.mutt/mailcap"
 set index_format="%4C %Z %{%b %d} %-15.15L (%4c) %s"
 unset confirmappend
 set sig_on_top
 set sendmail_wait=-1
-# view certain filetypes automatically
+
+# View certain filetypes automatically
 auto_view text/html application/pdf image/* application/msword
-# save html for last
+# Save html for last
 alternative_order text/plain text/enriched text/html
 
-macro index,pager ga "<save-message>=Archives/2016<enter>" "Archive message to 2016 Archive folder"
-macro index,pager gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
-macro index,pager g1 "<save-message>=Filtered/1to1<enter>" "Archive message to 1:1 Archive folder"
-macro index,pager gg "<group-reply>" "Group Reply- to all recipients"
+bind editor <space> noop
+bind index "\Ca" 'imap-fetch-mail'
 # Macro for MD to HTML needs gh-markdown-cli from NodeJS: `sudo npm install gh-markdown-cli -g`
 # https://github.com/millermedeiros/gh-markdown-cli
 macro compose md "F mdown \ny^T^Utext/html; charset=us-ascii\n" "Convert message from Markdown to HTML"
-bind index "\Ca" 'imap-fetch-mail'
 
-set folder={mail.pennmanor.net}
-set spoolfile={mail.pennmanor.net}INBOX
-fcc-hook ~A {mail.pennmanor.net}"Sent Items"
 set copy=yes
-set mail_check=30
-
-mailboxes =INBOX ="Filtered/Git Messages" ="Filtered/Voicemails"
+set timeout=30
+set mail_check=60
+set imap_keepalive=300
 # imap_check_subscribed requires Mutt v1.6+
-#set imap_check_subscribed
+unset imap_check_subscribed
 
 #set query_command = "~/ldap.pl '%s'"
 #bind editor "\t" complete-query
 set alias_file= ~/.mutt/aliases
 source $alias_file
 
+# General settings
 set forward_quote
 set include
 set beep_new
@@ -51,15 +45,17 @@ set sort_aux='reverse-last-date-received'
 set help=no
 set fast_reply
 set editor="vim -c 'set spell spelllang=en_us'"
-set recall=ask-no
 set pager_stop=yes
+set recall=ask-no
 set delete=ask-no
+set quit=ask-no
 #set print_command="/usr/bin/muttprint %s -p MnrLib"
 set print_command="lpr"
 unset imap_passive
 unset suspend
 unset read_only
 
+# Color options
 color status white black
 color tree brightred default
 color markers blue default
@@ -97,4 +93,4 @@ set pgp_replyencrypt=yes
 set pgp_timeout=28800
 set pgp_good_sign="^gpg: Good signature from"
 # postpone_encrypt requires Mutt v1.6+
-#set postpone_encrypt
+set postpone_encrypt

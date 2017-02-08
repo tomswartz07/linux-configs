@@ -1,0 +1,25 @@
+# User-specific options
+set imap_user="tom.swartz@crunchydata.com"
+set from="tom.swartz@crunchydata.com"
+set hostname="crunchydata.com"
+set sendmail="/usr/bin/msmtp -a crunchydata"
+set header_cache="~/.mutt/headercache-crunchy"
+set folder=imaps://imap.gmail.com/
+set spoolfile=+INBOX
+mailboxes =INBOX
+set record=+"[Gmail]/Sent Mail"
+#fcc-hook ~A ="[Gmail]/Sent Mail"
+
+# Securely source the password file
+source "gpg --textmode -d ~/.mutt/password-crunchy.gpg |"
+
+# Service Specific Macros
+macro index,pager ga "<save-message>=[Gmail]/All Mail<enter>" "Archive message"
+macro index,pager gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
+macro index,pager g1 "<save-message>=Filtered/1to1<enter>" "Archive message to 1:1 Archive folder"
+macro index,pager gg "<group-reply>" "Group Reply- to all recipients"
+
+# Import the rest of the options
+source "~/.muttrc"
+
+# vim: set ft=muttrc:
