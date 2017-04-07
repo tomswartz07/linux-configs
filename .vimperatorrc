@@ -1,0 +1,2 @@
+set slv=hidden
+hi Hint font-family:Hack; font-size:15px; font-weight:bold; color:#e3e0d7; background-color:#242424; border-color:ButtonShadow; border-width:0px; border-style:solid; padding: 0px 1px; 
