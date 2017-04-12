@@ -8,13 +8,14 @@ set ssl_force_tls=yes
 set mailcap_path="~/.mutt/mailcap"
 set index_format="%4C %Z %{%b %d} %-15.15L (%4c) %s"
 unset confirmappend
+unset record
 set sig_on_top
 set sendmail_wait=-1
 
 # View certain filetypes automatically
 auto_view text/html application/pdf image/* application/msword
 # Save html for last
-alternative_order text/plain text/enriched text/html
+alternative_order text/enriched text/html text/plain
 
 bind editor <space> noop
 bind index "\Ca" 'imap-fetch-mail'
@@ -25,7 +26,7 @@ macro compose md "F mdown \ny^T^Utext/html; charset=us-ascii\n" "Convert message
 set copy=yes
 set timeout=30
 set mail_check=60
-set imap_keepalive=300
+set imap_keepalive=30
 # imap_check_subscribed requires Mutt v1.6+
 unset imap_check_subscribed
 
@@ -72,8 +73,12 @@ mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 color body brightgreen default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
 color body brightblue default "(From|To|Subject|Cc|Date|Sent):"
 mono body bold "(From|To|Subject|Cc|Date|Sent):"
+# Highlight the AutoViewer output
+#color header brightblue default "^(\[-- Autoview using .* --\])"
 # Highlight flagged/tagged messages
 color index brightred default "!~N ~D"
+# Highlight flagged/tagged messages
+color index brightyellow default "~F"
 
 # Encryption settings. Suck one, NSA.
 set pgp_decode_command="gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
