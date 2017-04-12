@@ -32,9 +32,13 @@ zmodload -i zsh/complist
 # Export Env Variables
 PATH="/opt/android-sdk/platform-tools:${PATH}"
 PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:${PATH}
+RUBY_PATH="$(ruby -rubygems -e "puts Gem.user_dir")/bin"
+SPRUCE_PATH="/usr/local/bin"
 GOPATH="/home/tom/.go/"
 export PATH
 export GOPATH
+export RUBY_PATH
+export SPRUCE_PATH
 export EDITOR=/usr/bin/vim
 #export TERM=rxvt-unicode-256color
 
@@ -61,6 +65,7 @@ function bbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 
 function cvbbcradio() { local s PS3="Select a station: ";select s in 1 1x 2 3 4 5 6 7 "Asian Network an" "Nations & Local lcl";do break;done;s=($s);cvlc "http://www.bbc.co.uk/radio/listen/live/r"${s[@]: -1}".asx";}
 function macaddr() { echo "$1" | sed -e 's/\([0-9A-Fa-f]\{2\}\)/\1:/g' -e 's/\(.*\):$/\1/' }
 function gpg_encrypt() { gpg --symmetric --cipher-algo aes256 --digest-algo sha256 --cert-digest-algo sha256 --compress-algo none -z 0 --quiet --no-greeting --s2k-mode 3 --s2k-digest-algo sha512 "$@" }
+function weather() { curl "http://wttr.in/$1";}
 # Colors for man pages
 man() {
   env \
