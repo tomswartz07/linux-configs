@@ -15,3 +15,5 @@ export EDITOR=/usr/bin/vim
 #exec gnome-session
 #exec cinnamon-session
 exec i3
+
+# vim: set ft=config :
