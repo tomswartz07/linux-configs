@@ -77,6 +77,8 @@ nnoremap <Leader>l :set list!<CR>
 nnoremap <Leader>S :set hlsearch!<CR>
 " Ignore whitespace during VimDiff, only affects current session
 nnoremap <Leader>w :set diffopt+=iwhite<CR>
+" Toggle line wrapping
+nnoremap <Leader>W :set wrap!<CR>
 " Toggle spell check
 nnoremap <Leader>s :set spell!<CR>
 " Use pop-up window for spell check: hit <C-c> to select option
@@ -144,15 +146,15 @@ let g:airline_symbols.space = "\ua0"
 "let g:airline_right_sep = '◀'
 "let g:airline_symbols.linenr = '␊'
 "let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '№'
+let g:airline_symbols.linenr = '№'
 "let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.linenr = ''
+"let g:airline_symbols.linenr = ''
 "let g:airline_symbols.maxlinenr = '№'
 let g:airline_symbols.maxlinenr = ''
 "let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
 let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
