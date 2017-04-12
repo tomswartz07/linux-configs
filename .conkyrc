@@ -9,7 +9,7 @@
 ##############################################
 background yes
 use_xft yes
-xftfont sans:size=9
+xftfont Hack:size=9
 xftalpha 1
 update_interval 1.0
 total_run_times 0
@@ -28,13 +28,13 @@ draw_outline no
 draw_borders no
 draw_graph_borders yes
 default_color white
-default_shade_color white
-default_outline_color white
-alignment top_right
+default_shade_color black
+default_outline_color black
+alignment middle_middle
 #gap_x 285
 #gap_y 1240
-gap_x 100
-gap_y 120
+gap_x 0
+gap_y 150
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -43,25 +43,27 @@ override_utf8_locale no
 #  Output
 ##############################################
 TEXT
-${color aa0001}${font Roboto-Regular:bold:size=9}SYSTEM INFO ${hr 2}${color black}
-${font Roboto-Regular:normal:size=9}Host:$alignr$nodename
+${color aa0001}${font Hack:bold:size=9}SYSTEM INFO ${hr 2}${color white}
+${font Hack:normal:size=9}Host:$alignr$nodename
 Network:$alignr Wired Connection
-IP Address:$alignr${addr enp2s0}
+IP Address:$alignr${addr enp9s0}
 Uptime:$alignr$uptime
 Time:$alignr${time %H.%M}
 
-${color aa0001}${font Roboto-Regular:bold:size=9}HARDWARE INFO ${hr 2}${color black}
-${font Roboto-Regular:normal:size=9}RAM:$alignr$mem/$memmax
+${color aa0001}${font Hack:bold:size=9}HARDWARE INFO ${hr 2}${color white}
+${font Hack:normal:size=9}RAM:$alignr$mem/$memmax
 ${membar}
 Root usage:$alignr${fs_used /}/${fs_size /}
 ${fs_bar /}
 Home usage:$alignr${fs_used /home}/${fs_size /home}
 ${fs_bar /home}
+Storage usage:$alignr${fs_used /mnt/Teradrive}/${fs_size /mnt/Teradrive}
+${fs_bar /home}
 Swap usage:$alignr$swap/$swapmax
 ${swapbar}
 CPU usage:$alignr${cpu cpu0}%
-${cpugraph cpu0 cpu1 black black}
+${cpugraph cpu0 cpu1 white white}
 
-${color aa0001}${font Roboto-Regular:bold:size=9}NETWORK INFO ${hr 2}${color black}
-${font Roboto-Regular:normal:size=9}Total Download Data:$alignr${totaldown enp2s0}
-Total Uploaded Data:$alignr${totalup enp2s0}
+${color aa0001}${font Hack:bold:size=9}NETWORK INFO ${hr 2}${color white}
+${font Hack:normal:size=9}Total Download Data:$alignr${totaldown enp9s0}
+Total Uploaded Data:$alignr${totalup enp9s0}
