@@ -89,10 +89,14 @@ URxvt*colorUL:                        #87afd7
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt*font:                           xft:Hack:size=8
-URxvt*boldFont:                       xft:Hack:size=8:bold
-URxvt*italicFont:                     xft:Hack:size=8:italic
-URxvt*boldItalicFont:                 xft:Hack:size=8:italic:bold
+URxvt*font:                           xft:Hack:size=8,xft:Noto Emoji:size=6,xft:Symbola:size=6
+URxvt*boldFont:                       xft:Hack:size=8:bold,xft:Noto Emoji:size=6,xft:Symbola:size=6
+URxvt*italicFont:                     xft:Hack:size=8:italic,xft:Noto Emoji:size=6,xft:Symbola:size=6
+URxvt*boldItalicFont:                 xft:Hack:size=8:italic:bold,xft:Noto Emoji:size=6,xft:Symbola:size=6
+!URxvt*font:                           xft:Hack:size=8, xft:Noto Emoji:size=8,xft:Droid Sans Mono for Powerline:size=8, Roboto:style=Thin:size=8
+!URxvt*boldFont:                       xft:Hack:size=8:bold, xft:Noto Emoji:size=8:bold,xft:Droid Sans Mono for Powerline:size=8:bold
+!URxvt*italicFont:                     xft:Hack:size=8:italic, xft:Noto Emoji:size=8:italic,xft:Droid Sans Mono for Powerline:size=8:italic
+!URxvt*boldItalicFont:                 xft:Hack:size=8:italic:bold, xft:Noto Emoji:size=8:italic:bold,xft:Droid Sans Mono for Powerline:size=8:italic:bold
 !URxvt*font:                           xft:Droid Sans Mono for Powerline:size=8
 !URxvt*boldFont:                       xft:Droid Sans Mono for Powerline:size=8:bold
 !URxvt*italicFont:                     xft:Droid Sans Mono for Powerline:size=8:italic
