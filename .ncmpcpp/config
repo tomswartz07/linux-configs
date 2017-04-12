@@ -266,7 +266,7 @@ visualizer_type = "spectrum"
 ## Attention: It doesn't support song format anymore.
 ## Use `ncmpcpp --now-playing SONG_FORMAT` instead.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = "~/git/linux-configs/now-playing.sh"
 #
 #playlist_show_remaining_time = "no"
 #
