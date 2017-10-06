@@ -68,7 +68,7 @@ alias packer='pacaur'
 alias gist='gist -c -p'
 
 # Add the -O flag to open files in vsplits with Vim
-alias -g vim='vim -O'
+alias vim='vim -O'
 
 # Fancy ls
 alias ls='ls --color -lhSAv --group-directories-first'
@@ -77,7 +77,7 @@ alias ls='ls --color -lhSAv --group-directories-first'
 alias tmux='tmux attach'
 
 # Show the biggest files in this directory
-alias dusize="sudo du -hs * | sort -nr | head -10"
+alias dusize="sudo du -hs * | sort -hr | head -10"
 
 # Watch a .tex file and compile it when you write to it
 function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex "$1"; done;}
