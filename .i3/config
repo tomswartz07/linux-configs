@@ -167,10 +167,12 @@ bindsym $mod+m exec thunar
 bindsym $mod+b exec dwb
 
 # Multimedia Keys
-bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
-# bindsyn XF86AudioPlay exec
+bindsym XF86AudioRaiseVolume exec amixer -c 3 -q set Speaker 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -c 3 -q set Speaker 2dB- unmute
+bindsym XF86AudioMute exec amixer -c 3 -q set Speaker toggle
+bindsym XF86AudioPlay exec mpc -q toggle
+bindsym XF86AudioNext exec mpc -q next
+bindsym XF86AudioPrev exec mpc -q next
 
 # Brightness Keys
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -207,15 +209,17 @@ bar {
 exec --no-startup-id sh ~/.fehbg
 #exec --no-startup-id xcompmgr -f -D 1
 exec --no-startup-id compton -bC
+exec --no-startup-id nvidia-settings -l
 exec parcellite
 exec conky
-exec unclutter -keystroke
+exec unclutter
 exec volti
 exec x11vnc
-#exec synergy
+exec --no-startup-id caffeine
+exec --no-startup-id solaar
+exec --no-startup-id redshift-gtk
 exec --no-startup-id thunar --daemon
 exec --no-startup-id udiskie -2
-exec --no-startup-id owncloud
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id seahorse --no-window
@@ -238,7 +242,7 @@ assign [class="dwb"] 1
 #assign [window_role="browser"] 1
 assign [class="chromium"] 10
 assign [class="firefox"] 10
-assign [class="Gnome-terminal"] 2
+assign [class="Slack"] 2
 assign [class="Thunderbird"] 3
 
 # Per-App settings
