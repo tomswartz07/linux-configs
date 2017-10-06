@@ -170,6 +170,7 @@ let g:syntastic_error_symbol = '✗'
 "let g:syntastic_warning_symbol = '▶'
 let g:syntastic_full_redraws = 1
 let g:syntastic_puppet_puppetlint_args = "--no-autoloader_layout-check --no-80chars-check --no-class_inherits_from_params_class-check"
+let g:syntastic_python_pylint_args = "--disable=invalid-name"
 let g:syntastic_html_checkers = ["w3"]
 let g:syntastic_yaml_checkers = ["yamllint"]
 let g:syntastic_yaml_yamllint_args = "-d relaxed"
