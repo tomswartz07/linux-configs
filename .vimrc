@@ -41,16 +41,16 @@ set backupdir=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
 "
 " Extend undoable steps and preserve over restart (if available)
 if has('persistent_undo')
-	set undodir=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
-	set undofile
-	set undoreload=10000
+        set undodir=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
+        set undofile
+        set undoreload=10000
 end
 set undolevels=10000
 
 " Use different theme for VimDiff
 "if &diff
-"	colorscheme evening
-"	highlight CursorLine cterm=none ctermbg=236
+"       colorscheme evening
+"       highlight CursorLine cterm=none ctermbg=236
 "endif
 
 " Remove menu options for GVim
@@ -66,6 +66,9 @@ endif
 
 " Make tabs and trailing whitespace visible, use <Leader>+l to toggle
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+
+" Join command will act a little smarter
+set formatoptions+=j
 
 " Enable par as external formatter, for pretty paragraphs
 set formatprg=par\ -w80eq

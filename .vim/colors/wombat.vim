@@ -52,6 +52,7 @@ hi DiffChange                   ctermbg=237                                     
 
 " Color Column, highlight the 81st column
 call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\s\+$', 100)
 hi ColorColumn                  ctermbg=52                                      guibg=#5f0000
 
 "hi CursorIM
