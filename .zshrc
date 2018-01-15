@@ -32,8 +32,8 @@ zmodload -i zsh/complist
 
 # Export Env Variables
 PATH="/opt/android-sdk/platform-tools:${PATH}"
-PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:${PATH}
-RUBY_PATH="$(ruby -rubygems -e "puts Gem.user_dir")/bin"
+PATH=$(ruby -e "puts Gem.user_dir")/bin:${PATH}
+RUBY_PATH="$(ruby -e "puts Gem.user_dir")/bin"
 SPRUCE_PATH="/usr/local/bin"
 GOPATH="/home/tom/.go/"
 export PATH
@@ -46,6 +46,7 @@ export EDITOR=/usr/bin/vim
 # Keybindings
 bindkey -v
 bindkey '^r' history-incremental-pattern-search-backward # CTRL+R
+bindkey '^p' history-incremental-pattern-search-forward  # CTRL+P
 bindkey '^[.' insert-last-word    # ESC+.
 bindkey '^[[7~' beginning-of-line # HOME
 bindkey '^[[H' beginning-of-line
