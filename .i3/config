@@ -167,12 +167,14 @@ bindsym $mod+m exec thunar
 bindsym $mod+b exec dwb
 
 # Multimedia Keys
-bindsym XF86AudioRaiseVolume exec amixer -c 3 -q set Speaker 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -c 3 -q set Speaker 2dB- unmute
+#bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Speaker 2dB+ unmute
+#bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Speaker 2dB- unmute
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_00_14.2.analog-surround-40 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_00_14.2.analog-surround-40 -5%
 bindsym XF86AudioMute exec amixer -c 3 -q set Speaker toggle
 bindsym XF86AudioPlay exec mpc -q toggle
 bindsym XF86AudioNext exec mpc -q next
-bindsym XF86AudioPrev exec mpc -q next
+bindsym XF86AudioPrev exec mpc -q prev
 
 # Brightness Keys
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -225,7 +227,7 @@ exec --no-startup-id dunst
 exec --no-startup-id seahorse --no-window
 exec --no-startup-id gpg-agent --homedir /home/tom/.gnupg --use-standard-socket --daemon
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
-exec xautolock -time 10 -locker '~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png'
+exec xautolock -time 9 -locker '~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png'
 
 # Workspace assignments
 workspace 1 output HDMI-0
@@ -246,6 +248,10 @@ assign [class="Slack"] 2
 assign [class="Thunderbird"] 3
 
 # Per-App settings
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Msgcompose"] floating enable
+for_window [title="Gpredict Radio Control*"] floating enable
+for_window [title="The sky at a glance*"] floating enable
 for_window [class="Cssh"] floating enable
 for_window [class="cssh"] floating enable
