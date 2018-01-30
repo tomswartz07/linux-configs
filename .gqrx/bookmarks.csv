@@ -1,17 +1,17 @@
 # Tag name          ;  color
+Data                ; #00ffff
+Schuylkill County   ; #eae788
+Utilities           ; #4d5fc0
+Aircraft            ; #aaffff
+Public Works        ; #c0629f
+Untagged            ; #c0c0c0
+Digital/DMR         ; #aa55ff
 Radio Direction Finding; #aaaa00
 TRS                 ; #ff510c
 Ham                 ; #00aa7f
-Public Works        ; #c0629f
-Untagged            ; #c0c0c0
-Satellite           ; #905353
-Digital/DMR         ; #aa55ff
 Transportation      ; #5bc03f
 Voice               ; #00aa7f
-Schuylkill County   ; #eae788
-Aircraft            ; #aaffff
-Utilities           ; #4d5fc0
-Data                ; #00ffff
+Satellite           ; #905353
 
 # Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
      1490000; WONN-FM                  ; AM                  ;      10000; Voice
@@ -44,6 +44,7 @@ Data                ; #00ffff
     45040000; Mount Joy Township Forest Fire Channel; Narrow FM           ;      10000; Voice
     45640000; Akron Municipal PD (Tac/Low); Narrow FM           ;      10000; Voice
     45700000; West Earl Municipal PD (Low); Narrow FM           ;      10000; Voice
+    50185000; 6M QRP Phone             ; LSB                 ;       2700; Ham,Voice
     53330000; K3CX Honey Brook         ; AM                  ;      46400; Ham,Voice
     53850000; N3TJJ Rawlinsville       ; Narrow FM           ;       6600; Ham
     53870000; N3KZ Earlville           ; Narrow FM           ;      10000; Ham,Voice
@@ -76,6 +77,9 @@ Data                ; #00ffff
    137620000; NOAA 15                  ; Narrow FM           ;      25000; Data,Satellite
    137890000; Meteor M2                ; Narrow FM           ;      10000; Data,Satellite
    137912500; NOAA 18                  ; Narrow FM           ;      25000; Data,Satellite
+   144060000; 2M QRP CW                ; CW-U                ;        500; Ham
+   144200000; 2M Voice Calling         ; Narrow FM           ;      10000; Ham,Voice
+   144285000; 2M QRP Voice             ; Narrow FM           ;      10000; Ham,Voice
    144390000; APRS                     ; Narrow FM           ;      10000; Data
    144489000; WSPR Net Dial            ; Narrow FM           ;      10000; Data,Ham
    144990000; APRS?                    ; Narrow FM           ;       5000; Data
@@ -126,6 +130,7 @@ Data                ; #00ffff
    147330000; W3MUM - Hanover          ; Narrow FM           ;      15400; Ham,Voice
    147345000; W3SC Pottsville          ; Narrow FM           ;      15400; Ham,Schuylkill County,Voice
    147390000; Hegins KB3VXB            ; Narrow FM           ;      10000; Schuylkill County
+   147765000; K3LV Input               ; Narrow FM           ;      10000; Voice
    150830000; Black Rock Retreat       ; Narrow FM           ;      10000; Voice
    150995000; Mountville Borough PD    ; Narrow FM           ;      10000; Public Works,Voice
    151085000; West Lampeter PD         ; Narrow FM           ;      10000; Public Works,Voice
@@ -297,10 +302,12 @@ Data                ; #00ffff
    162550000; NOAA Weather Channel 7   ; Narrow FM           ;      10000; Data,Voice
    163462500; Muir Army Airfield       ; Narrow FM           ;      10000; Aircraft
    180310000; NTSC Channel 8 Carrier   ; Narrow FM           ;      10000; Data
+   217049000; Strange Pulser           ; Narrow FM           ;      80000; Data
    224020000; K3ZMC Pottstown          ; Narrow FM           ;      10000; Ham
    224040000; N3JCN Parkesburg         ; Narrow FM           ;      10000; Ham,Voice
    224320000; N3FYI - Lancaster        ; Narrow FM           ;      10000; Ham,Voice
    224320000; WA3WPA Rawlinsville      ; Narrow FM           ;      10000; Ham,Voice
+   224420000; N3DAP Wilkes-Barre       ; Narrow FM           ;       8200; Ham,Voice
    224440000; KA3CNT Lititz            ; Narrow FM           ;      10000; Ham,Voice
    224640000; K3TI Reading             ; Narrow FM           ;      10000; Ham,Voice
    224780000; AK3E Buck                ; Narrow FM           ;      10000; Ham,Voice
@@ -308,6 +315,8 @@ Data                ; #00ffff
    224840000; KA3CNT Cornwall          ; Narrow FM           ;      10000; Ham,Voice
    225790000; RTTY Beacon?             ; USB                 ;       2700; Data
    315000000; TMPS Sensors             ; Narrow FM           ;      20000; Data
+   432100000; 70CM Calling             ; Narrow FM           ;      10000; Ham
+   433960000; ISM 433 Devices          ; Narrow FM           ;       5000; Data,Utilities
    436795000; SO-50                    ; Narrow FM           ;      10000; Satellite,Voice
    442000000; KJ6AL Parkesburg         ; Narrow FM           ;      10000; Ham
    442050000; N3KZ York                ; Narrow FM           ;      10000; Ham
