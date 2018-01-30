@@ -32,6 +32,11 @@ call s:set('g:gitgutter_max_signs',                 500)
 call s:set('g:gitgutter_signs',                       1)
 call s:set('g:gitgutter_highlight_lines',             0)
 call s:set('g:gitgutter_sign_column_always',          0)
+if g:gitgutter_sign_column_always && exists('&signcolumn')
+  set signcolumn=yes
+  let g:gitgutter_sign_column_always = 0
+  call gitgutter#utility#warn('please replace "let g:gitgutter_sign_column_always=1" with "set signcolumn=yes"')
+endif
 call s:set('g:gitgutter_override_sign_column_highlight', 1)
 call s:set('g:gitgutter_realtime',                    1)
 call s:set('g:gitgutter_eager',                       1)
@@ -52,7 +57,6 @@ call s:set('g:gitgutter_avoid_cmd_prompt_on_windows', 1)
 call s:set('g:gitgutter_async',                       1)
 call s:set('g:gitgutter_log',                         0)
 call s:set('g:gitgutter_git_executable',          'git')
-call s:set('g:gitgutter_sh',                  '/bin/sh')
 
 if !executable(g:gitgutter_git_executable)
   call gitgutter#utility#warn('cannot find git. Please set g:gitgutter_git_executable.')
@@ -197,18 +201,27 @@ augroup gitgutter
   endif
 
   if g:gitgutter_eager
-    autocmd BufEnter,BufWritePost,FileChangedShellPost *
+    autocmd BufWritePost,FileChangedShellPost,ShellCmdPost * call gitgutter#process_buffer(bufnr(''), 0)
+
+    autocmd BufEnter *
           \  if gettabvar(tabpagenr(), 'gitgutter_didtabenter') |
           \   call settabvar(tabpagenr(), 'gitgutter_didtabenter', 0) |
+          \   call gitgutter#all() |
           \ else |
           \   call gitgutter#process_buffer(bufnr(''), 0) |
           \ endif
-    autocmd TabEnter *
-          \  call settabvar(tabpagenr(), 'gitgutter_didtabenter', 1) |
-          \ call gitgutter#all()
+
+    autocmd TabEnter * call settabvar(tabpagenr(), 'gitgutter_didtabenter', 1)
+
+    " Ensure that all buffers are processed when opening vim with multiple files, e.g.:
+    "
+    "   vim -o file1 file2
+    autocmd VimEnter * if winnr() != winnr('$') | :GitGutterAll | endif
+
     if !has('gui_win32')
       autocmd FocusGained * call gitgutter#all()
     endif
+
   else
     autocmd BufRead,BufWritePost,FileChangedShellPost * call gitgutter#process_buffer(bufnr(''), 0)
   endif
