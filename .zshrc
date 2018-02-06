@@ -14,6 +14,7 @@ setopt complete_in_word
 setopt always_to_end
 setopt complete_aliases
 setopt list_ambiguous
+setopt interactivecomments
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
