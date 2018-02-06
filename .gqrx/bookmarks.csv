@@ -1,17 +1,17 @@
 # Tag name          ;  color
-Data                ; #00ffff
 Schuylkill County   ; #eae788
-Utilities           ; #4d5fc0
-Aircraft            ; #aaffff
-Public Works        ; #c0629f
-Untagged            ; #c0c0c0
+Data                ; #00ffff
 Digital/DMR         ; #aa55ff
-Radio Direction Finding; #aaaa00
 TRS                 ; #ff510c
-Ham                 ; #00aa7f
-Transportation      ; #5bc03f
+Utilities           ; #4d5fc0
+Public Works        ; #c0629f
 Voice               ; #00aa7f
 Satellite           ; #905353
+Radio Direction Finding; #aaaa00
+Transportation      ; #5bc03f
+Ham                 ; #00aa7f
+Untagged            ; #c0c0c0
+Aircraft            ; #aaffff
 
 # Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
      1490000; WONN-FM                  ; AM                  ;      10000; Voice
@@ -105,6 +105,7 @@ Satellite           ; #905353
    145980000; AO-85 (FOX-1A)           ; Narrow FM           ;      10000; Satellite
    146445000; KB3TWW - Etters          ; Narrow FM           ;      19800; Digital/DMR,Ham
    146490000; Tamaqua Repeater         ; Narrow FM           ;      10000; Schuylkill County
+   146520000; 2M National Call         ; Narrow FM           ;      10000; Ham,Voice
    146610000; K3NCY New Holland        ; Narrow FM           ;      10000; Ham,Voice
    146640000; AA3RG Pine Grove         ; Narrow FM           ;      10000; Schuylkill County
    146700000; K3AE Shrewsberry         ; Narrow FM           ;      10000; Ham,Voice
