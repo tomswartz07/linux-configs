@@ -116,6 +116,13 @@ EXEC 01;32
 .pp 00;34
 .apk 00;34
 .pdf 00;34
+.PDF 00;34
+.xls 01;35
+.xlsx 01;35
+.doc 01;35
+.docx 01;35
+.ppt 01;35
+.pptx 01;35
 .json 00;32
 .log 00;36
 #  Markup/Markdown
