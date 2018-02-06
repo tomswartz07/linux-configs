@@ -1,6 +1,7 @@
-display :0
 # Set VNC password with `x11vnc -storepasswd ~/.x11vnc/passwd`
 rfbauth .x11vnc/passwd
 rfbport 5900
+many
+display :0
 forever
 solid darkblue
