@@ -19,6 +19,9 @@ autocmd BufNewFile,BufRead *.ps1,*.ps set filetype=powershell
 " Automatically reload .vimrc files
 autocmd BufWritePost .vimrc source %
 
+" Auto Return to last edited point
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 " UI settings
 set laststatus=2
 set encoding=utf-8
