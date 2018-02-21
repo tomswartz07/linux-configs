@@ -9,8 +9,9 @@ set splitbelow
 " Enable some per file options
 autocmd FileType commitmsg setlocal textwidth=72 spell
 autocmd FileType mail setlocal textwidth=0 spell
-autocmd FileType puppet setlocal tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 expandtab spell guifont="Hack\ 12"
+autocmd FileType puppet setlocal tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType yaml setlocal cursorcolumn
 
 " Override Filetype settings
 autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
