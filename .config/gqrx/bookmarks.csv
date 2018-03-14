@@ -1,16 +1,16 @@
 # Tag name          ;  color
-Schuylkill County   ; #eae788
-Data                ; #00ffff
 Digital/DMR         ; #aa55ff
-TRS                 ; #ff510c
 Utilities           ; #4d5fc0
-Public Works        ; #c0629f
-Voice               ; #00aa7f
 Satellite           ; #905353
-Radio Direction Finding; #aaaa00
+Data                ; #00ffff
 Transportation      ; #5bc03f
+TRS                 ; #ff510c
 Ham                 ; #00aa7f
 Untagged            ; #c0c0c0
+Radio Direction Finding; #aaaa00
+Voice               ; #00aa7f
+Schuylkill County   ; #eae788
+Public Works        ; #c0629f
 Aircraft            ; #aaffff
 
 # Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
@@ -21,7 +21,11 @@ Aircraft            ; #aaffff
      7048900; W1AW - ARRL              ; LSB                 ;       2700; Ham
      7173000; LSB 40 Meters            ; LSB                 ;       2700; Ham
     12160000; Crazy Conspiracy Nut     ; AM                  ;      10000; Voice
+    24890000; Start of 12M Band        ; Demod Off           ;          0; Ham
+    24990000; End of 12M Band          ; Demod Off           ;          0; Ham
+    28000000; Start of 10M Band        ; Demod Off           ;          0; Ham
     29680000; W3HZU York               ; Narrow FM           ;      10000; Ham
+    29700000; End of 10M Band          ; Demod Off           ;          0; Ham
     31000000; Little Britain Ag Supply ; Narrow FM           ;      10000; Voice
     31160000; John Weidman & Son Oil Burner Service; Narrow FM           ;      10000; Voice
     33080000; Manheim Township Ambulance Assoc; Narrow FM           ;      10000; Voice
@@ -37,19 +41,22 @@ Aircraft            ; #aaffff
     33800000; Lititz FC No. 1          ; Narrow FM           ;      10000; Voice
     33820000; Lancaster City Voice     ; Narrow FM           ;      10000; Voice
     33840000; Ephrata Pioneer FC       ; Narrow FM           ;      10000; Voice
-    33900000; County Fire/EMS Dispatch ; Narrow FM           ;      10000; Voice
+    33900000; Lancaster County Fire/EMS Dispatch; Narrow FM           ;      10000; Voice
     33920000; East Lampeter Township Fire District; Narrow FM           ;      10000; Voice
     33960000; Lititz FC No. 1          ; Narrow FM           ;      10000; Voice
     33980000; Elizabethtown Fire District; Narrow FM           ;      10000; Voice
     45040000; Mount Joy Township Forest Fire Channel; Narrow FM           ;      10000; Voice
     45640000; Akron Municipal PD (Tac/Low); Narrow FM           ;      10000; Voice
     45700000; West Earl Municipal PD (Low); Narrow FM           ;      10000; Voice
+    50000000; Start of 6M Band         ; Demod Off           ;          0; Ham
     50185000; 6M QRP Phone             ; LSB                 ;       2700; Ham,Voice
     53330000; K3CX Honey Brook         ; AM                  ;      46400; Ham,Voice
     53850000; N3TJJ Rawlinsville       ; Narrow FM           ;       6600; Ham
     53870000; N3KZ Earlville           ; Narrow FM           ;      10000; Ham,Voice
     53970000; W3HZU York               ; Narrow FM           ;       6600; Ham
-    72580000; County Fire/EMS Dispatch ; Narrow FM           ;      10000; Voice
+    54000000; End of 6M Band           ; Demod Off           ;          0; Ham
+    72220000; Lancaster General Hospital WQHT584; Narrow FM           ;      10000; Data,Public Works
+    72580000; Lancaster County Fire/EMS Dispatch; Narrow FM           ;      10000; Voice
     75620000; AFSK Pager Link          ; Narrow FM           ;      10000; Data
     88700000; WXPN                     ; WFM (mono)          ;     160000; Voice
     89500000; WITF                     ; WFM (mono)          ;     160000; Voice
@@ -77,6 +84,7 @@ Aircraft            ; #aaffff
    137620000; NOAA 15                  ; Narrow FM           ;      25000; Data,Satellite
    137890000; Meteor M2                ; Narrow FM           ;      10000; Data,Satellite
    137912500; NOAA 18                  ; Narrow FM           ;      25000; Data,Satellite
+   144000000; Start of 2M Band         ; Demod Off           ;          0; Ham
    144060000; 2M QRP CW                ; CW-U                ;        500; Ham
    144200000; 2M Voice Calling         ; Narrow FM           ;      10000; Ham,Voice
    144285000; 2M QRP Voice             ; Narrow FM           ;      10000; Ham,Voice
@@ -99,7 +107,7 @@ Aircraft            ; #aaffff
    145490000; K3TI Reading             ; Narrow FM           ;      10000; Ham,Voice
    145610000; K3NCY New Holland        ; Narrow FM           ;      10000; Ham,Voice
    145800000; ISS Voice/SSTV           ; Narrow FM           ;      10000; Satellite,Voice
-   145825000; ISS APRS                 ; Narrow FM           ;      10000; Data,Satellite
+   145825000; ISS APRS                 ; Narrow FM           ;      10000; Satellite
    145880000; RadFxSat (Fox-1D) AO-92  ; Narrow FM           ;      10000; Satellite
    145960000; RadFxSat (Fox-1B) AO-91  ; Narrow FM           ;      10000; Satellite,Voice
    145980000; AO-85 (FOX-1A)           ; Narrow FM           ;      10000; Satellite
@@ -107,9 +115,10 @@ Aircraft            ; #aaffff
    146490000; Tamaqua Repeater         ; Narrow FM           ;      10000; Schuylkill County
    146520000; 2M National Call         ; Narrow FM           ;      10000; Ham,Voice
    146610000; K3NCY New Holland        ; Narrow FM           ;      10000; Ham,Voice
-   146640000; AA3RG Pine Grove         ; Narrow FM           ;      10000; Schuylkill County
+   146640000; AA3RG Pine Grove         ; Narrow FM           ;      10000; Ham,Schuylkill County
+   146685000; N3TWT Landisburg         ; Narrow FM           ;      10000; Digital/DMR,Ham
    146700000; K3AE Shrewsberry         ; Narrow FM           ;      10000; Ham,Voice
-   146745000; KX3B Buck                ; Narrow FM           ;      10000; Digital/DMR
+   146745000; KX3B Buck                ; Narrow FM           ;      10000; Digital/DMR,Ham,Voice
    146760000; W3UU Harrisburg          ; Narrow FM           ;      15400; Ham,Voice
    146820000; K2SNY Richfield          ; Narrow FM           ;      10000; Ham,Voice
    146865000; W3ZGD Red Lion           ; Narrow FM           ;      10000; Ham,Voice
@@ -131,7 +140,10 @@ Aircraft            ; #aaffff
    147330000; W3MUM - Hanover          ; Narrow FM           ;      15400; Ham,Voice
    147345000; W3SC Pottsville          ; Narrow FM           ;      15400; Ham,Schuylkill County,Voice
    147390000; Hegins KB3VXB            ; Narrow FM           ;      10000; Schuylkill County
+   147480000; ? Input?                 ; Narrow FM           ;      10000; Ham
+   147615000; W3RRR Input              ; Narrow FM           ;      10000; Ham
    147765000; K3LV Input               ; Narrow FM           ;      10000; Voice
+   148000000; End of 2M Band           ; Demod Off           ;          0; Ham
    150830000; Black Rock Retreat       ; Narrow FM           ;      10000; Voice
    150995000; Mountville Borough PD    ; Narrow FM           ;      10000; Public Works,Voice
    151085000; West Lampeter PD         ; Narrow FM           ;      10000; Public Works,Voice
@@ -215,8 +227,7 @@ Aircraft            ; #aaffff
    155655000; Manheim Twp Police       ; Narrow FM           ;      10000; Voice
    155685000; Lancaster County Police Dispatch; Narrow FM           ;      10000; Voice
    155715000; Millersville PD          ; Narrow FM           ;      10000; Voice
-   155745000; Airport Security         ; Narrow FM           ;      10000; Voice
-   155745000; Lancaster Airport        ; Narrow FM           ;      10000; Voice
+   155745000; Lancaster Airport Security; Narrow FM           ;      10000; Voice
    155775000; Marine SEA F2            ; Narrow FM           ;      10000; Voice,Transportation
    155775000; Warwick PD - Tactical    ; Narrow FM           ;      10000; Voice
    155825000; Marine SEA F3            ; Narrow FM           ;      10000; Voice,Transportation
@@ -302,10 +313,12 @@ Aircraft            ; #aaffff
    162525000; NOAA Weather Channel 6   ; Narrow FM           ;      10000; Data,Voice
    162550000; NOAA Weather Channel 7   ; Narrow FM           ;      10000; Data,Voice
    163462500; Muir Army Airfield       ; Narrow FM           ;      10000; Aircraft
-   180310000; NTSC Channel 8 Carrier   ; Narrow FM           ;      10000; Data
+   180310000; ATSC Channel 8 Carrier   ; Narrow FM           ;      10000; Data
    217049000; Strange Pulser           ; Narrow FM           ;      80000; Data
+   222000000; Start of 1.25M Band      ; Demod Off           ;      10000; Ham
    224020000; K3ZMC Pottstown          ; Narrow FM           ;      10000; Ham
    224040000; N3JCN Parkesburg         ; Narrow FM           ;      10000; Ham,Voice
+   224140000; N3TJJ Summit Station     ; Narrow FM           ;      10000; Ham
    224320000; N3FYI - Lancaster        ; Narrow FM           ;      10000; Ham,Voice
    224320000; WA3WPA Rawlinsville      ; Narrow FM           ;      10000; Ham,Voice
    224420000; N3DAP Wilkes-Barre       ; Narrow FM           ;       8200; Ham,Voice
@@ -314,8 +327,10 @@ Aircraft            ; #aaffff
    224780000; AK3E Buck                ; Narrow FM           ;      10000; Ham,Voice
    224820000; N3TPL Cornwall           ; Narrow FM           ;      10000; Ham,Voice
    224840000; KA3CNT Cornwall          ; Narrow FM           ;      10000; Ham,Voice
+   225000000; End of 1.25M Band        ; Demod Off           ;      10000; Ham
    225790000; RTTY Beacon?             ; USB                 ;       2700; Data
    315000000; TMPS Sensors             ; Narrow FM           ;      20000; Data
+   420000000; Start of 70cm Band       ; Demod Off           ;       5000; Ham
    432100000; 70CM Calling             ; Narrow FM           ;      10000; Ham
    433960000; ISM 433 Devices          ; Narrow FM           ;       5000; Data,Utilities
    436795000; SO-50                    ; Narrow FM           ;      10000; Satellite,Voice
@@ -331,6 +346,7 @@ Aircraft            ; #aaffff
    444250000; W3SWR Oxford             ; Narrow FM           ;      10000; Ham
    444250000; W3SBA York               ; Narrow FM           ;      10000; Ham
    444350000; K3TI Reading             ; Narrow FM           ;      10000; Ham
+   444500000; W3SBA York               ; Narrow FM           ;      10000; Ham
    444600000; N3EZI Kirkwood           ; Narrow FM           ;      10000; Ham
    444650000; W3XP Ephrata             ; Narrow FM           ;      10000; Ham
    444950000; W3SC Delano              ; Narrow FM           ;      10000; Schuylkill County,Voice
@@ -349,7 +365,7 @@ Aircraft            ; #aaffff
    448625000; N3TPL Holtwood           ; Narrow FM           ;      10000; Ham
    448725000; W3MEL Reading            ; Narrow FM           ;      10000; Ham
    448925000; N3JOZ Schaefferstown     ; Narrow FM           ;      10000; Ham
-   449025000; W3AD Cornwall            ; Narrow FM           ;      10000; Ham
+   449025000; W3AD Cornwall            ; Narrow FM           ;      10000; Digital/DMR,Ham
    449075000; N3SWH Texter Mtn         ; Narrow FM           ;      10000; Ham
    449225000; KA3CNT Lancaster         ; Narrow FM           ;      10000; Ham
    449275000; N3FYI New Holland        ; Narrow FM           ;      10000; Ham
@@ -362,7 +378,9 @@ Aircraft            ; #aaffff
    449675000; WB3LGG Cochranville      ; Narrow FM           ;      10000; Ham
    449925000; KA3RMP Hershey           ; Narrow FM           ;      10000; Ham
    449975000; K3IR Manheim SPARC INC   ; Narrow FM           ;      10000; Ham
+   450000000; End of 70cm Band         ; Demod Off           ;          0; Ham
    450413000; WGAL In-Studio           ; Narrow FM           ;      10000; Voice
+   450608000; WEEU 830AM Uplink        ; Narrow FM           ;      10000; Voice
    450637500; WGAL TV8 IFB             ; Narrow FM           ;      10000; Voice
    450650000; WGAL Field Operations    ; Narrow FM           ;      10000; Voice
    451112500; Three Mile Island Siren Control; Narrow FM           ;      10000; Voice
@@ -392,7 +410,7 @@ Aircraft            ; #aaffff
    452387500; Lebanon School District Bus; Narrow FM           ;      10000; Public Works,Voice
    452625000; Site 011 Rawlinsville    ; Narrow FM           ;      10000; TRS
    452700000; LGH - Engineering        ; Narrow FM           ;      10000; Voice
-   453125000; Pagers - POCSAG          ; Narrow FM           ;      10000; Data
+   453124500; Pagers - POCSAG          ; Narrow FM           ;       9000; Data
    453211600; WQQT436 Lancaster PDW    ; Narrow FM           ;      10000; Public Works,Utilities,Voice
    453475000; Ephrata Borough DPW      ; Narrow FM           ;      10000; Public Works
    453525000; Alpha Paging (POCSAG)    ; Narrow FM           ;      10000; Data
@@ -553,6 +571,11 @@ Aircraft            ; #aaffff
    478787500; LCWC Site 003 Northwest Simulcast; Narrow FM           ;      10000; TRS
    478862500; LCWC Site 003 Northwest Simulcast; Narrow FM           ;      10000; TRS
    502962500; PA Digital Site 006 New Holland; Narrow FM           ;      10000; TRS
+   512310000; ATSC Channel 31 Carrier  ; Narrow FM           ;      10000; Data
+   602310000; ATSC Channel 36 Carrier  ; Narrow FM           ;      10000; Data
+   680310000; ATSC Channel 49 Carrier  ; Narrow FM           ;      10000; Data
+   729238000; 4G LTE Begin             ; Narrow FM           ;      10000; Data
+   733770000; 4G LTE End               ; Narrow FM           ;      10000; Data
    851275000; PASTARNet Site 71063 Lancaster (LANC63); Narrow FM           ;      10000; TRS
    851462500; PASTARNet Site 71033 Truce (LANC33); Narrow FM           ;      10000; TRS
    851537500; PASTARNet Site 71065 Lancaster (LANC65); Narrow FM           ;      10000; TRS
