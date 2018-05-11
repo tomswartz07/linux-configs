@@ -1,26 +1,47 @@
 # Tag name          ;  color
-Digital/DMR         ; #aa55ff
-Utilities           ; #4d5fc0
-Satellite           ; #905353
 Data                ; #00ffff
-Transportation      ; #5bc03f
-TRS                 ; #ff510c
-Ham                 ; #00aa7f
-Untagged            ; #c0c0c0
-Radio Direction Finding; #aaaa00
-Voice               ; #00aa7f
-Schuylkill County   ; #eae788
-Public Works        ; #c0629f
 Aircraft            ; #aaffff
+Satellite           ; #905353
+Ham                 ; #00aa7f
+Voice               ; #00aa7f
+Digital/DMR         ; #aa55ff
+TRS                 ; #ff510c
+Public Works        ; #c0629f
+Utilities           ; #4d5fc0
+Untagged            ; #c0c0c0
+Transportation      ; #5bc03f
+Radio Direction Finding; #aaaa00
+Schuylkill County   ; #eae788
 
 # Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
      1490000; WONN-FM                  ; AM                  ;      10000; Voice
+     1800000; Start of 160M Band       ; Demod Off           ;          0; Ham
      1816710; Morse Code               ; CW-L                ;        500; Data
+     2000000; End of 160M Band         ; Demod Off           ;          0; Ham
+     3330000; CHU Canadian Time        ; USB                 ;       2700; Data
+     3500000; Start of 80M Band        ; Demod Off           ;          0; Ham
+     4000000; End of 80M Band          ; Demod Off           ;          0; Ham
      4625000; UVB-76                   ; USB                 ;       2700; Ham
+     5330500; 60M Channel 1            ; USB                 ;       5000; Ham
+     5346500; 60M Channel 2            ; USB                 ;       5000; Ham
+     5357000; 60M Channel 3            ; USB                 ;       5000; Ham
+     5371500; 60M Channel 4            ; USB                 ;       5000; Ham
+     5403500; 60M Channel 5            ; USB                 ;       5000; Ham
+     6604000; Gander Radio Canada      ; USB                 ;       2700; Aircraft,Public Works
      6925000; Frequent Pirate Radio    ; AM                  ;      10000; Voice
+     7000000; Start of 40M Band        ; Demod Off           ;          0; Ham
      7048900; W1AW - ARRL              ; LSB                 ;       2700; Ham
      7173000; LSB 40 Meters            ; LSB                 ;       2700; Ham
+     7300000; End of 40M Band          ; Demod Off           ;          0; Ham
+    10100000; Start of 30M Band        ; Demod Off           ;          0; Ham
+    10150000; End of 30M Band          ; Demod Off           ;          0; Ham
     12160000; Crazy Conspiracy Nut     ; AM                  ;      10000; Voice
+    14000000; Start of 20M Band        ; Demod Off           ;          0; Ham
+    14350000; End of 20M Band          ; Demod Off           ;          0; Ham
+    18068000; Start of 17M Band        ; Demod Off           ;          0; Ham
+    18168000; End of 17M Band          ; Demod Off           ;          0; Ham
+    21000000; Start of 15M Band        ; Demod Off           ;          0; Ham
+    21450000; End of 15M Band          ; Demod Off           ;          0; Ham
     24890000; Start of 12M Band        ; Demod Off           ;          0; Ham
     24990000; End of 12M Band          ; Demod Off           ;          0; Ham
     28000000; Start of 10M Band        ; Demod Off           ;          0; Ham
@@ -112,19 +133,22 @@ Aircraft            ; #aaffff
    145960000; RadFxSat (Fox-1B) AO-91  ; Narrow FM           ;      10000; Satellite,Voice
    145980000; AO-85 (FOX-1A)           ; Narrow FM           ;      10000; Satellite
    146445000; KB3TWW - Etters          ; Narrow FM           ;      19800; Digital/DMR,Ham
-   146490000; Tamaqua Repeater         ; Narrow FM           ;      10000; Schuylkill County
-   146520000; 2M National Call         ; Narrow FM           ;      10000; Ham,Voice
+   146460000; N3TWT Mechanicsburg      ; AM                  ;      10000; Ham,Voice
+   146490000; W3TWA Tamaqua            ; Narrow FM           ;      10000; Schuylkill County
+   146520000; 2M National Simplex Call ; Narrow FM           ;      10000; Ham,Voice
    146610000; K3NCY New Holland        ; Narrow FM           ;      10000; Ham,Voice
+   146625000; KA3KDL Reading           ; Narrow FM           ;      10000; Ham,Voice
    146640000; AA3RG Pine Grove         ; Narrow FM           ;      10000; Ham,Schuylkill County
    146685000; N3TWT Landisburg         ; Narrow FM           ;      10000; Digital/DMR,Ham
    146700000; K3AE Shrewsberry         ; Narrow FM           ;      10000; Ham,Voice
-   146745000; KX3B Buck                ; Narrow FM           ;      10000; Digital/DMR,Ham,Voice
+   146745000; KX3B Buck                ; Narrow FM           ;      10000; Ham,Voice
    146760000; W3UU Harrisburg          ; Narrow FM           ;      15400; Ham,Voice
    146820000; K2SNY Richfield          ; Narrow FM           ;      10000; Ham,Voice
    146865000; W3ZGD Red Lion           ; Narrow FM           ;      10000; Ham,Voice
    146880000; W3WAN Lebanon            ; Narrow FM           ;      10000; Ham,Voice
    146910000; W3BN Reading             ; Narrow FM           ;      10000; Ham,Voice
    146925000; W3WAN York               ; Narrow FM           ;      10000; Ham,Voice
+   146940000; W3EOC West Chester       ; Narrow FM           ;      10000; Ham,Voice
    146955000; W3SC Joliett             ; Narrow FM           ;      10000; Schuylkill County,Voice
    146970000; W3HZU York               ; Narrow FM           ;      10000; Ham,Voice
    146985000; W3GMS Chester            ; Narrow FM           ;      20000; Ham,Voice
@@ -133,14 +157,16 @@ Aircraft            ; #aaffff
    147105000; KA0JQO Cornwall          ; Narrow FM           ;      10000; Digital/DMR,Ham
    147165000; K3LV Grantville          ; Narrow FM           ;      10000; Ham,Voice
    147180000; K2SEH Reading            ; Narrow FM           ;      10000; Ham,Voice
-   147210000; K3ZMC Berks/Earlville    ; Narrow FM           ;      20000; Ham,Voice
+   147210000; K3ZMC Earlville PAARC    ; Narrow FM           ;      20000; Ham,Voice
    147270000; Tamaqua W3TWA            ; Narrow FM           ;      10000; Schuylkill County
    147285000; N3SWH - Newmanstown      ; Narrow FM           ;      10000; Ham,Voice
+   147300000; N3NJB Steelton           ; Narrow FM           ;      10000; Ham,Voice
    147315000; K3LV Cornwall            ; Narrow FM           ;      10000; Voice
    147330000; W3MUM - Hanover          ; Narrow FM           ;      15400; Ham,Voice
-   147345000; W3SC Pottsville          ; Narrow FM           ;      15400; Ham,Schuylkill County,Voice
+   147345000; W3SC Pottsville          ; Narrow FM           ;      15400; Schuylkill County,Voice
+   147375000; W3ND Harrisburg          ; Narrow FM           ;      15400; Digital/DMR,Voice
    147390000; Hegins KB3VXB            ; Narrow FM           ;      10000; Schuylkill County
-   147480000; ? Input?                 ; Narrow FM           ;      10000; Ham
+   147480000; W3WAN Lebanon Input      ; Narrow FM           ;      10000; Ham
    147615000; W3RRR Input              ; Narrow FM           ;      10000; Ham
    147765000; K3LV Input               ; Narrow FM           ;      10000; Voice
    148000000; End of 2M Band           ; Demod Off           ;          0; Ham
@@ -314,6 +340,7 @@ Aircraft            ; #aaffff
    162550000; NOAA Weather Channel 7   ; Narrow FM           ;      10000; Data,Voice
    163462500; Muir Army Airfield       ; Narrow FM           ;      10000; Aircraft
    180310000; ATSC Channel 8 Carrier   ; Narrow FM           ;      10000; Data
+   204310000; ATSC Channel 12 Carrier  ; Narrow FM           ;      10000; Data
    217049000; Strange Pulser           ; Narrow FM           ;      80000; Data
    222000000; Start of 1.25M Band      ; Demod Off           ;      10000; Ham
    224020000; K3ZMC Pottstown          ; Narrow FM           ;      10000; Ham
@@ -334,13 +361,16 @@ Aircraft            ; #aaffff
    432100000; 70CM Calling             ; Narrow FM           ;      10000; Ham
    433960000; ISM 433 Devices          ; Narrow FM           ;       5000; Data,Utilities
    436795000; SO-50                    ; Narrow FM           ;      10000; Satellite,Voice
+   441900000; W3RC Hazleton            ; Narrow FM           ;      10000; Ham,Schuylkill County,Voice
    442000000; KJ6AL Parkesburg         ; Narrow FM           ;      10000; Ham
    442050000; N3KZ York                ; Narrow FM           ;      10000; Ham
    442150000; W3BXW Cornwall BEARS     ; Narrow FM           ;      10000; Ham
    442200000; N3KZ  Summerdale         ; Narrow FM           ;      10000; Ham,Voice
    442400000; N3KZ Eagles Peak         ; Narrow FM           ;      10000; Ham
+   443000000; W3XN Pottsville          ; Narrow FM           ;      10000; Ham,Schuylkill County,Voice
    443250000; K3IR Manheim SPARC       ; Narrow FM           ;      10000; Ham
    443550000; K3ZMC Earlville          ; AM                  ;      10000; Ham,Voice
+   443800000; N3KZ Valley Forge        ; Narrow FM           ;      10000; Ham,Voice
    443975000; KB3OUC Reading Mt. Penn  ; Narrow FM           ;      10000; Ham
    444056250; KB3TWW Etters            ; Narrow FM           ;      10000; Digital/DMR,Voice
    444250000; W3SWR Oxford             ; Narrow FM           ;      10000; Ham
@@ -349,14 +379,17 @@ Aircraft            ; #aaffff
    444500000; W3SBA York               ; Narrow FM           ;      10000; Ham
    444600000; N3EZI Kirkwood           ; Narrow FM           ;      10000; Ham
    444650000; W3XP Ephrata             ; Narrow FM           ;      10000; Ham
+   444700000; KM3W Chester             ; Narrow FM           ;      10000; Ham,Voice
    444950000; W3SC Delano              ; Narrow FM           ;      10000; Schuylkill County,Voice
    445175000; KB3WLV Reading           ; Narrow FM           ;      10000; Ham
    446175000; W3EOC - Chester          ; Narrow FM           ;      10000; Voice
    446425000; W3ND York                ; Narrow FM           ;      10000; Ham,Voice
    446475000; N3FYI Cornwall           ; Narrow FM           ;      10000; Ham
+   446525000; W3EOC West Chester       ; Narrow FM           ;      10000; Ham,Voice
    446855000; W3RRR Artifact?          ; Narrow FM           ;      10000; Untagged
    447075000; AA3VI - Thorndale/Chester; Narrow FM           ;      20000; Ham,Voice
    447125000; W3BXW Honeybrook         ; Narrow FM           ;      10000; Ham
+   447275000; W3HZU York               ; Narrow FM           ;      10000; Digital/DMR,Ham,Voice
    447675000; K3LV Lebanon LVSRA       ; Narrow FM           ;      10000; Ham
    447925000; K3LV Cornwall LVSRA      ; Narrow FM           ;      10000; Ham
    448075000; W3ND Harrisburg          ; Narrow FM           ;      22800; Ham
@@ -392,6 +425,7 @@ Aircraft            ; #aaffff
    451387500; Thaddeus Stevens Security; Narrow FM           ;      10000; Voice
    451400000; Eastern Lancaster County School District - Maintenance; Narrow FM           ;      10000; Voice
    451587500; Thaddeus Stevens Maintenance; Narrow FM           ;      10000; Voice
+   451596000; WPMR457 New Holland      ; Narrow FM           ;      10000; TRS
    451725000; PA Digital Site 006 New Holland; Narrow FM           ;      10000; TRS
    451787500; Noah N Sensenig Farm     ; Narrow FM           ;      10000; Voice
    451850000; Millersville University Sports 1; Narrow FM           ;      10000; Voice
@@ -570,9 +604,15 @@ Aircraft            ; #aaffff
    478600000; LCWC Site 003 Northwest Simulcast; Narrow FM           ;      10000; TRS
    478787500; LCWC Site 003 Northwest Simulcast; Narrow FM           ;      10000; TRS
    478862500; LCWC Site 003 Northwest Simulcast; Narrow FM           ;      10000; TRS
+   488310000; ATSC Channel 17 Carrier  ; Narrow FM           ;      10000; Data
    502962500; PA Digital Site 006 New Holland; Narrow FM           ;      10000; TRS
-   512310000; ATSC Channel 31 Carrier  ; Narrow FM           ;      10000; Data
+   512310000; ATSC Channel 21 Carrier  ; Narrow FM           ;      10000; Data
+   536310000; ATSC Channel 25 Carrier  ; Narrow FM           ;      10000; Data
+   542310000; ATSC Channel 26 Carrier  ; Narrow FM           ;      10000; Data
+   560310000; ATSC Channel 29 Carrier  ; Narrow FM           ;      10000; Data
+   578310000; ATSC Channel 32          ; Narrow FM           ;      10000; Data
    602310000; ATSC Channel 36 Carrier  ; Narrow FM           ;      10000; Data
+   638310000; ATSC Channel 42 Carrier  ; Narrow FM           ;      10000; Data
    680310000; ATSC Channel 49 Carrier  ; Narrow FM           ;      10000; Data
    729238000; 4G LTE Begin             ; Narrow FM           ;      10000; Data
    733770000; 4G LTE End               ; Narrow FM           ;      10000; Data
