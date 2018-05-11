@@ -143,10 +143,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -182,6 +182,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Capture Screenshot
 bindsym $mod+Print exec scrot
+bindsym $mod+Shift+Print exec scrot -u
+bindsym --release $mod+Pause exec --no-startup-id scrot -s
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -191,20 +193,20 @@ bindsym $mod+minus scratchpad show
 # finds out, if available)
 bar {
         status_command i3status
-#	position top
-	mode dock
-	tray_output primary
-	font pango:Hack 10
-	colors {
-		background #080808
-		statusline #D3D7CF
-		separator #3465A4
+#       position top
+        mode dock
+        tray_output primary
+        font pango:Hack 10
+        colors {
+                background #080808
+                statusline #D3D7CF
+                separator #3465A4
 #                                  border  bg      text
-		focused_workspace  #4c7899 #285577 #ffffff
-		active_workspace   #333333 #5f676a #ffffff
-		inactive_workspace #333333 #222222 #888888
-		urgent_workspace   #ff2026 #ff5f55 #ffffff
-	}
+                focused_workspace  #4c7899 #285577 #ffffff
+                active_workspace   #333333 #5f676a #ffffff
+                inactive_workspace #333333 #222222 #888888
+                urgent_workspace   #ff2026 #ff5f55 #ffffff
+        }
 }
 
 # Autolaunch applications
@@ -226,7 +228,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 exec --no-startup-id seahorse --no-window
 exec --no-startup-id gpg-agent --homedir /home/tom/.gnupg --use-standard-socket --daemon
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+#exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec xautolock -time 9 -locker '~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png'
 
 # Workspace assignments
