@@ -77,9 +77,9 @@ mono header bold "^(From|To|Subject|Cc|Date|[u|U]ser-[a|A]gent|[x|X]-[m|M]ailer)
 color body brightgreen default "(http|https|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 # Highlight email addresses
-color body brightgreen default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body brightgreen default "mailto:[-a-z_0-9.\+]+@[-a-z_0-9.]+"
 mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-color body brightgreen default "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color body brightgreen default "[-a-z_0-9.%$\+]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
 color body brightblue default "(From|To|Subject|Cc|Date|Sent):"
 mono body bold "(From|To|Subject|Cc|Date|Sent):"
 # Highlight the AutoViewer output
