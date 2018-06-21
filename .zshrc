@@ -44,6 +44,7 @@ export RUBY_PATH
 export SPRUCE_PATH
 export EDITOR=/usr/bin/vim
 #export TERM=rxvt-unicode-256color
+#export LESS='-C -M -I -j 10 -# 4'
 
 # Keybindings
 bindkey -v
@@ -64,7 +65,7 @@ bindkey '^F' forward-word         # CTRL+F
 
 # Auto-Sudo for package manager
 alias pacman='sudo pacman'
-alias packer='pacaur'
+alias packer='yay'
 
 # Automatically make it a private Gist and copy Gist URL
 # Requires https://github.com/defunkt/gist
@@ -80,7 +81,18 @@ alias ls='ls --color -lhSAv --group-directories-first'
 alias tmux='tmux attach'
 
 # Show the biggest files in this directory
-alias dusize="sudo du -hs * | sort -hr | head -10"
+alias dusize="sudo du -hs ** | sort -hr | head -10"
+
+# Aliases and exports for Bosh, because it sucks
+alias bosh="/usr/bin/bosh"
+if [[ -e "$HOME/git/bosh-deployment/deployments/vbox/state.json" ]]; then
+        export BOSH_CLIENT=admin
+        export BOSH_ENVIRONMENT=vbox
+        export BOSH_CLIENT_SECRET=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /admin_password)
+        export BOSH_CA_CERT=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /director_ssl/ca)
+        alias bosh_save="vboxmanage controlvm $(bosh int ~/git/bosh-deployment/deployments/vbox/state.json --path /current_vm_cid) savestate"
+        alias bosh_up="vboxmanage startvm $(bosh int ~/git/bosh-deployment/deployments/vbox/state.json --path /current_vm_cid) --type headless"
+fi
 
 # Watch a .tex file and compile it when you write to it
 function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex "$1"; done;}
