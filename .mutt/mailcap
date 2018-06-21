@@ -1,6 +1,6 @@
-text/html; w3m -v -F -I %{charset} -T text/html; copiousoutput; needsterminal
+text/html; w3m -dump -v -F -I %{charset} -T text/html %s; copiousoutput; needsterminal
 application/pdf; pdftotext %s -; copiousoutput;
 # Catimg is provided by https://github.com/tomswartz07/catimg-PKGBUILD
-image/*; catimg -r2 %s | less -r; needsterminal;
+image/*; catimg -r2 %s; needsterminal;
 # Doc view provided by antiword
 application/msword; antiword %s; copiousoutput;
