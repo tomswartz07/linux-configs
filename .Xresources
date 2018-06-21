@@ -159,7 +159,7 @@ URxvt*borderLess:                     false
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
-URxvt.perl-ext-common:                default,clipboard,url-select,keyboard-select
+URxvt.perl-ext-common:                default,clipboard,url-select,keyboard-select,resize-font
 URxvt.url-select.launcher:            firefox
 URxvt.url-select.underline:           true
 URxvt.keysym.M-u:                     perl:url-select:select_next
