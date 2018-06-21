@@ -1,17 +1,17 @@
 # Tag name          ;  color
-Data                ; #00ffff
-Aircraft            ; #aaffff
-Satellite           ; #905353
-Ham                 ; #00aa7f
-Voice               ; #00aa7f
-Digital/DMR         ; #aa55ff
-TRS                 ; #ff510c
-Public Works        ; #c0629f
-Utilities           ; #4d5fc0
-Untagged            ; #c0c0c0
-Transportation      ; #5bc03f
-Radio Direction Finding; #aaaa00
 Schuylkill County   ; #eae788
+TRS                 ; #ff510c
+Radio Direction Finding; #aaaa00
+Aircraft            ; #aaffff
+Utilities           ; #4d5fc0
+Satellite           ; #905353
+Digital/DMR         ; #aa55ff
+Transportation      ; #5bc03f
+Voice               ; #00aa7f
+Ham                 ; #00aa7f
+Untagged            ; #c0c0c0
+Public Works        ; #c0629f
+Data                ; #00ffff
 
 # Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
      1490000; WONN-FM                  ; AM                  ;      10000; Voice
@@ -27,12 +27,15 @@ Schuylkill County   ; #eae788
      5357000; 60M Channel 3            ; USB                 ;       5000; Ham
      5371500; 60M Channel 4            ; USB                 ;       5000; Ham
      5403500; 60M Channel 5            ; USB                 ;       5000; Ham
+     6586000; MWARA CAR-B New York     ; USB                 ;       2700; Aircraft,Voice
      6604000; Gander Radio Canada      ; USB                 ;       2700; Aircraft,Public Works
+     6754000; Trenton, Canada Mil Weather; USB                 ;       2700; Aircraft,Voice
      6925000; Frequent Pirate Radio    ; AM                  ;      10000; Voice
      7000000; Start of 40M Band        ; Demod Off           ;          0; Ham
      7048900; W1AW - ARRL              ; LSB                 ;       2700; Ham
      7173000; LSB 40 Meters            ; LSB                 ;       2700; Ham
      7300000; End of 40M Band          ; Demod Off           ;          0; Ham
+     7850000; CHU Canada Time          ; USB                 ;       2700; Data,Voice
     10100000; Start of 30M Band        ; Demod Off           ;          0; Ham
     10150000; End of 30M Band          ; Demod Off           ;          0; Ham
     12160000; Crazy Conspiracy Nut     ; AM                  ;      10000; Voice
@@ -105,9 +108,10 @@ Schuylkill County   ; #eae788
    137620000; NOAA 15                  ; Narrow FM           ;      25000; Data,Satellite
    137890000; Meteor M2                ; Narrow FM           ;      10000; Data,Satellite
    137912500; NOAA 18                  ; Narrow FM           ;      25000; Data,Satellite
+   143697700; ?                        ; Narrow FM           ;      10000; Untagged
    144000000; Start of 2M Band         ; Demod Off           ;          0; Ham
    144060000; 2M QRP CW                ; CW-U                ;        500; Ham
-   144200000; 2M Voice Calling         ; Narrow FM           ;      10000; Ham,Voice
+   144200000; 2M SSB Calling           ; Narrow FM           ;      10000; Ham,Voice
    144285000; 2M QRP Voice             ; Narrow FM           ;      10000; Ham,Voice
    144390000; APRS                     ; Narrow FM           ;      10000; Data
    144489000; WSPR Net Dial            ; Narrow FM           ;      10000; Data,Ham
@@ -170,6 +174,7 @@ Schuylkill County   ; #eae788
    147615000; W3RRR Input              ; Narrow FM           ;      10000; Ham
    147765000; K3LV Input               ; Narrow FM           ;      10000; Voice
    148000000; End of 2M Band           ; Demod Off           ;          0; Ham
+   148150000; ?                        ; Narrow FM           ;      10000; Untagged
    150830000; Black Rock Retreat       ; Narrow FM           ;      10000; Voice
    150995000; Mountville Borough PD    ; Narrow FM           ;      10000; Public Works,Voice
    151085000; West Lampeter PD         ; Narrow FM           ;      10000; Public Works,Voice
@@ -361,6 +366,7 @@ Schuylkill County   ; #eae788
    432100000; 70CM Calling             ; Narrow FM           ;      10000; Ham
    433960000; ISM 433 Devices          ; Narrow FM           ;       5000; Data,Utilities
    436795000; SO-50                    ; Narrow FM           ;      10000; Satellite,Voice
+   441475000; N3FYI Input              ; Narrow FM           ;      10000; Voice
    441900000; W3RC Hazleton            ; Narrow FM           ;      10000; Ham,Schuylkill County,Voice
    442000000; KJ6AL Parkesburg         ; Narrow FM           ;      10000; Ham
    442050000; N3KZ York                ; Narrow FM           ;      10000; Ham
