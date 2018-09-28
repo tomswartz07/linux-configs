@@ -1,0 +1,217 @@
+[bar/bar1]
+width = 100%
+height = 30
+clickareas = 35
+dock = false
+monitor = DVI-I-1
+
+background = #f41C1C1C
+foreground = #ccD0D0D0
+
+locale = en_US.UTF-8
+
+tray-position = right
+spacing = 0
+padding-left = 2
+padding-right = 2
+module-margin-left = 0
+module-margin-right = 3
+
+font-0 = Hack=12;0
+#font-1 = MaterialIcons:size=12;0
+#font-2 = FontAwesome:size=12;0
+
+modules-center = i3
+modules-left = cpu memory temperature
+modules-right = volume date
+
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format = <label> <bar-load>
+label = CPU
+label-foreground = #fabd2f
+label-padding = 0
+
+bar-load-width = 15
+bar-load-foreground-0 = #aaff77
+bar-load-foreground-1 = #aaff77
+bar-load-foreground-2 = #fba922
+bar-load-foreground-3 = #ff5555
+bar-load-indicator = |
+bar-load-indicator-foreground = #ff
+bar-load-indicator-font = 3
+bar-load-fill = ─
+bar-load-fill-font = 3
+bar-load-empty = ─
+bar-load-empty-font = 3
+bar-load-empty-foreground = #444444
+
+[module/date]
+type = internal/date
+date = %%{F#d3869b}%a %e %b%%{F-}  %%{F#fabd2f}%H:%M:%S%%{F-}
+
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+thermal-zone = 0
+warn-temperature = 100
+format = <ramp> <label>
+format-warn = <ramp>
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = #f00
+ramp-0 = T
+ramp-1 = T
+ramp-foreground = #55
+label-foreground = #ff5555
+ramp-0-foreground = #ff5555
+
+
+#[module/pkg]
+#type = custom/script
+#interval = 1200
+#format = <label>
+#format-underline = #dc322f
+#label = "%output:0:30%"
+#exec = .config/polybar/pkg.sh
+#exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+
+#[module/battery]
+#type = internal/battery
+#adapter = AC
+#battery = BAT0
+#poll-interval = 5
+#format-charging = <bar-capacity> <label-charging>
+#format-discharging = <bar-capacity> <label-discharging>
+#bar-capacity-width = 10
+#bar-capacity-foreground-0 = #ff5555
+#bar-capacity-foreground-1 = #fba922
+#bar-capacity-foreground-2 = ##aaff77
+#bar-capacity-foreground-3 = #aaff77#
+#bar-capacity-indicator = |
+#bar-capaciyt-indicator-foreground = #ff
+#bar-capacity-indicator-font = 3
+#bar-capacity-fill = ─
+#bar-capacity-fill-font = 3
+#bar-capacity-empty = ─
+#bar-capacity-empty-font = 3
+#bar-capacity-empty-foreground = #444444
+#time-format = %H:%M
+#label-charging = %time%
+#label-discharging = %time%
+#label-charging-foreground = #ff5555
+#label-discharging-foreground = #ff5555
+
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+pin-workspaces = true
+enable-scroll = true
+module-offset-y = 3
+
+ws-icon-0 = 1;I
+ws-icon-1 = 2;II
+ws-icon-2 = 3;III
+ws-icon-3 = 4;IV
+ws-icon-4 = 5;V
+ws-icon-5 = 6;VI
+ws-icon-6 = 7;VII
+ws-icon-7 = 8;VIII
+ws-icon-9 = 9;IX
+ws-icon-default = ♟
+
+label-focused = %icon%
+;label-focused-foreground = #ffffff
+label-focused-foreground = #000000
+
+;label-focused-background = #3f3f3f
+label-focused-background = #e18222
+
+#label-focused-underline = #00FF65
+label-focused-padding = 2
+
+label-unfocused = %icon%
+label-unfocused-padding = 2
+label-unfocused-foreground = #fabd2f
+
+
+label-visible = %icon%
+#label-visible-underline = #555555
+label-visible-padding = 4
+
+label-urgent = %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 2
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = Mem
+label-foreground = #fabd2f
+
+bar-used-width = 15
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-foreground = #ff
+bar-used-indicator-font = 3
+bar-used-fill = ─
+bar-used-fill-font = 3
+bar-used-empty = ─
+bar-used-empty-font = 3
+bar-used-empty-foreground = #444444
+
+[module/volume]
+type = internal/volume
+master_mixer = Pulseaudio
+speaker-mixer =
+#headphone_mixer = Capture
+#headphone_control_numid = 9
+
+format-volume = <ramp-volume> <label-volume>
+label-muted = silencio
+label-muted-foreground = #689d6a
+label-volume-foreground = #689d6a
+ramp-volume-foreground = #689d6a
+
+ramp-volume-0 =Vol
+ramp-volume-1 =Vol
+ramp-volume-2 =Vol
+ramp-volume-3 =Vol
+
+[module/wireless-network]
+type = internal/network
+interface = wlp58s0
+interval = 3.0
+ping_interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+label-bat = 
+label-connected = %essid%
+label-disconnected = Sin conexión
+label-connected-foreground = #458588
+label-disconnected-foreground = #458588
+ramp-signal-foreground = #458588
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-framerate_ms = 500
+
+; vim:ft=dosini
