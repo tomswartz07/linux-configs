@@ -1,0 +1,16 @@
+{
+  "101B:05267156": {
+    "_name": "Marathon Mouse M705"
+  },
+  "400E:C6FF0855": {
+    "_name": "Wireless Touch Keyboard K400"
+  },
+  "4060:78AECBA0": {
+    "_name": "Wireless Mouse MX Master",
+    "dpi": "1600",
+    "hires-smooth-invert": false,
+    "hires-smooth-resolution": false,
+    "smart-shift": 15
+  },
+  "_version": "0.9.2"
+}
