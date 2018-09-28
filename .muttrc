@@ -31,7 +31,7 @@ set sidebar_format="%B%* %N%!"
 
 set copy=yes
 set timeout=30
-set mail_check=60
+set mail_check=601
 set imap_keepalive=30
 # imap_check_subscribed requires Mutt v1.6+
 unset imap_check_subscribed
@@ -49,12 +49,14 @@ set include
 set beep_new
 set indent_str="> "
 set check_new=yes
+set mark_old=no
 set sort='threads'
 set sort_aux='reverse-last-date-received'
 set help=no
 set fast_reply
 set editor="vim -c 'set spell spelllang=en_us'"
 set pager_stop=yes
+set pager_context=5
 set recall=ask-no
 set delete=ask-no
 set quit=ask-no

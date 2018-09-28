@@ -7,7 +7,7 @@ set header_cache="~/.mutt/headercache-tomswartz07"
 set folder=imaps://imap.gmail.com/
 set spoolfile=+INBOX
 mailboxes =INBOX
-set record=+"[Gmail]/Sent Mail"
+#set record=+"[Gmail]/Sent Mail"
 #fcc-hook ~A ="[Gmail]/Sent Mail"
 
 # Securely source the password file
@@ -15,9 +15,11 @@ source "gpg --textmode -d ~/.mutt/password-tomswartz07.gpg |"
 
 # Service Specific Macros
 macro index,pager ga "<save-message>=[Gmail]/All Mail<enter>" "Archive message"
-macro index,pager gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
-macro index,pager g1 "<save-message>=Filtered/1to1<enter>" "Archive message to 1:1 Archive folder"
+macro index,pager gi "<save-message>=[Gmail]/Instructables<enter>" "Archive message to Intresting Instructables Folder"
+macro index,pager g1 "<save-message>=[Gmail]/Amazon<enter>" "Archive message to Amazon folder"
 macro index,pager gg "<group-reply>" "Group Reply- to all recipients"
+
+set signature="~/.mutt/.signature"
 
 # Import the rest of the options
 source "~/.muttrc"

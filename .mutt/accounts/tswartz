@@ -6,8 +6,9 @@ set sendmail="/usr/bin/msmtp -a tswartz"
 set header_cache="~/.mutt/headercache-tswartz"
 set folder=imaps://imap.gmail.com/
 set spoolfile=+INBOX
+set postponed="~/.mutt/postponed-tswartz"
 mailboxes =INBOX
-set record=+"[Gmail]/Sent Mail"
+#set record=+"[Gmail]/Sent Mail"
 #fcc-hook ~A ="[Gmail]/Sent Mail"
 
 # Securely source the password file
@@ -18,6 +19,8 @@ macro index,pager ga "<save-message>=[Gmail]/All Mail<enter>" "Archive message"
 macro index,pager gt "<save-message>=Filtered/Tech Department<enter>" "Archive message to Tech Archive folder"
 macro index,pager g1 "<save-message>=Filtered/1to1<enter>" "Archive message to 1:1 Archive folder"
 macro index,pager gg "<group-reply>" "Group Reply- to all recipients"
+
+set signature="~/.mutt/.signature"
 
 # Import the rest of the options
 source "~/.muttrc"
