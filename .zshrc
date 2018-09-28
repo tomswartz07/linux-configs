@@ -204,4 +204,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets)
 
 # Print out sysinfo on shell start
-archey3
+archey3 --config ~/.config/archey3.cfg
