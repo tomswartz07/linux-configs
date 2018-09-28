@@ -1,0 +1,9 @@
+[Radio]
+Host=localhost
+Port=7356
+LO=0
+LO_UP=0
+Type=0
+PTT=0
+SIGNAL_AOS=false
+SIGNAL_LOS=false
