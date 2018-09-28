@@ -1,17 +1,17 @@
 # Tag name          ;  color
-Schuylkill County   ; #eae788
-TRS                 ; #ff510c
-Radio Direction Finding; #aaaa00
-Aircraft            ; #aaffff
-Utilities           ; #4d5fc0
+Data                ; #00ffff
 Satellite           ; #905353
 Digital/DMR         ; #aa55ff
+Aircraft            ; #aaffff
 Transportation      ; #5bc03f
-Voice               ; #00aa7f
+Radio Direction Finding; #aaaa00
+Schuylkill County   ; #eae788
 Ham                 ; #00aa7f
+Utilities           ; #4d5fc0
 Untagged            ; #c0c0c0
 Public Works        ; #c0629f
-Data                ; #00ffff
+Voice               ; #00aa7f
+TRS                 ; #ff510c
 
 # Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
      1490000; WONN-FM                  ; AM                  ;      10000; Voice
@@ -112,6 +112,7 @@ Data                ; #00ffff
    144000000; Start of 2M Band         ; Demod Off           ;          0; Ham
    144060000; 2M QRP CW                ; CW-U                ;        500; Ham
    144200000; 2M SSB Calling           ; Narrow FM           ;      10000; Ham,Voice
+   144275000; Strange Beeper (25 Min Intervals); Narrow FM           ;      10000; Ham
    144285000; 2M QRP Voice             ; Narrow FM           ;      10000; Ham,Voice
    144390000; APRS                     ; Narrow FM           ;      10000; Data
    144489000; WSPR Net Dial            ; Narrow FM           ;      10000; Data,Ham
@@ -161,6 +162,7 @@ Data                ; #00ffff
    147105000; KA0JQO Cornwall          ; Narrow FM           ;      10000; Digital/DMR,Ham
    147165000; K3LV Grantville          ; Narrow FM           ;      10000; Ham,Voice
    147180000; K2SEH Reading            ; Narrow FM           ;      10000; Ham,Voice
+   147195000; W3DI Newtown Square      ; Narrow FM           ;      10000; Ham,Voice
    147210000; K3ZMC Earlville PAARC    ; Narrow FM           ;      20000; Ham,Voice
    147270000; Tamaqua W3TWA            ; Narrow FM           ;      10000; Schuylkill County
    147285000; N3SWH - Newmanstown      ; Narrow FM           ;      10000; Ham,Voice
@@ -336,13 +338,13 @@ Data                ; #00ffff
    161975000; Marine AIS 87            ; Narrow FM           ;      10000; Voice,Transportation
    162000000; Marine SEA 28            ; Narrow FM           ;      10000; Voice,Transportation
    162025000; Marine AIS 88            ; Narrow FM           ;      10000; Voice,Transportation
-   162400000; NOAA Weather Channel 1   ; Narrow FM           ;      10000; Data,Voice
-   162425000; NOAA Weather Channel 2   ; Narrow FM           ;      10000; Data,Voice
-   162450000; NOAA Weather Channel 3   ; Narrow FM           ;      10000; Data,Voice
-   162475000; NOAA Weather Channel 4   ; Narrow FM           ;      10000; Data,Voice
-   162500000; NOAA Weather Channel 5   ; Narrow FM           ;      10000; Data,Voice
-   162525000; NOAA Weather Channel 6   ; Narrow FM           ;      10000; Data,Voice
-   162550000; NOAA Weather Channel 7   ; Narrow FM           ;      10000; Data,Voice
+   162400000; NOAA Weather Channel 1   ; Narrow FM           ;      20000; Data,Voice
+   162425000; NOAA Weather Channel 2   ; Narrow FM           ;      20000; Data,Voice
+   162450000; NOAA Weather Channel 3   ; Narrow FM           ;      20000; Data,Voice
+   162475000; NOAA Weather Channel 4   ; Narrow FM           ;      20000; Data,Voice
+   162500000; NOAA Weather Channel 5   ; Narrow FM           ;      20000; Data,Voice
+   162525000; NOAA Weather Channel 6   ; Narrow FM           ;      20000; Data,Voice
+   162550000; NOAA Weather Channel 7   ; Narrow FM           ;      20000; Data,Voice
    163462500; Muir Army Airfield       ; Narrow FM           ;      10000; Aircraft
    180310000; ATSC Channel 8 Carrier   ; Narrow FM           ;      10000; Data
    204310000; ATSC Channel 12 Carrier  ; Narrow FM           ;      10000; Data
@@ -362,6 +364,7 @@ Data                ; #00ffff
    225000000; End of 1.25M Band        ; Demod Off           ;      10000; Ham
    225790000; RTTY Beacon?             ; USB                 ;       2700; Data
    315000000; TMPS Sensors             ; Narrow FM           ;      20000; Data
+   410076200; Strange AFSK?            ; Narrow FM           ;      20000; Untagged
    420000000; Start of 70cm Band       ; Demod Off           ;       5000; Ham
    432100000; 70CM Calling             ; Narrow FM           ;      10000; Ham
    433960000; ISM 433 Devices          ; Narrow FM           ;       5000; Data,Utilities
@@ -423,6 +426,7 @@ Data                ; #00ffff
    450637500; WGAL TV8 IFB             ; Narrow FM           ;      10000; Voice
    450650000; WGAL Field Operations    ; Narrow FM           ;      10000; Voice
    451112500; Three Mile Island Siren Control; Narrow FM           ;      10000; Voice
+   451118750; PPL System Ops           ; Narrow FM           ;       5000; Public Works
    451125000; HACC Lancaster IT        ; Narrow FM           ;      10000; Voice
    451225000; Lancaster School District - Maintenance; Narrow FM           ;      10000; Voice
    451287500; F&M College Facility and Operations; Narrow FM           ;      10000; Voice
@@ -640,6 +644,7 @@ Data                ; #00ffff
    853875000; PASTARNet Site 71001 Cornwall (LANC01); Narrow FM           ;      10000; TRS
    853962500; PASTARNet Site 71006 Bowmansville (LANC06); Narrow FM           ;      10000; TRS
    854462500; PASTARNet Site 71634 Gap (LANC634); Narrow FM           ;      10000; TRS
+   870200000; GSM Channel 133          ; Narrow FM           ;      30000; Data
    927587500; N3TUQ CORNWALL LRTS      ; Narrow FM           ;      10000; Ham
    940263000; GSM900 Basestation       ; Narrow FM           ;      10000; Data
   1625500000; Iridium Satellites       ; Narrow FM           ;      10000; Satellite
