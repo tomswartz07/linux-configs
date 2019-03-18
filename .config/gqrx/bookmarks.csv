@@ -1,55 +1,95 @@
 # Tag name          ;  color
-Data                ; #00ffff
-Satellite           ; #905353
-Digital/DMR         ; #aa55ff
-Aircraft            ; #aaffff
-Transportation      ; #5bc03f
-Radio Direction Finding; #aaaa00
-Schuylkill County   ; #eae788
-Ham                 ; #00aa7f
-Utilities           ; #4d5fc0
-Untagged            ; #c0c0c0
-Public Works        ; #c0629f
 Voice               ; #00aa7f
+Public Works        ; #c0629f
+Satellite           ; #905353
+Ham                 ; #00aa7f
+Radio Direction Finding; #aaaa00
+Aircraft            ; #aaffff
+Data                ; #00ffff
+Transportation      ; #5bc03f
+Digital/DMR         ; #aa55ff
 TRS                 ; #ff510c
+Untagged            ; #c0c0c0
+Schuylkill County   ; #eae788
+Utilities           ; #4d5fc0
 
 # Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
      1490000; WONN-FM                  ; AM                  ;      10000; Voice
-     1800000; Start of 160M Band       ; Demod Off           ;          0; Ham
+     1800000; Start of 160m Band       ; Demod Off           ;          0; Ham
      1816710; Morse Code               ; CW-L                ;        500; Data
-     2000000; End of 160M Band         ; Demod Off           ;          0; Ham
+     2000000; End of 160m Band         ; Demod Off           ;          0; Ham
      3330000; CHU Canadian Time        ; USB                 ;       2700; Data
-     3500000; Start of 80M Band        ; Demod Off           ;          0; Ham
-     4000000; End of 80M Band          ; Demod Off           ;          0; Ham
+     3500000; Start of 80m Band        ; Demod Off           ;          0; Ham
+     4000000; End of 80m Band          ; Demod Off           ;          0; Ham
      4625000; UVB-76                   ; USB                 ;       2700; Ham
-     5330500; 60M Channel 1            ; USB                 ;       5000; Ham
-     5346500; 60M Channel 2            ; USB                 ;       5000; Ham
-     5357000; 60M Channel 3            ; USB                 ;       5000; Ham
-     5371500; 60M Channel 4            ; USB                 ;       5000; Ham
-     5403500; 60M Channel 5            ; USB                 ;       5000; Ham
+     5330500; 60m Channel 1            ; USB                 ;       5000; Ham
+     5346500; 60m Channel 2            ; USB                 ;       5000; Ham
+     5357000; 60m Channel 3            ; USB                 ;       5000; Ham
+     5371500; 60m Channel 4            ; USB                 ;       5000; Ham
+     5403500; 60m Channel 5            ; USB                 ;       5000; Ham
      6586000; MWARA CAR-B New York     ; USB                 ;       2700; Aircraft,Voice
      6604000; Gander Radio Canada      ; USB                 ;       2700; Aircraft,Public Works
      6754000; Trenton, Canada Mil Weather; USB                 ;       2700; Aircraft,Voice
      6925000; Frequent Pirate Radio    ; AM                  ;      10000; Voice
-     7000000; Start of 40M Band        ; Demod Off           ;          0; Ham
+     7000000; Start of 40m Band        ; Demod Off           ;          0; Ham
      7048900; W1AW - ARRL              ; LSB                 ;       2700; Ham
      7173000; LSB 40 Meters            ; LSB                 ;       2700; Ham
-     7300000; End of 40M Band          ; Demod Off           ;          0; Ham
+     7300000; End of 40m Band          ; Demod Off           ;          0; Ham
      7850000; CHU Canada Time          ; USB                 ;       2700; Data,Voice
-    10100000; Start of 30M Band        ; Demod Off           ;          0; Ham
-    10150000; End of 30M Band          ; Demod Off           ;          0; Ham
+    10100000; Start of 30m Band        ; Demod Off           ;          0; Ham
+    10150000; End of 30m Band          ; Demod Off           ;          0; Ham
     12160000; Crazy Conspiracy Nut     ; AM                  ;      10000; Voice
-    14000000; Start of 20M Band        ; Demod Off           ;          0; Ham
-    14350000; End of 20M Band          ; Demod Off           ;          0; Ham
-    18068000; Start of 17M Band        ; Demod Off           ;          0; Ham
-    18168000; End of 17M Band          ; Demod Off           ;          0; Ham
-    21000000; Start of 15M Band        ; Demod Off           ;          0; Ham
-    21450000; End of 15M Band          ; Demod Off           ;          0; Ham
-    24890000; Start of 12M Band        ; Demod Off           ;          0; Ham
-    24990000; End of 12M Band          ; Demod Off           ;          0; Ham
-    28000000; Start of 10M Band        ; Demod Off           ;          0; Ham
+    14000000; Start of 20m Band        ; Demod Off           ;          0; Ham
+    14350000; End of 20m Band          ; Demod Off           ;          0; Ham
+    18068000; Start of 17m Band        ; Demod Off           ;          0; Ham
+    18168000; End of 17m Band          ; Demod Off           ;          0; Ham
+    21000000; Start of 15m Band        ; Demod Off           ;          0; Ham
+    21450000; End of 15m Band          ; Demod Off           ;          0; Ham
+    24890000; Start of 12m Band        ; Demod Off           ;          0; Ham
+    24990000; End of 12m Band          ; Demod Off           ;          0; Ham
+    26965000; CB Channel 01            ; AM                  ;      10000; Voice
+    26975000; CB Channel 02            ; AM                  ;      10000; Voice
+    26985000; CB Channel 03            ; AM                  ;      10000; Voice
+    27005000; CB Channel 04            ; AM                  ;      10000; Voice
+    27015000; CB Channel 05            ; AM                  ;      10000; Voice
+    27025000; CB Channel 06            ; AM                  ;      10000; Voice
+    27035000; CB Channel 07            ; AM                  ;      10000; Voice
+    27055000; CB Channel 08            ; AM                  ;      10000; Voice
+    27065000; CB Channel 09            ; AM                  ;      10000; Voice
+    27075000; CB Channel 10            ; AM                  ;      10000; Voice
+    27085000; CB Channel 11            ; AM                  ;      10000; Voice
+    27105000; CB Channel 12            ; AM                  ;      10000; Voice
+    27115000; CB Channel 13            ; AM                  ;      10000; Voice
+    27125000; CB Channel 14            ; AM                  ;      10000; Voice
+    27135000; CB Channel 15            ; AM                  ;      10000; Voice
+    27155000; CB Channel 16            ; AM                  ;      10000; Voice
+    27165000; CB Channel 17            ; AM                  ;      10000; Voice
+    27175000; CB Channel 18            ; AM                  ;      10000; Voice
+    27185000; CB Channel 19            ; AM                  ;      10000; Transportation,Voice
+    27205000; CB Channel 20            ; AM                  ;      10000; Voice
+    27215000; CB Channel 21            ; AM                  ;      10000; Voice
+    27225000; CB Channel 22            ; AM                  ;      10000; Voice
+    27235000; CB Channel 24            ; AM                  ;      10000; Voice
+    27245000; CB Channel 25            ; AM                  ;      10000; Voice
+    27255000; CB Channel 23            ; AM                  ;      10000; Voice
+    27265000; CB Channel 26            ; AM                  ;      10000; Voice
+    27275000; CB Channel 27            ; AM                  ;      10000; Voice
+    27285000; CB Channel 28            ; AM                  ;      10000; Voice
+    27295000; CB Channel 29            ; AM                  ;      10000; Voice
+    27305000; CB Channel 30            ; AM                  ;      10000; Voice
+    27315000; CB Channel 31            ; AM                  ;      10000; Voice
+    27325000; CB Channel 32            ; AM                  ;      10000; Voice
+    27335000; CB Channel 33            ; AM                  ;      10000; Voice
+    27345000; CB Channel 34            ; AM                  ;      10000; Voice
+    27355000; CB Channel 35            ; AM                  ;      10000; Voice
+    27365000; CB Channel 36            ; AM                  ;      10000; Voice
+    27375000; CB Channel 37            ; AM                  ;      10000; Voice
+    27385000; CB Channel 38            ; AM                  ;      10000; Voice
+    27395000; CB Channel 39            ; AM                  ;      10000; Voice
+    27405000; CB Channel 40            ; AM                  ;      10000; Voice
+    28000000; Start of 10m Band        ; Demod Off           ;          0; Ham
     29680000; W3HZU York               ; Narrow FM           ;      10000; Ham
-    29700000; End of 10M Band          ; Demod Off           ;          0; Ham
+    29700000; End of 10m Band          ; Demod Off           ;          0; Ham
     31000000; Little Britain Ag Supply ; Narrow FM           ;      10000; Voice
     31160000; John Weidman & Son Oil Burner Service; Narrow FM           ;      10000; Voice
     33080000; Manheim Township Ambulance Assoc; Narrow FM           ;      10000; Voice
@@ -72,13 +112,14 @@ TRS                 ; #ff510c
     45040000; Mount Joy Township Forest Fire Channel; Narrow FM           ;      10000; Voice
     45640000; Akron Municipal PD (Tac/Low); Narrow FM           ;      10000; Voice
     45700000; West Earl Municipal PD (Low); Narrow FM           ;      10000; Voice
-    50000000; Start of 6M Band         ; Demod Off           ;          0; Ham
-    50185000; 6M QRP Phone             ; LSB                 ;       2700; Ham,Voice
+    50000000; Start of 6m Band         ; Demod Off           ;          0; Ham
+    50185000; 6m QRP Phone             ; LSB                 ;       2700; Ham,Voice
+    52525000; 6m National Call         ; Narrow FM           ;      10000; Ham
     53330000; K3CX Honey Brook         ; AM                  ;      46400; Ham,Voice
     53850000; N3TJJ Rawlinsville       ; Narrow FM           ;       6600; Ham
     53870000; N3KZ Earlville           ; Narrow FM           ;      10000; Ham,Voice
     53970000; W3HZU York               ; Narrow FM           ;       6600; Ham
-    54000000; End of 6M Band           ; Demod Off           ;          0; Ham
+    54000000; End of 6m Band           ; Demod Off           ;          0; Ham
     72220000; Lancaster General Hospital WQHT584; Narrow FM           ;      10000; Data,Public Works
     72580000; Lancaster County Fire/EMS Dispatch; Narrow FM           ;      10000; Voice
     75620000; AFSK Pager Link          ; Narrow FM           ;      10000; Data
@@ -103,17 +144,17 @@ TRS                 ; #ff510c
    126450000; KLNS Approach/Departure (KMDT Harrisburg); AM                  ;      10000; Aircraft
    130169000; ISS Comms                ; Narrow FM           ;      10000; Satellite,Voice
    136770000; NOAA 9 (DEAD)            ; Narrow FM           ;      10000; Satellite
-   136975000; Orbcomm                  ; Narrow FM           ;      10000; Data,Satellite
+   136975000; VDL-M2                   ; Narrow FM           ;      10000; Aircraft,Data,Transportation
    137100000; NOAA 19                  ; Narrow FM           ;      25000; Data,Satellite
    137620000; NOAA 15                  ; Narrow FM           ;      25000; Data,Satellite
    137890000; Meteor M2                ; Narrow FM           ;      10000; Data,Satellite
    137912500; NOAA 18                  ; Narrow FM           ;      25000; Data,Satellite
    143697700; ?                        ; Narrow FM           ;      10000; Untagged
-   144000000; Start of 2M Band         ; Demod Off           ;          0; Ham
-   144060000; 2M QRP CW                ; CW-U                ;        500; Ham
-   144200000; 2M SSB Calling           ; Narrow FM           ;      10000; Ham,Voice
+   144000000; Start of 2m Band         ; Demod Off           ;          0; Ham
+   144060000; 2m QRP CW                ; CW-U                ;        500; Ham
+   144200000; 2m SSB Calling           ; Narrow FM           ;      10000; Ham,Voice
    144275000; Strange Beeper (25 Min Intervals); Narrow FM           ;      10000; Ham
-   144285000; 2M QRP Voice             ; Narrow FM           ;      10000; Ham,Voice
+   144285000; 2m QRP Voice             ; Narrow FM           ;      10000; Ham,Voice
    144390000; APRS                     ; Narrow FM           ;      10000; Data
    144489000; WSPR Net Dial            ; Narrow FM           ;      10000; Data,Ham
    144990000; APRS?                    ; Narrow FM           ;       5000; Data
@@ -126,6 +167,7 @@ TRS                 ; #ff510c
    145270000; N3TWT Mechanicsburg      ; Narrow FM           ;      10000; Ham,Voice
    145290000; W3ND Harrisburg          ; Narrow FM           ;      20000; Ham,Voice
    145310000; N3FYI Lancaster          ; Narrow FM           ;      10000; Ham
+   145330000; K3HT Shawsville MD       ; Narrow FM           ;      10000; Ham
    145370000; W3SC Delano              ; Narrow FM           ;      10000; Schuylkill County
    145390000; W3AD Cornwall            ; Narrow FM           ;      10000; Ham,Voice
    145450000; W3XP Ephrata             ; Narrow FM           ;      10000; Ham,Voice
@@ -140,10 +182,11 @@ TRS                 ; #ff510c
    146445000; KB3TWW - Etters          ; Narrow FM           ;      19800; Digital/DMR,Ham
    146460000; N3TWT Mechanicsburg      ; AM                  ;      10000; Ham,Voice
    146490000; W3TWA Tamaqua            ; Narrow FM           ;      10000; Schuylkill County
-   146520000; 2M National Simplex Call ; Narrow FM           ;      10000; Ham,Voice
+   146520000; 2m National Simplex Call ; Narrow FM           ;      10000; Ham,Voice
    146610000; K3NCY New Holland        ; Narrow FM           ;      10000; Ham,Voice
    146625000; KA3KDL Reading           ; Narrow FM           ;      10000; Ham,Voice
    146640000; AA3RG Pine Grove         ; Narrow FM           ;      10000; Ham,Schuylkill County
+   146670000; W3OHX Hazleton           ; Narrow FM           ;      10000; Ham
    146685000; N3TWT Landisburg         ; Narrow FM           ;      10000; Digital/DMR,Ham
    146700000; K3AE Shrewsberry         ; Narrow FM           ;      10000; Ham,Voice
    146745000; KX3B Buck                ; Narrow FM           ;      10000; Ham,Voice
@@ -175,7 +218,7 @@ TRS                 ; #ff510c
    147480000; W3WAN Lebanon Input      ; Narrow FM           ;      10000; Ham
    147615000; W3RRR Input              ; Narrow FM           ;      10000; Ham
    147765000; K3LV Input               ; Narrow FM           ;      10000; Voice
-   148000000; End of 2M Band           ; Demod Off           ;          0; Ham
+   148000000; End of 2m Band           ; Demod Off           ;          0; Ham
    148150000; ?                        ; Narrow FM           ;      10000; Untagged
    150830000; Black Rock Retreat       ; Narrow FM           ;      10000; Voice
    150995000; Mountville Borough PD    ; Narrow FM           ;      10000; Public Works,Voice
@@ -298,6 +341,7 @@ TRS                 ; #ff510c
    158805000; West Donegal PD          ; Narrow FM           ;      10000; Voice
    158955000; Manheim Boro PD          ; Narrow FM           ;      10000; Public Works
    159395000; Dispactch (Unknown Org)  ; Narrow FM           ;      10000; Voice
+   159600000; Chester County Fire      ; Narrow FM           ;      10000; Public Works,Voice
    159735000; Chester County Fire      ; Narrow FM           ;      10000; Public Works,Voice
    160065000; Rohrers Quarry (Ops)     ; Narrow FM           ;      10000; Voice
    160170000; Shultz Lancaster District 2; Narrow FM           ;      10000; Transportation
@@ -349,7 +393,10 @@ TRS                 ; #ff510c
    180310000; ATSC Channel 8 Carrier   ; Narrow FM           ;      10000; Data
    204310000; ATSC Channel 12 Carrier  ; Narrow FM           ;      10000; Data
    217049000; Strange Pulser           ; Narrow FM           ;      80000; Data
-   222000000; Start of 1.25M Band      ; Demod Off           ;      10000; Ham
+   219000000; Start of 1.25m P2P       ; Demod Off           ;      10000; Ham
+   220000000; End of 1.25m P2P         ; Demod Off           ;      10000; Ham
+   222000000; Start of 1.25m Band      ; Demod Off           ;      10000; Ham
+   223500000; 1.25m National Simplex Call; Narrow FM           ;      10000; Ham
    224020000; K3ZMC Pottstown          ; Narrow FM           ;      10000; Ham
    224040000; N3JCN Parkesburg         ; Narrow FM           ;      10000; Ham,Voice
    224140000; N3TJJ Summit Station     ; Narrow FM           ;      10000; Ham
@@ -361,12 +408,12 @@ TRS                 ; #ff510c
    224780000; AK3E Buck                ; Narrow FM           ;      10000; Ham,Voice
    224820000; N3TPL Cornwall           ; Narrow FM           ;      10000; Ham,Voice
    224840000; KA3CNT Cornwall          ; Narrow FM           ;      10000; Ham,Voice
-   225000000; End of 1.25M Band        ; Demod Off           ;      10000; Ham
+   225000000; End of 1.25m Band        ; Demod Off           ;      10000; Ham
    225790000; RTTY Beacon?             ; USB                 ;       2700; Data
    315000000; TMPS Sensors             ; Narrow FM           ;      20000; Data
    410076200; Strange AFSK?            ; Narrow FM           ;      20000; Untagged
    420000000; Start of 70cm Band       ; Demod Off           ;       5000; Ham
-   432100000; 70CM Calling             ; Narrow FM           ;      10000; Ham
+   432100000; 70cm Calling             ; Narrow FM           ;      10000; Ham
    433960000; ISM 433 Devices          ; Narrow FM           ;       5000; Data,Utilities
    436795000; SO-50                    ; Narrow FM           ;      10000; Satellite,Voice
    441475000; N3FYI Input              ; Narrow FM           ;      10000; Voice
@@ -391,6 +438,7 @@ TRS                 ; #ff510c
    444700000; KM3W Chester             ; Narrow FM           ;      10000; Ham,Voice
    444950000; W3SC Delano              ; Narrow FM           ;      10000; Schuylkill County,Voice
    445175000; KB3WLV Reading           ; Narrow FM           ;      10000; Ham
+   446000000; 70cm National Call       ; Narrow FM           ;      10000; Ham
    446175000; W3EOC - Chester          ; Narrow FM           ;      10000; Voice
    446425000; W3ND York                ; Narrow FM           ;      10000; Ham,Voice
    446475000; N3FYI Cornwall           ; Narrow FM           ;      10000; Ham
@@ -645,6 +693,13 @@ TRS                 ; #ff510c
    853962500; PASTARNet Site 71006 Bowmansville (LANC06); Narrow FM           ;      10000; TRS
    854462500; PASTARNet Site 71634 Gap (LANC634); Narrow FM           ;      10000; TRS
    870200000; GSM Channel 133          ; Narrow FM           ;      30000; Data
+   902000000; 33cm Band Begin          ; Demod Off           ;      10000; Ham
    927587500; N3TUQ CORNWALL LRTS      ; Narrow FM           ;      10000; Ham
+   928000000; 33cm Band End            ; Demod Off           ;      10000; Ham
    940263000; GSM900 Basestation       ; Narrow FM           ;      10000; Data
+  1240000000; 23cm Band Begin          ; Demod Off           ;      10000; Ham
+  1300000000; 23cm Band End            ; Demod Off           ;      10000; Ham
   1625500000; Iridium Satellites       ; Narrow FM           ;      10000; Satellite
+  1707000000; NOAA 18 HRPT             ; WFM (stereo)        ;     240000; Satellite
+  2255500000; Hubble Downlink 1        ; Narrow FM           ;       5000; Data,Satellite
+  2287500000; Hubble Downlink 2        ; Narrow FM           ;       5000; Data,Satellite
