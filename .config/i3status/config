@@ -18,6 +18,7 @@ general {
 #order += "ipv6"
 order += "disk /"
 order += "disk /home"
+order += "disk /mnt/Storage"
 order += "disk /mnt/Teradrive"
 order += "run_watch SSH"
 #order += "run_watch DHCP"
@@ -25,7 +26,7 @@ order += "path_exists VPN"
 #order += "wireless wlan0"
 order += "ethernet enp9s0"
 order += "cpu_temperature 0"
-order += "battery 1"
+#order += "battery 1"
 order += "load"
 order += "volume master"
 order += "tztime local"
@@ -92,6 +93,12 @@ disk "/home" {
 }
 
 disk "/mnt/Teradrive" {
+        format = "Teradrive: %free"
+        low_threshold = 30
+        threshold_type = percentage_free
+}
+
+disk "/mnt/Storage" {
         format = "Storage: %free"
         low_threshold = 30
         threshold_type = percentage_free
