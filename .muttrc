@@ -23,6 +23,8 @@ bind index "\Ca" 'imap-fetch-mail'
 # Macro for MD to HTML needs gh-markdown-cli from NodeJS: `sudo npm install gh-markdown-cli -g`
 # https://github.com/millermedeiros/gh-markdown-cli
 macro compose md "F mdown \ny^T^Utext/html; charset=utf-8\n" "Convert message from Markdown to HTML"
+# Hotkey return to Inbox
+macro index <home> "<change-folder>=INBOX<enter>" "Return to Inbox"
 
 # Sidebar Settings
 bind index,pager B sidebar-toggle-visible
@@ -96,12 +98,13 @@ color compose security_none red default
 
 
 # Encryption settings. Suck one, NSA.
-#set pgp_use_gpg_agent=yes
+set pgp_use_gpg_agent=no
+set pgp_default_key="979D0E08803702A076A23A6707B8C15FCC2A1A93"
 set pgp_decode_command="gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
 set pgp_verify_command="gpg --no-verbose --batch --output - --verify %s %f"
 set pgp_decrypt_command="gpg --passphrase-fd 0 --no-verbose --batch --output - %f"
 set pgp_sign_command="gpg --pinentry-mode loopback --no-verbose --batch --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
-set pgp_clearsign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_clearsign_command="gpg --no-verbose --passphrase-fd 0 --batch --output - --armor --textmode --clearsign %?a?-u %a? %f"
 set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0x8D545FDA9E2518C8 -- -r %r -- %f"
 set pgp_encrypt_sign_command="pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0x8D545FDA9E2518C8 -- -r %r -- %f"
 set pgp_import_command="gpg --no-verbose --import -v %f"
@@ -115,5 +118,5 @@ set pgp_timeout=28800
 set pgp_good_sign="^gpg: Good signature from"
 # postpone_encrypt requires Mutt v1.6+
 set postpone_encrypt=yes
-#set postpone_encrypt_as="0xCC2A1A93"
-set postpone_encrypt_as="0x8D545FDA9E2518C8"
+set postpone_encrypt_as="0xCC2A1A93"
+#set postpone_encrypt_as="0x8D545FDA9E2518C8"
