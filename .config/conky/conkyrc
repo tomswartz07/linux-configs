@@ -8,38 +8,39 @@ conky.config = {
 --#############################################
 --  Settings
 --#############################################
-	background = true,
-	use_xft = true,
-	font = 'Hack:size=9',
-	xftalpha = 1,
-	update_interval = 1.0,
-	total_run_times = 0,
-	own_window = true,
-	own_window_class = 'Conky',
-	own_window_type = 'override',
-	own_window_transparent = true,
-	own_window_argb_visual = true,
-	own_window_argb_value = 255,
-	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
-	double_buffer = true,
-	minimum_width = 200, minimum_height = 200,
-	maximum_width = 240,
-	draw_shades = false,
-	draw_outline = false,
-	draw_borders = false,
-	draw_graph_borders = true,
-	default_color = 'white',
-	default_shade_color = 'black',
-	default_outline_color = 'black',
-	alignment = 'middle_middle',
+background = true,
+use_xft = true,
+font = 'Noto Sans=10',
+xftalpha = 1,
+update_interval = 1.0,
+total_run_times = 0,
+own_window = true,
+own_window_class = 'Conky',
+own_window_type = 'override',
+own_window_transparent = true,
+own_window_argb_visual = true,
+own_window_argb_value = 255,
+own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+double_buffer = true,
+minimum_width = 200,
+minimum_height = 200,
+maximum_width = 240,
+draw_shades = false,
+draw_outline = true,
+draw_borders = false,
+draw_graph_borders = true,
+default_color = 'white',
+default_shade_color = 'black',
+default_outline_color = '636066',
+alignment = 'middle_right',
 --gap_x 285
 --gap_y 1240
-	gap_x = 150,
-	gap_y = 150,
-	no_buffers = true,
-	uppercase = false,
-	cpu_avg_samples = 2,
-	override_utf8_locale = false,
+gap_x = -1775,
+gap_y = 25,
+no_buffers = true,
+uppercase = false,
+cpu_avg_samples = 2,
+override_utf8_locale = false,
 --#############################################
 --  Output
 --#############################################
@@ -60,7 +61,7 @@ Root usage:$alignr${fs_used /}/${fs_size /}
 ${fs_bar /}
 Home usage:$alignr${fs_used /home}/${fs_size /home}
 ${fs_bar /home}
-Storage usage:$alignr${fs_used /mnt/Teradrive}/${fs_size /mnt/Teradrive}
+Storage usage:$alignr${fs_used /mnt/Storage}/${fs_size /mnt/Storage}
 ${fs_bar /home}
 Swap usage:$alignr$swap/$swapmax
 ${swapbar}
