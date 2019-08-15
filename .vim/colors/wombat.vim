@@ -50,6 +50,12 @@ hi DiffDelete   ctermfg=234     ctermbg=60      cterm=none      guifg=#242424   
 hi DiffText                     ctermbg=53      cterm=none                      guibg=#73186e   gui=none
 hi DiffChange                   ctermbg=237                                     guibg=#382a37
 
+" vim-gitgutter highlighting
+hi GitGutterAdd 				ctermfg=113 ctermbg=232 guifg=#95e454 guibg=#080808
+hi GitGutterChange 				ctermfg=203 ctermbg=232 guifg=#d7875f guibg=#080808
+hi GitGutterDelete 				ctermfg=196 ctermbg=232 guifg=#ff2026 guibg=#080808
+hi GitGutterChagneDelete 		ctermfg=52  ctermbg=232 guifg=#5f0000 guibg=#080808
+
 " Color Column, highlight the 81st column
 call matchadd('ColorColumn', '\%81v', 100)
 hi ColorColumn                  ctermbg=52                                      guibg=#5f0000

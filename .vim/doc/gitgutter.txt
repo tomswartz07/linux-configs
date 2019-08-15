@@ -79,6 +79,19 @@ Copy vim-gitgutter's subdirectories into your vim configuration directory:
 See |add-global-plugin|.
 
 
+WINDOWS                                                     *gitgutter-windows*
+
+I recommend configuring vim-gitgutter with the full path to your git executable.
+For example:
+>
+    let g:gitgutter_git_executable = 'C:\Program Files\Git\bin\git.exe'
+<
+This is to avoid a problem which occurs if you have file named "git.*" (i.e.
+with any extension in "PATHEXT") in your current folder.  "cmd.exe" prioritises
+the current folder over folders in 'PATH' and will try to execute your file
+instead of the "git" binary.
+
+
 ===============================================================================
 COMMANDS                                                   *gitgutter-commands*
 
@@ -126,6 +139,19 @@ Commands for turning line highlighting on and off (defaults to off):~
 :GitGutterLineHighlightsToggle  Turn line highlighting on or off.
 
 
+Commands for turning line number highlighting on and off (defaults to off):~
+NOTE: This feature requires Neovim 0.3.2 or higher.
+
+                                   *gitgutter-:GitGutterLineNrHighlightsEnable*
+:GitGutterLineNrHighlightsEnable  Turn on line highlighting.
+
+                                  *gitgutter-:GitGutterLineNrHighlightsDisable*
+:GitGutterLineNrHighlightsDisable Turn off line highlighting.
+
+                                   *gitgutter-:GitGutterLineNrHighlightsToggle*
+:GitGutterLineNrHighlightsToggle  Turn line highlighting on or off.
+
+
 Commands for jumping between hunks:~
 
                                                  *gitgutter-:GitGutterNextHunk*
@@ -138,7 +164,13 @@ Commands for jumping between hunks:~
 Commands for operating on a hunk:~
 
                                                 *gitgutter-:GitGutterStageHunk*
-:GitGutterStageHunk     Stage the hunk the cursor is in.
+:GitGutterStageHunk     Stage the hunk the cursor is in.  Use a visual selection
+                        to stage part of an (additions-only) hunk; or use a
+                        range.
+
+                        To stage part of any hunk, first |GitGutterPreviewHunk|
+                        it, then move to the preview window, delete the lines
+                        you do not want to stage, and |GitGutterStageHunk|.
 
                                                  *gitgutter-:GitGutterUndoHunk*
 :GitGutterUndoHunk      Undo the hunk the cursor is in.
@@ -147,6 +179,15 @@ Commands for operating on a hunk:~
 :GitGutterPreviewHunk   Preview the hunk the cursor is in.
                         Use |:pclose| or |CTRL-W_CTRL-Z| to close the preview
                         window.
+
+                        To stage part of the hunk, move to the preview window,
+                        delete any lines you do not want to stage, and
+                        |GitGutterStageHunk|.
+
+Commands for folds:~
+
+                                                     *gitgutter-:GitGutterFold*
+:GitGutterFold          Fold all unchanged lines.  Execute again to undo.
 
 
 ===============================================================================
@@ -244,6 +285,7 @@ Signs:~
 
     |g:gitgutter_signs|
     |g:gitgutter_highlight_lines|
+    |g:gitgutter_highlight_linenrs|
     |g:gitgutter_max_signs|
     |g:gitgutter_sign_added|
     |g:gitgutter_sign_modified|
@@ -264,6 +306,13 @@ General:~
     |g:gitgutter_async|
     |g:gitgutter_log|
 
+
+                                             *g:gitgutter_preview_win_location*
+Default: 'bo'
+
+This option determines where the preview window pops up as a result of the
+:GitGutterPreviewHunk command. Other plausible values are 'to', 'bel', 'abo'.
+See the end of the |opening-window| docs.
 
                                                    *g:gitgutter_git_executable*
 Default: 'git'
@@ -324,6 +373,11 @@ Default: 0
 
 Determines whether or not to show line highlights.
 
+                                                *g:gitgutter_highlight_linenrs*
+Default: 0
+
+Determines whether or not to show line number highlights.
+
                                                         *g:gitgutter_max_signs*
 Default: 500
 
@@ -331,6 +385,13 @@ Sets the maximum number of signs to show in a buffer.  Vim is slow at updating
 signs, so to avoid slowing down the GUI the number of signs is capped.  When
 the number of changed lines exceeds this value, the plugin removes all signs
 and displays a warning message.
+
+                                               *g:gitgutter_sign_allow_clobber*
+Default: 0 (Vim, Neovim < 0.4.0)
+         1 (Neovim >= 0.4.0)
+
+Determines whether gitgutter preserves non-gitgutter signs. When 1, gitgutter
+will not preserve non-gitgutter signs.
 
                                           *g:gitgutter_sign_added*
                                           *g:gitgutter_sign_modified*
@@ -391,6 +452,11 @@ If this applies to you, either install something like Terminus
 (https://github.com/wincent/terminus) to make |FocusGained| work or set this
 option to 0.
 
+If you use tmux, try this in your tmux.conf:
+>
+    set -g focus-events on
+<
+
 When this option is 0, the plugin force-updates the buffer on |BufEnter|
 (instead of only updating if the buffer's contents has changed since the last
 update).
@@ -433,7 +499,7 @@ colorscheme or |vimrc|:
 You can either set these with `highlight GitGutterAdd {key}={arg}...` or link
 them to existing highlight groups with, say:
 >
-  highlight link GitGutterAdd DiffAdd
+  highlight link GitGutterAdd MyDiffAdd
 <
 
 To change the line highlights, set up the following highlight groups in your
@@ -443,6 +509,23 @@ colorscheme or |vimrc|:
     GitGutterChangeLine       " default: links to DiffChange
     GitGutterDeleteLine       " default: links to DiffDelete
     GitGutterChangeDeleteLine " default: links to GitGutterChangeLineDefault
+<
+
+For example, to use |hl-DiffText| instead of |hl-DiffChange|:
+>
+    highlight link GitGutterChangeLine DiffText
+<
+To change the line number highlights, set up the following highlight groups in
+your colorscheme or |vimrc|:
+>
+    GitGutterAddLineNr          " default: links to CursorLineNr
+    GitGutterChangeLineNr       " default: links to CursorLineNr
+    GitGutterDeleteLineNr       " default: links to CursorLineNr
+    GitGutterChangeDeleteLineNr " default: links to CursorLineNr
+<
+For example, to use |hl-Underlined| instead of |hl-CursorLineNr|:
+>
+    highlight link GitGutterChangeLineNr Underlined
 <
 
 

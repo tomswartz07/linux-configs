@@ -22,10 +22,16 @@ function! s:set(var, default) abort
   endif
 endfunction
 
+call s:set('g:gitgutter_preview_win_location',     'bo')
 call s:set('g:gitgutter_enabled',                     1)
 call s:set('g:gitgutter_max_signs',                 500)
 call s:set('g:gitgutter_signs',                       1)
 call s:set('g:gitgutter_highlight_lines',             0)
+call s:set('g:gitgutter_highlight_linenrs',           0)
+if has('nvim-0.4.0') && !exists('g:gitgutter_sign_allow_clobber')
+  let g:gitgutter_sign_allow_clobber = 1
+endif
+call s:set('g:gitgutter_sign_allow_clobber',          0)
 call s:set('g:gitgutter_sign_column_always',          0)
 if g:gitgutter_sign_column_always && exists('&signcolumn')
   " Vim 7.4.2201.
@@ -97,6 +103,10 @@ command! -bar GitGutterDisable call gitgutter#disable()
 command! -bar GitGutterEnable  call gitgutter#enable()
 command! -bar GitGutterToggle  call gitgutter#toggle()
 
+command! -bar GitGutterBufferDisable call gitgutter#buffer_disable()
+command! -bar GitGutterBufferEnable  call gitgutter#buffer_enable()
+command! -bar GitGutterBufferToggle  call gitgutter#buffer_toggle()
+
 " }}}
 
 " Line highlights {{{
@@ -105,6 +115,12 @@ command! -bar GitGutterLineHighlightsDisable call gitgutter#highlight#line_disab
 command! -bar GitGutterLineHighlightsEnable  call gitgutter#highlight#line_enable()
 command! -bar GitGutterLineHighlightsToggle  call gitgutter#highlight#line_toggle()
 
+" }}}
+
+" 'number' column highlights {{{
+command! -bar GitGutterLineNrHighlightsDisable call gitgutter#highlight#linenr_disable()
+command! -bar GitGutterLineNrHighlightsEnable  call gitgutter#highlight#linenr_enable()
+command! -bar GitGutterLineNrHighlightsToggle  call gitgutter#highlight#linenr_toggle()
 " }}}
 
 " Signs {{{
@@ -120,7 +136,7 @@ command! -bar GitGutterSignsToggle  call gitgutter#sign#toggle()
 command! -bar -count=1 GitGutterNextHunk call gitgutter#hunk#next_hunk(<count>)
 command! -bar -count=1 GitGutterPrevHunk call gitgutter#hunk#prev_hunk(<count>)
 
-command! -bar GitGutterStageHunk   call gitgutter#hunk#stage()
+command! -bar -range=% GitGutterStageHunk call gitgutter#hunk#stage(<line1>,<line2>)
 command! -bar GitGutterUndoHunk    call gitgutter#hunk#undo()
 command! -bar GitGutterPreviewHunk call gitgutter#hunk#preview()
 
@@ -162,6 +178,12 @@ endfunction
 
 " }}}
 
+" Folds {{{
+
+command! -bar GitGutterFold call gitgutter#fold#toggle()
+
+" }}}
+
 command! -bar GitGutterDebug call gitgutter#debug#debug()
 
 " Maps {{{
@@ -169,6 +191,7 @@ command! -bar GitGutterDebug call gitgutter#debug#debug()
 nnoremap <silent> <expr> <Plug>GitGutterNextHunk &diff ? ']c' : ":\<C-U>execute v:count1 . 'GitGutterNextHunk'\<CR>"
 nnoremap <silent> <expr> <Plug>GitGutterPrevHunk &diff ? '[c' : ":\<C-U>execute v:count1 . 'GitGutterPrevHunk'\<CR>"
 
+xnoremap <silent> <Plug>GitGutterStageHunk   :GitGutterStageHunk<CR>
 nnoremap <silent> <Plug>GitGutterStageHunk   :GitGutterStageHunk<CR>
 nnoremap <silent> <Plug>GitGutterUndoHunk    :GitGutterUndoHunk<CR>
 nnoremap <silent> <Plug>GitGutterPreviewHunk :GitGutterPreviewHunk<CR>
@@ -176,11 +199,12 @@ nnoremap <silent> <Plug>GitGutterPreviewHunk :GitGutterPreviewHunk<CR>
 " }}}
 
 function! s:on_bufenter()
+  call gitgutter#setup_maps()
+
   if exists('t:gitgutter_didtabenter') && t:gitgutter_didtabenter
     let t:gitgutter_didtabenter = 0
     call gitgutter#all(!g:gitgutter_terminal_reports_focus)
   else
-    call gitgutter#init_buffer(bufnr(''))
     call gitgutter#process_buffer(bufnr(''), !g:gitgutter_terminal_reports_focus)
   endif
 endfunction
@@ -202,7 +226,18 @@ augroup gitgutter
   "   vim -o file1 file2
   autocmd VimEnter * if winnr() != winnr('$') | call gitgutter#all(0) | endif
 
-  autocmd FocusGained,ShellCmdPost * call gitgutter#all(1)
+  autocmd ShellCmdPost * call gitgutter#all(1)
+  autocmd BufLeave term://* call gitgutter#all(1)
+
+  autocmd BufFilePre  * GitGutterBufferDisable
+  autocmd BufFilePost * GitGutterBufferEnable
+
+  " Handle all buffers when focus is gained, but only after it was lost.
+  " FocusGained gets triggered on startup with Neovim at least already.
+  " Therefore this tracks also if it was lost before.
+  let s:focus_was_lost = 0
+  autocmd FocusGained * if s:focus_was_lost | let focus_was_lost = 0 | call gitgutter#all(1) | endif
+  autocmd FocusLost * let s:focus_was_lost = 1
 
   if exists('##VimResume')
     autocmd VimResume * call gitgutter#all(1)
