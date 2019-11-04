@@ -227,7 +227,6 @@ exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id compton --config ~/.config/compton/compton.conf -bC
 exec --no-startup-id nvidia-settings -l
 exec parcellite
-exec conky --config=.config/conky/conkyrc
 exec unclutter -noevents
 exec volti
 exec x11vnc
@@ -242,6 +241,7 @@ exec --no-startup-id dunst
 exec --no-startup-id liferea
 exec --no-startup-id seahorse --no-window
 exec --no-startup-id gpg-agent --homedir /home/tom/.gnupg --use-standard-socket --daemon
+exec_always --no-startup-id conky --config=.config/conky/conkyrc
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec xautolock -time 9 -locker '~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png'
 

@@ -28,6 +28,7 @@ order += "ethernet enp9s0"
 order += "cpu_temperature 0"
 #order += "battery 1"
 order += "load"
+#order += "memory"
 order += "volume master"
 order += "tztime local"
 order += "tztime utc"
@@ -35,7 +36,7 @@ order += "tztime utc"
 cpu_temperature 0 {
         format = "❄ %degrees°C"
         max_threshold = 65 # 149°F
-        path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input"
+        path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input"
 }
 
 wireless wlp2s0 {
@@ -78,6 +79,12 @@ tztime utc {
 
 load {
         format = "Load: %1min %15min"
+}
+
+memory {
+        format = "RAM: %free %available %used/%total"
+        threshold_degraded = 20%
+        format_degraded = "RAM LOW: %free Remaining"
 }
 
 disk "/" {
