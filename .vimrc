@@ -20,6 +20,9 @@ autocmd BufNewFile,BufRead *.ps1,*.ps set filetype=powershell
 " Automatically reload .vimrc files
 autocmd BufWritePost .vimrc source %
 
+" Automatically build LaTeX files on write
+"autocmd BufWritePost *.tex silent !pdflatex % >/dev/null
+
 " Auto Return to last edited point
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -43,7 +46,12 @@ set swapfile
 set directory=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
 set backup
 set backupdir=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
-"
+
+" New and better diff settings
+if has("patch-8.1.0360")
+    set diffopt=filler,internal,algorithm:histogram,indent-heuristic
+endif
+
 " Extend undoable steps and preserve over restart (if available)
 if has('persistent_undo')
         set undodir=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
