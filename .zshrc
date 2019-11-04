@@ -1,9 +1,10 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1000000
+SAVEHIST=1000000
 setopt share_history
 setopt append_history
+setopt extended_history
 setopt inc_append_history
 setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
@@ -30,26 +31,37 @@ colors
 autoload -U compinit
 compinit
 zmodload -i zsh/complist
+autoload -Uz history-beginning-search-menu
+zle -N history-beginning-search-menu
 
 # Export Env Variables
+REPORTTIME=5
 PATH="/opt/android-sdk/platform-tools:${PATH}"
-PATH=$(ruby -e "puts Gem.user_dir")/bin:${PATH}
-RUBY_PATH="$(ruby -e "puts Gem.user_dir")/bin"
-GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-SPRUCE_PATH="/usr/local/bin"
-GOPATH="/home/tom/.go/"
-export PATH
-export GOPATH
-export RUBY_PATH
-export SPRUCE_PATH
+if which ruby >/dev/null 2>&1 ; then
+        PATH=$(ruby -e "puts Gem.user_dir")/bin:${PATH}
+        RUBY_PATH="$(ruby -e "puts Gem.user_dir")/bin"
+        GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+        export PATH
+        export RUBY_PATH
+fi
 export EDITOR=/usr/bin/vim
-#export TERM=rxvt-unicode-256color
+export TERM=rxvt-unicode-256color
+export GPG_TTY=$(tty)
 #export LESS='-C -M -I -j 10 -# 4'
+if which spruce >/dev/null 2>&1 ; then
+        SPRUCE_PATH="/usr/local/bin"
+        export SPRUCE_PATH
+fi
+if [[ -d "$HOME/.go" ]]; then
+        GOPATH="/home/tom/.go/"
+        export GOPATH
+fi
 
 # Keybindings
 bindkey -v
 bindkey '^r' history-incremental-pattern-search-backward # CTRL+R
 bindkey '^p' history-incremental-pattern-search-forward  # CTRL+P
+bindkey '^x' history-beginning-search-menu
 bindkey '^[.' insert-last-word    # ESC+.
 bindkey '^[[1~' beginning-of-line # HOME
 bindkey '^[[H' beginning-of-line
@@ -65,7 +77,7 @@ bindkey '^F' forward-word         # CTRL+F
 
 # Auto-Sudo for package manager
 alias pacman='sudo pacman'
-alias packer='yay'
+#alias packer='yay'
 
 # Automatically make it a private Gist and copy Gist URL
 # Requires https://github.com/defunkt/gist
@@ -78,7 +90,7 @@ alias vim='vim -O'
 alias ls='ls --color -lhSAv --group-directories-first'
 
 # Always attach to a current tmux session
-alias tmux='tmux attach'
+#alias tmux='tmux attach'
 
 # Show the biggest files in this directory
 alias dusize="sudo du -hs ** | sort -hr | head -10"
@@ -90,6 +102,11 @@ if [[ -e "$HOME/git/bosh-deployment/deployments/vbox/state.json" ]]; then
         export BOSH_ENVIRONMENT=vbox
         export BOSH_CLIENT_SECRET=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /admin_password)
         export BOSH_CA_CERT=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /director_ssl/ca)
+        export CF_STEMCELL_VERSION=$(bosh int ~/git/cf-deployment/cf-deployment.yml --path /stemcells/alias=default/version)
+        export CREDHUB_CLIENT=credhub-admin
+        export CREDHUB_SERVER=https://192.168.50.6:8844/
+        export CREDHUB_SECRET=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /credhub_admin_client_secret)
+        export CREDHUB_CA_CERT="$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /credhub_tls/ca)\n$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /uaa_ssl/ca)"
         alias bosh_save="vboxmanage controlvm $(bosh int ~/git/bosh-deployment/deployments/vbox/state.json --path /current_vm_cid) savestate"
         alias bosh_up="vboxmanage startvm $(bosh int ~/git/bosh-deployment/deployments/vbox/state.json --path /current_vm_cid) --type headless"
 fi
@@ -108,7 +125,7 @@ function macaddr() { echo "$1" | sed -e 's/\([0-9A-Fa-f]\{2\}\)/\1:/g' -e 's/\(.
 function gpg_encrypt() { gpg --symmetric --cipher-algo aes256 --digest-algo sha256 --cert-digest-algo sha256 --compress-algo none -z 0 --quiet --no-greeting --s2k-mode 3 --s2k-digest-algo sha512 "$@" }
 
 # Get the weather
-function weather() { curl "http://wttr.in/$1";}
+function weather() { curl "https://wttr.in/$1";}
 
 # Automatically load environment variables specific to a directory tree
 function chpwd() {
@@ -200,8 +217,20 @@ fi
 # Highlight brackets
 # Requires zsh-syntax-highlighting package
 # https://github.com/zsh-users/zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets)
+if [ -d /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets)
+elif [ -d /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+        source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets)
+fi
+
+# K8s completion
+if which kubectl >/dev/null 2>&1 ; then
+        source <(kubectl completion zsh)
+fi
 
 # Print out sysinfo on shell start
-archey3 --config ~/.config/archey3.cfg
+if which archey3 >/dev/null 2>&1 ; then
+        archey3 --config ~/.config/archey3.cfg
+fi
