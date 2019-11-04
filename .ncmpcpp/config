@@ -12,7 +12,7 @@
 ## file which defines that while launching ncmpcpp.
 ##
 #
-#ncmpcpp_directory = "~/.ncmpcpp"
+ncmpcpp_directory = "~/.ncmpcpp"
 #
 ##
 ## Directory for storing downloaded lyrics. It
@@ -30,9 +30,9 @@ mpd_host = "localhost"
 #
 mpd_port = "6600"
 #
-mpd_music_dir = "~/music"
+#mpd_music_dir = "~/music"
 #
-#mpd_connection_timeout = "5"
+mpd_connection_timeout = "5"
 #
 #mpd_crossfade_time = "5"
 #
@@ -474,7 +474,9 @@ volume_color = "yellow"
 #
 #color2 = "green"
 #
-main_window_highlight_color = "blue"
+#main_window_highlight_color = "blue"
+current_item_prefix = "$(blue)$r"
+current_item_suffix = "$/r$(end)"
 #
 progressbar_color = "blue"
 #
