@@ -368,6 +368,10 @@
     summary = "Disconnected"
     urgency = critical
 
+[slack]
+    appname = "Slack"
+    new_icon = "/usr/lib/slack/resources/app.asar.unpacked/dist/static/logo_spinner.gif"
+
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
