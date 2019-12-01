@@ -2,20 +2,25 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
-setopt share_history
+# History
 setopt append_history
 setopt extended_history
-setopt inc_append_history
 setopt hist_ignore_all_dups
+setopt hist_no_store
 setopt hist_reduce_blanks
+setopt inc_append_history_time
+setopt share_history
+# Completion
+setopt always_to_end
 setopt autocd
 unsetopt beep
-setopt correct
-setopt complete_in_word
-setopt always_to_end
 setopt complete_aliases
-setopt list_ambiguous
+setopt complete_in_word
+setopt correct
 setopt interactivecomments
+setopt list_ambiguous
+# Job Control
+setopt auto_continue
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
