@@ -58,6 +58,8 @@ battery 1 {
 
 run_watch SSH {
         pidfile = "/var/run/ssh*.pid"
+        format = ""
+        format_down = "SSH: DOWN"
 }
 
 run_watch DHCP {
