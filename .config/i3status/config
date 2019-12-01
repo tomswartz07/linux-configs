@@ -21,6 +21,8 @@ order += "disk /home"
 order += "disk /mnt/Storage"
 order += "disk /mnt/Teradrive"
 order += "run_watch SSH"
+order += "run_watch nginx"
+order += "path_exists fail2ban"
 #order += "run_watch DHCP"
 order += "path_exists VPN"
 #order += "wireless wlan0"
@@ -59,11 +61,25 @@ battery 1 {
 run_watch SSH {
         pidfile = "/var/run/ssh*.pid"
         format = ""
-        format_down = "SSH: DOWN"
+        format_down = "%title: %status"
 }
 
 run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
+        format = ""
+        format_down = "%title: %status"
+}
+
+run_watch nginx {
+        pidfile = "/var/run/nginx*.pid"
+        format = ""
+        format_down = "%title: %status"
+}
+
+path_exists fail2ban {
+        path = "/var/run/fail2ban/fail2ban.pid"
+        format = ""
+        format_down = "%title: %status"
 }
 
 path_exists VPN {
