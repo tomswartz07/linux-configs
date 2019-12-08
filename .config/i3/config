@@ -38,7 +38,7 @@ focus_follows_mouse no
 mouse_warping none
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 #bindsym $mod+Return exec gnome-terminal
 
 # Allow Screen Lock
@@ -223,8 +223,8 @@ bar {
 
 # Autolaunch applications
 exec --no-startup-id sh ~/.fehbg
-#exec --no-startup-id xcompmgr -f -D 1
-exec --no-startup-id compton --config ~/.config/compton/compton.conf -bC
+exec --no-startup-id xcompmgr -f -D 1
+#exec --no-startup-id picom --config ~/.config/picom/picom.conf -bC
 exec --no-startup-id nvidia-settings -l
 exec parcellite
 exec unclutter -noevents
@@ -241,7 +241,7 @@ exec --no-startup-id dunst
 exec --no-startup-id liferea
 exec --no-startup-id seahorse --no-window
 exec --no-startup-id gpg-agent --homedir /home/tom/.gnupg --use-standard-socket --daemon
-exec_always --no-startup-id conky --config=.config/conky/conkyrc
+exec --no-startup-id conky --config=.config/conky/conkyrc
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec xautolock -time 9 -locker '~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png'
 
@@ -256,12 +256,13 @@ workspace 7 output DVI-D-0
 workspace 8 output HDMI-0
 workspace 9 output DVI-D-0
 workspace 10 output DVI-D-0
-assign [class="dwb"] 1
 #assign [window_role="browser"] 1
-assign [class="chromium"] 10
-assign [class="firefox"] 10
+assign [class="dwb"] 1
 assign [class="Slack"] 2
 assign [class="Liferea"] 3
+assign [class="zoom"] 8
+assign [class="chromium"] 10
+assign [class="firefox"] 10
 
 # Per-App settings
 for_window [window_role="pop-up"] floating enable
