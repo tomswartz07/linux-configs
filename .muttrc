@@ -16,8 +16,10 @@ set send_charset="utf-8"
 # View certain filetypes automatically
 auto_view text/html application/pdf image/* application/msword
 # Save html for last
-#alternative_order text/plain text/enriched text/html
-alternative_order text/enriched text/html text/plain
+alternative_order text/plain text/enriched text/html
+#alternative_order text/enriched text/html text/plain
+# Handle ical/calendar events
+auto_view text/calendar application/ics
 
 bind editor <space> noop
 bind index "\Ca" 'imap-fetch-mail'
