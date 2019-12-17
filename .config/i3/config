@@ -222,9 +222,9 @@ bar {
 }
 
 # Autolaunch applications
+#exec --no-startup-id xcompmgr -f -D 5 # Legacy, poor performance
+exec --no-startup-id picom --config ~/.config/picom/picom.conf -b # Newest, but wonky as hell
 exec --no-startup-id sh ~/.fehbg
-exec --no-startup-id xcompmgr -f -D 1
-#exec --no-startup-id picom --config ~/.config/picom/picom.conf -bC
 exec --no-startup-id nvidia-settings -l
 exec parcellite
 exec unclutter -noevents
