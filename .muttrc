@@ -15,8 +15,10 @@ set send_charset="utf-8"
 
 # View certain filetypes automatically
 auto_view text/html application/pdf image/* application/msword
-# Save html for last
-alternative_order text/plain text/enriched text/html
+# Enriched format first, then plain to prevent attachment view errors
+# https://gitlab.com/muttmua/mutt/-/wikis/MuttFaq/Attachment#why-cant-i-see-attachments-in-some-multipartalternative-emails
+alternative_order text/enriched text/plain text/html
+# Do plaintext last, optionally
 #alternative_order text/enriched text/html text/plain
 # Handle ical/calendar events
 auto_view text/calendar application/ics
@@ -78,8 +80,20 @@ color markers blue default
 color indicator brightyellow blue
 color quoted blue default
 # Highlight From/To/Subject lines
-color header brightblue default "^(From|To|Subject|Cc|Date|[u|U]ser-[a|A]gent|[x|X]-[m|M]ailer):"
+color header brightblue default "^(From|To|Subject|Cc|Date):"
 mono header bold "^(From|To|Subject|Cc|Date|[u|U]ser-[a|A]gent|[x|X]-[m|M]ailer):"
+# Highlight certain header info
+## X-Mailer and User-Agent
+color header brightblue default "^([u|U]ser-[a|A]gent|[x|X]-[m|M]ailer):"
+mono header bold "^([u|U]ser-[a|A]gent|[x|X]-[m|M]ailer):"
+## Organization Header
+color header brightblue default "^([o|O]rganization):"
+mono header bold "^([o|O]rganization):"
+## Message-ID
+color header brightblue default "^(Message-ID):"
+mono header bold "^(Message-ID):"
+## Display the extra custom headers
+unignore organization: message-id:
 # Highlight web addresses
 color body brightgreen default "(http|https|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
