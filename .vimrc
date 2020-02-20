@@ -39,6 +39,9 @@ set smarttab
 set expandtab
 set autoread
 set noshowmode
+set scrolloff=5 " Keep 5 lines above/below while scrolling
+set shortmess+=I " No splash screen, I know how to quit vim
+set synmaxcol=180 " Stop trying syntax formatting on long lines
 colorscheme wombat
 
 " Write swap and backup files in the event of a crash or accident
@@ -80,8 +83,13 @@ endif
 " Make tabs and trailing whitespace visible, use <Leader>+l to toggle
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 
-" Join command will act a little smarter
+" Join command will act a little smarter for comments
 set formatoptions+=j
+" Join command will honor numbered lists
+set formatoptions+=n
+" Join command handles abbreviations better
+set formatoptions+=p
+
 
 " Enable par as external formatter, for pretty paragraphs
 set formatprg=par\ -w80eq
@@ -187,6 +195,8 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_full_redraws = 1
 let g:syntastic_puppet_puppetlint_args = "--no-autoloader_layout-check --no-80chars-check --no-class_inherits_from_params_class-check"
 let g:syntastic_python_pylint_args = "--disable=invalid-name"
+" Syntastic Checkers
 let g:syntastic_html_checkers = ["w3"]
 let g:syntastic_yaml_checkers = ["yamllint"]
 let g:syntastic_yaml_yamllint_args = "-d relaxed"
+let g:syntastic_markdown_checkers = ["proselint"]
