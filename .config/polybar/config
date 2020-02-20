@@ -3,7 +3,7 @@ width = 100%
 height = 30
 clickareas = 35
 dock = false
-monitor = DVI-I-1
+monitor = HDMI-0
 
 background = #f41C1C1C
 foreground = #ccD0D0D0
