@@ -38,7 +38,8 @@ focus_follows_mouse no
 mouse_warping none
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id termite
+#bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 #bindsym $mod+Return exec gnome-terminal
 
 # Allow Screen Lock
@@ -232,7 +233,8 @@ exec volti
 exec x11vnc
 exec --no-startup-id caffeine
 #exec --no-startup-id mopidy
-exec --no-startup-id solaar --restart-on-wake-up
+exec --no-startup-id xdotool key --clearmodifiers Num_Lock
+exec --no-startup-id solaar --restart-on-wake-up -t
 exec --no-startup-id redshift-gtk
 exec --no-startup-id thunar --daemon
 exec --no-startup-id udiskie -2
@@ -261,7 +263,7 @@ assign [class="dwb"] 1
 assign [class="Slack"] 2
 assign [class="Liferea"] 3
 assign [class="zoom"] 8
-assign [class="chromium"] 10
+assign [class="Chromium"] 8
 assign [class="firefox"] 10
 
 # Per-App settings
