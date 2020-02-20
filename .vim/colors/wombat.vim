@@ -85,6 +85,8 @@ hi ColorColumn                  ctermbg=52                                      
 
 " Custom Formatting
 hi SpellBad     ctermfg=203     ctermbg=234     cterm=underline,bold       guifg=#ff5f55        gui=underline,bold
+hi SpellRare    ctermfg=203     ctermbg=234     cterm=underline,bold       guifg=#4A412A        gui=underline,bold
+hi SpellLocal   ctermfg=203     ctermbg=234     cterm=underline,bold       guifg=#4A412A        gui=underline,bold
 
 " Syntax highlighting
 hi Keyword      ctermfg=111     cterm=none      guifg=#88b8f6   gui=none
