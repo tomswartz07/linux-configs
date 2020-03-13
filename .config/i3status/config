@@ -26,7 +26,7 @@ order += "path_exists fail2ban"
 #order += "run_watch DHCP"
 order += "path_exists VPN"
 #order += "wireless wlan0"
-order += "ethernet enp4s0"
+order += "ethernet enp5s0"
 order += "cpu_temperature 0"
 #order += "battery 1"
 order += "load"
@@ -46,7 +46,7 @@ wireless wlp2s0 {
         format_down = "⎇ down"
 }
 
-ethernet enp4s0 {
+ethernet enp5s0 {
         # if you use %speed, i3status requires root privileges
         format_up = "⎇ %ip"
         format_down = "⎇ down"
@@ -133,7 +133,7 @@ disk "/mnt/Storage" {
 
 volume master {
         format = "♪ %volume"
-        device = "pulse:alsa_output.pci-0000_0a_00.4.analog-stereo"
+        device = "pulse:alsa_output.pci-0000_04_00.0.analog-stereo"
         #device = "pulse:alsa_output.pci-0000_00_14.2.analog-surround-40"
 #       mixer = "master"
 #       mixer_idx = 0
