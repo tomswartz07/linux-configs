@@ -4,9 +4,9 @@
     <title>Liferea Feed List Export</title>
   </head>
   <body>
-    <outline title="Magrathea" text="Magrathea" description="Magrathea" type="folder" id="iashrnq" sortColumn="time" expanded="true">
-      <outline title="Comics" text="Comics" description="Comics" type="folder" id="bjhtens" sortColumn="time" collapsed="true">
-        <outline title="A Softer World" text="A Softer World" description="A Softer World" type="rss" id="itcdaht" sortColumn="time" xmlUrl="http://www.asofterworld.com/rssfeed.php" htmlUrl="http://www.asofterworld.com" updateInterval="-1" collapsed="true"/>
+    <outline title="Magrathea" text="Magrathea" description="Magrathea" type="folder" id="iashrnq" sortColumn="time" viewMode="2" expanded="true">
+      <outline title="Comics" text="Comics" description="Comics" type="folder" id="bjhtens" sortColumn="time" expanded="true">
+        <outline title="A Softer World" text="A Softer World" description="A Softer World" type="rss" id="itcdaht" sortColumn="time" xmlUrl="http://asofterworld.com/rssfeed.php" htmlUrl="http://www.asofterworld.com" updateInterval="-1" collapsed="true"/>
         <outline title="Abstruse Goose" text="Abstruse Goose" description="Abstruse Goose" type="rss" id="tutqgky" sortColumn="time" xmlUrl="https://abstrusegoose.com/feed.xml" htmlUrl="https://abstrusegoose.com" updateInterval="-1" collapsed="true"/>
         <outline title="Brown Sharpie" text="Brown Sharpie" description="Brown Sharpie" type="rss" id="eltuiiw" sortColumn="time" xmlUrl="http://brownsharpie.courtneygibbons.org/feed/" htmlUrl="http://brownsharpie.courtneygibbons.org" updateInterval="-1" collapsed="true"/>
         <outline title="Buttersafe - Updated Tuesdays and Thursdays" text="Buttersafe - Updated Tuesdays and Thursdays" description="Buttersafe - Updated Tuesdays and Thursdays" type="rss" id="yoapucv" sortColumn="time" xmlUrl="http://feeds.feedburner.com/buttersafe" htmlUrl="http://www.buttersafe.com" updateInterval="-1" collapsed="true"/>
@@ -29,29 +29,29 @@
         <outline title="Wondermark" text="Wondermark" description="Wondermark" type="rss" id="sgfeiea" sortColumn="time" xmlUrl="http://feeds.feedburner.com/wondermark" htmlUrl="http://wondermark.com" updateInterval="-1" collapsed="true"/>
         <outline title="xkcd" text="xkcd" description="xkcd" type="atom" id="tbhwxsq" sortColumn="time" xmlUrl="https://xkcd.com/atom.xml" htmlUrl="https://xkcd.com/" updateInterval="-1" collapsed="true"/>
       </outline>
-      <outline title="Music Blogs" text="Music Blogs" description="Music Blogs" type="folder" id="gwophvj" sortColumn="time" collapsed="true">
+      <outline title="Music Blogs" text="Music Blogs" description="Music Blogs" type="folder" id="gwophvj" sortColumn="time" expanded="true">
         <outline title="Chromeo Diary" text="Chromeo Diary" description="Chromeo Diary" type="rss" id="ospahkg" sortColumn="time" xmlUrl="http://diary.chromeo.net/rss" htmlUrl="https://diary.chromeo.net/" updateInterval="-1" collapsed="true"/>
         <outline title="Gorilla vs. Bear" text="Gorilla vs. Bear" description="Gorilla vs. Bear" type="rss" id="ebewraw" sortColumn="time" xmlUrl="https://www.gorillavsbear.net/category/mp3/feed/" htmlUrl="http://www.gorillavsbear.net" updateInterval="-1" collapsed="true"/>
         <outline title="KEXP" text="KEXP" description="KEXP" type="rss" id="vdjpavp" sortColumn="time" xmlUrl="https://www.omnycontent.com/d/playlist/bad5d079-8dcb-4630-8770-aa090049131d/32b2ac38-5a48-4300-9fa6-aa40002038b5/4ac1c451-4315-4096-ab9b-aa40002038c4/podcast.rss" htmlUrl="http://media.kexp.org/podcasts/songoftheday/" updateInterval="-1" collapsed="true"/>
         <outline title="Radio Wonderland" text="Radio Wonderland" description="Radio Wonderland" type="rss" id="vmhperl" sortColumn="time" xmlUrl="http://alisonwonderland.podtree.com/feed/podcast/" htmlUrl="http://www.alisonwonderland.com.au/" updateInterval="-1" collapsed="true"/>
-        <outline title="This Song Is Sick" text="This Song Is Sick" description="This Song Is Sick" type="rss" id="euudpiy" sortColumn="time" xmlUrl="https://thissongissick.com/feeds/feed" htmlUrl="http://thissongissick.com" updateInterval="-1" collapsed="true"/>
+        <outline title="This Song Is Sick" text="This Song Is Sick" description="This Song Is Sick" type="rss" id="euudpiy" sortColumn="time" xmlUrl="https://thissongissick.com/feed/" htmlUrl="https://thissongissick.com" updateInterval="-1" collapsed="true"/>
         <outline title="Punknews.org" text="Punknews.org" description="Punknews.org" type="rss" id="unheyyu" sortColumn="time" xmlUrl="https://static.punknews.org/feeds/punknews.rdf" htmlUrl="https://www.punknews.org" updateInterval="-1" collapsed="true"/>
       </outline>
-      <outline title="News" text="News" description="News" type="folder" id="cbiomyg" sortColumn="time" collapsed="true">
-        <outline title="Science" text="Science" description="Science" type="folder" id="ppdxoff" sortColumn="time" collapsed="true">
+      <outline title="News" text="News" description="News" type="folder" id="cbiomyg" sortColumn="time" expanded="true">
+        <outline title="Science" text="Science" description="Science" type="folder" id="ppdxoff" sortColumn="time" expanded="true">
           <outline title="Science News" text="Science News" description="Science News" type="rss" id="qerkghb" sortColumn="time" xmlUrl="https://www.sciencenews.org/feed" htmlUrl="https://www.sciencenews.org" updateInterval="-1" collapsed="true"/>
           <outline title="Discover Master Feed" text="Discover Master Feed" description="Discover Master Feed" type="rss" id="jtwiftc" sortColumn="time" viewMode="2" xmlUrl="http://feeds.feedburner.com/DiscoverMag" htmlUrl="https://www.discovermagazine.com/rss/all" updateInterval="-1" collapsed="true"/>
-          <outline title="Wolfram Blog" text="Wolfram Blog" description="Wolfram Blog" type="rss" id="voiwyld" sortColumn="time" xmlUrl="http://blog.wolfram.com/feed/" htmlUrl="https://blog.wolfram.com" updateInterval="-1" collapsed="true"/>
+          <outline title="Wolfram Blog" text="Wolfram Blog" description="Wolfram Blog" type="rss" id="voiwyld" sortColumn="time" xmlUrl="https://blog.wolfram.com/feed/rss/" htmlUrl="https://blog.wolfram.com" updateInterval="-1" collapsed="true"/>
         </outline>
         <outline title="Boing Boing" text="Boing Boing" description="Boing Boing" type="rss" id="kxgiyev" sortColumn="time" xmlUrl="https://boingboing.net/feed" htmlUrl="https://boingboing.net" updateInterval="-1" collapsed="true"/>
         <outline title="Ars Technica" text="Ars Technica" description="Ars Technica" type="rss" id="ptchkuy" sortColumn="time" xmlUrl="http://feeds.arstechnica.com/arstechnica/index" htmlUrl="https://arstechnica.com" updateInterval="-1" collapsed="true"/>
         <outline title="Slashdot" text="Slashdot" description="Slashdot" type="rss" id="aixvjhw" sortColumn="time" xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="https://slashdot.org/" updateInterval="-1" collapsed="true"/>
         <outline title="BBC" text="BBC" description="BBC" type="rss" id="wcndxko" sortColumn="time" viewMode="2" xmlUrl="http://feeds.bbci.co.uk/news/rss.xml?edition=int" htmlUrl="https://www.bbc.co.uk/news/" updateInterval="4320" collapsed="true"/>
         <outline title="Lancaster County Live Incidents" text="Lancaster County Live Incidents" description="Lancaster County Live Incidents" type="rss" id="elkiqss" sortColumn="time" xmlUrl="https://www.lcwc911.us/lcwc/lcwc/incidents.xml" htmlUrl="https://webcad.lcwc911.us/Pages/Public/LiveIncidentsFeed.aspx" updateInterval="1440" collapsed="true"/>
-        <outline title="Current Watches, Warnings and Advisories for Lancaster (PAZ066) Pennsylvania Issued by the National Weather Service" text="Current Watches, Warnings and Advisories for Lancaster (PAZ066) Pennsylvania Issued by the National Weather Service" description="Current Watches, Warnings and Advisories for Lancaster (PAZ066) Pennsylvania Issued by the National Weather Service" type="atom" id="bhhqbao" sortColumn="time" xmlUrl="file:///tmp/mozilla_tom0/wwaatmget.php" htmlUrl="https://alerts.weather.gov/cap/wwaatmget.php?x=PAZ066&amp;y=0" updateInterval="-1" collapsed="true"/>
+        <outline title="Current Watches, Warnings and Advisories for Lancaster (PAZ066) Pennsylvania Issued by the National Weather Service" text="Current Watches, Warnings and Advisories for Lancaster (PAZ066) Pennsylvania Issued by the National Weather Service" description="Current Watches, Warnings and Advisories for Lancaster (PAZ066) Pennsylvania Issued by the National Weather Service" type="atom" id="bhhqbao" sortColumn="time" xmlUrl="https://alerts.weather.gov/cap/wwaatmget.php?x=PAZ066&amp;y=0" htmlUrl="https://alerts.weather.gov/cap/wwaatmget.php?x=PAZ066&amp;y=0" updateInterval="-1" collapsed="true"/>
       </outline>
       <outline title="Technology" text="Technology" description="Technology" type="folder" id="yrukkkp" sortColumn="time" expanded="true">
-        <outline title="Krebs on Security" text="Krebs on Security" description="Krebs on Security" type="rss" id="hjmyeqs" sortColumn="time" xmlUrl="file:///tmp/mozilla_tom0/3kiocvK6.rss" htmlUrl="https://krebsonsecurity.com" updateInterval="-1" collapsed="true"/>
+        <outline title="Krebs on Security" text="Krebs on Security" description="Krebs on Security" type="rss" id="hjmyeqs" sortColumn="time" xmlUrl="https://krebsonsecurity.com/feed/" htmlUrl="https://krebsonsecurity.com" updateInterval="-1" collapsed="true"/>
         <outline title="Arch Linux: Recent news updates" text="Arch Linux: Recent news updates" description="Arch Linux: Recent news updates" type="rss" id="crqykmi" sortColumn="time" xmlUrl="https://www.archlinux.org/feeds/news/" htmlUrl="https://www.archlinux.org/news/" updateInterval="-1" collapsed="true"/>
         <outline title="Blog &#x2013; Hackaday" text="Blog &#x2013; Hackaday" description="Blog &#x2013; Hackaday" type="rss" id="jdeuvsu" sortColumn="time" xmlUrl="https://hackaday.com/blog/feed/" htmlUrl="https://hackaday.com" updateInterval="-1" collapsed="true"/>
         <outline title="Clients From Hell" text="Clients From Hell" description="Clients From Hell" type="rss" id="kmbasdq" sortColumn="time" xmlUrl="https://clientsfromhell.net/feed/" htmlUrl="https://clientsfromhell.net" updateInterval="-1" collapsed="true"/>
@@ -60,17 +60,17 @@
         <outline title="Command Line Fu" text="Command Line Fu" description="Command Line Fu" type="rss" id="bommggn" sortColumn="time" xmlUrl="http://feeds.feedburner.com/Command-line-fu" htmlUrl="http://www.commandlinefu.com/commands/browse/rss" updateInterval="-1" collapsed="true"/>
         <outline title="CSS-Tricks" text="CSS-Tricks" description="CSS-Tricks" type="rss" id="udythhu" sortColumn="time" xmlUrl="http://feeds.feedburner.com/CssTricks" htmlUrl="https://css-tricks.com" updateInterval="-1" collapsed="true"/>
         <outline title="Penn Manor Technology Blog" text="Penn Manor Technology Blog" description="Penn Manor Technology Blog" type="rss" id="ntqdsos" sortColumn="time" xmlUrl="https://technology.pennmanor.net/feed/" htmlUrl="https://technology.pennmanor.net" updateInterval="-1" collapsed="true"/>
-        <outline title="Mobile" text="Mobile" description="Mobile" type="folder" id="duuwppi" sortColumn="time" collapsed="true">
+        <outline title="Mobile" text="Mobile" description="Mobile" type="folder" id="duuwppi" sortColumn="time" expanded="true">
           <outline title="Android Developers Blog" text="Android Developers Blog" description="Android Developers Blog" type="atom" id="stycbov" sortColumn="time" xmlUrl="http://feeds.feedburner.com/blogspot/hsDu" htmlUrl="http://feeds.feedburner.com/blogspot/hsDu" updateInterval="-1" collapsed="true"/>
           <outline title="Android Central" text="Android Central" description="Android Central" type="rss" id="oprlvgo" sortColumn="time" xmlUrl="http://feeds2.feedburner.com/androidcentral?format=xml" htmlUrl="https://www.androidcentral.com/" updateInterval="-1" collapsed="true"/>
         </outline>
-        <outline title="Open Source" text="Open Source" description="Open Source" type="folder" id="gdpjmet" sortColumn="time" collapsed="true">
+        <outline title="Open Source" text="Open Source" description="Open Source" type="folder" id="gdpjmet" sortColumn="time" expanded="true">
           <outline title="Ubuntu Geek" text="Ubuntu Geek" description="Ubuntu Geek" type="rss" id="ruubcoy" sortColumn="time" xmlUrl="http://feeds.feedburner.com/UbuntuGeek" htmlUrl="http://www.ubuntugeek.com" updateInterval="-1" collapsed="true"/>
           <outline title="Omg! Ubuntu!" text="Omg! Ubuntu!" description="Omg! Ubuntu!" type="rss" id="urbqrov" sortColumn="time" xmlUrl="http://feeds.feedburner.com/d0od" htmlUrl="https://www.omgubuntu.co.uk" updateInterval="-1" collapsed="true"/>
           <outline title="Liferea Blog" text="Liferea Blog" description="Liferea Blog" type="atom" id="uqdhpie" sortColumn="time" xmlUrl="http://feeds.feedburner.com/LifereaBlog" htmlUrl="http://feeds.feedburner.com/LifereaBlog" updateInterval="-1" collapsed="true"/>
           <outline title="rtl-sdr.com" text="rtl-sdr.com" description="rtl-sdr.com" type="rss" id="pifcxby" sortColumn="time" xmlUrl="https://www.rtl-sdr.com/feed/" htmlUrl="https://www.rtl-sdr.com" updateInterval="-1" collapsed="true"/>
         </outline>
-        <outline title="OZ9AEC Website" text="OZ9AEC Website" description="OZ9AEC Website" type="rss" id="durjgws" sortColumn="time" xmlUrl="http://oz9aec.net/feed" htmlUrl="http://oz9aec.net" updateInterval="-1" collapsed="true"/>
+        <outline title="OZ9AEC Website" text="OZ9AEC Website" description="OZ9AEC Website" type="rss" id="durjgws" sortColumn="time" xmlUrl="https://oz9aec.net/feed" htmlUrl="https://oz9aec.net" updateInterval="-1" collapsed="true"/>
       </outline>
     </outline>
     <outline title="Unread" text="Unread" description="Unread" type="vfolder" id="ewividb" sortColumn="time" matchType="any" collapsed="true">

@@ -261,7 +261,7 @@ workspace 10 output DVI-D-0
 #assign [window_role="browser"] 1
 assign [class="dwb"] 1
 assign [class="Slack"] 2
-assign [class="Liferea"] 3
+assign [class="Liferea"] 8
 assign [class="zoom"] 8
 assign [class="Chromium"] 8
 assign [class="firefox"] 10
