@@ -5,3 +5,8 @@ dwb/default/*
 !dwb/default/plugin*
 .vim/tmp/*
 !.vim/tmp/
+*/mpd/database
+*/mpd/log
+*/mpd/pid
+*/mpd/state
+*/mpd/*.sql
