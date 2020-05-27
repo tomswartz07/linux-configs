@@ -89,10 +89,14 @@ URxvt*colorUL:                        #87afd7
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt*font:                           xft:Hack:size=8,xft:Noto Emoji:size=6,xft:Symbola:size=6
-URxvt*boldFont:                       xft:Hack:size=8:bold,xft:Noto Emoji:size=6,xft:Symbola:size=6
-URxvt*italicFont:                     xft:Hack:size=8:italic,xft:Noto Emoji:size=6,xft:Symbola:size=6
-URxvt*boldItalicFont:                 xft:Hack:size=8:italic:bold,xft:Noto Emoji:size=6,xft:Symbola:size=6
+URxvt*font:                           xft:Hack Nerd Font Mono:size=8,xft:Noto Emoji:size=8,xft:Symbola:size=8:minspace=False
+URxvt*boldFont:                       xft:Hack Nerd Font Mono:size=8:bold,xft:Noto Emoji:size=8,xft:Symbola:size=8:minspace=False
+URxvt*italicFont:                     xft:Hack Nerd Font Mono:size=8:italic,xft:Noto Emoji:size=6,xft:Symbola:size=8:minspace=False
+URxvt*boldItalicFont:                 xft:Hack Nerd Font Mono:size=8:italic:bold,xft:Noto Emoji:size=8,xft:Symbola:size=8:minspace=False
+xterm*font:                           xft:Hack Nerd Font Mono:size=10,xft:Noto Emoji:size=8,xft:Symbola:size=8:minspace=False
+xterm*boldFont:                       xft:Hack Nerd Font Mono:size=10:bold,xft:Noto Emoji:size=8,xft:Symbola:size=8:minspace=False
+xterm*italicFont:                     xft:Hack Nerd Font Mono:size=10:italic,xft:Noto Emoji:size=8,xft:Symbola:size=8:minspace=False
+xterm*boldItalicFont:                 xft:Hack Nerd Font Mono:size=10:italic:bold,xft:Noto Emoji:size=8,xft:Symbola:size=8:minspace=False
 !URxvt*font:                           xft:Hack:size=8, xft:Noto Emoji:size=8,xft:Droid Sans Mono for Powerline:size=8, Roboto:style=Thin:size=8
 !URxvt*boldFont:                       xft:Hack:size=8:bold, xft:Noto Emoji:size=8:bold,xft:Droid Sans Mono for Powerline:size=8:bold
 !URxvt*italicFont:                     xft:Hack:size=8:italic, xft:Noto Emoji:size=8:italic,xft:Droid Sans Mono for Powerline:size=8:italic
