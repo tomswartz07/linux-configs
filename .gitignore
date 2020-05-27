@@ -4,6 +4,7 @@ dwb/default/*
 !dwb/default/custom_keys
 !dwb/default/plugin*
 .vim/tmp/*
+.vim/.net*
 !.vim/tmp/
 */mpd/database
 */mpd/log
