@@ -113,6 +113,10 @@ EXEC 01;32
 # various files
 .apk 00;34
 .bak 45;31;01
+.txt 00;32
+.pp 00;34
+.apk 00;34
+.pdf 00;34
 .doc 01;35
 .docx 01;35
 .json 00;32
@@ -127,6 +131,7 @@ EXEC 01;32
 .txt 00;32
 .xls 01;35
 .xlsx 01;35
+.sql 03;33
 #  Markup/Markdown
 .css 03;32
 .xml 00;32
