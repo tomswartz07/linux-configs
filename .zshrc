@@ -95,7 +95,7 @@ alias vim='vim -O'
 alias ls='ls --color -lhSAv --group-directories-first'
 
 # Always attach to a current tmux session
-#alias tmux='tmux attach'
+alias ttyd_tmux='ttyd -R tmux attach -t "Server"'
 
 # Show the biggest files in this directory
 alias dusize="sudo du -hs ** | sort -hr | head -10"
