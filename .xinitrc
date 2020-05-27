@@ -1,8 +1,8 @@
 xset s on
 xset b off
-syndaemon -t -k -i 2 -d &
-synclient TouchpadOff=1
-synclient TapButton3=2
+#syndaemon -t -k -i 2 -d &
+#synclient TouchpadOff=1
+#synclient TapButton3=2
 setxkbmap -option compose:ralt
 setxkbmap -option caps:escape
 eval `dbus-launch --sh-syntax`
