@@ -4,10 +4,13 @@ set from="tom.swartz@crunchydata.com"
 set hostname="crunchydata.com"
 set sendmail="/usr/bin/msmtp -a crunchydata"
 set header_cache="~/.mutt/headercache-crunchy"
+set message_cachedir="~/.mutt/cache/crunchy"
 set folder=imaps://imap.gmail.com/
 set spoolfile=+INBOX
 set postponed="~/.mutt/postponed-crunchy"
-mailboxes =INBOX
+mailboxes =INBOX "=[Gmail]/Sent Mail" "=[Gmail]/Starred"
+set alias_file="~/.mutt/aliases-crunchy"
+source "~/.mutt/aliases-crunchy"
 #set record=+"[Gmail]/Sent Mail"
 #fcc-hook ~A ="[Gmail]/Sent Mail"
 
@@ -17,6 +20,7 @@ source "gpg --textmode -d ~/.mutt/password-crunchy.gpg |"
 # Service Specific Macros
 macro index,pager ga "<save-message>=[Gmail]/All Mail<enter>" "Archive message"
 macro index,pager gh "<save-message>=HR<enter>" "Archive message to HR folder"
+macro index,pager gi "<save-message>=Interesting Incidents<enter>" "Archive message to Interesting Incidents folder"
 macro index,pager gn "<save-message>=Accounts<enter>" "Archive message to Accounts folder"
 macro index,pager gg "<group-reply>" "Group Reply- to all recipients"
 

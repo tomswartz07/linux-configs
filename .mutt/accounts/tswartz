@@ -4,10 +4,13 @@ set from="tom@tswartz.net"
 set hostname="gmail.com"
 set sendmail="/usr/bin/msmtp -a tswartz"
 set header_cache="~/.mutt/headercache-tswartz"
+set message_cachedir="~/.mutt/cache/tswartz"
 set folder=imaps://imap.gmail.com/
 set spoolfile=+INBOX
 set postponed="~/.mutt/postponed-tswartz"
-mailboxes =INBOX
+mailboxes =INBOX "=[Gmail]/Sent Mail" "=[Gmail]/Starred"
+set alias_file= ~/.mutt/aliases
+source $alias_file
 #set record=+"[Gmail]/Sent Mail"
 #fcc-hook ~A ="[Gmail]/Sent Mail"
 
