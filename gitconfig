@@ -1,7 +1,7 @@
 [user]
         name = Tom Swartz
         email = tom.swartz07@gmail.com
-        signingkey = 4D957D39
+        signingkey = CC2A1A93
 [push]
         default = current
 [help]
@@ -27,10 +27,17 @@
         tool = vimdiff
 [mergetool]
         prompt = false
-[url "https://github.com/"]
+[url "git@github.com:"]
         insteadOf = http://github.com/
         insteadOf = git://github.com/
 [rebase]
         autostash = true
 [pull]
         rebase = true
+[commit]
+        gpgsign = true
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
