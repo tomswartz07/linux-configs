@@ -239,3 +239,8 @@ fi
 if which vault >/dev/null 2>&1 ; then
         complete -o nospace -C /usr/bin/vault vault
 fi
+
+# Print out sysinfo on shell start
+#if which archey3 >/dev/null 2>&1 ; then
+#        archey3 --config ~/.config/archey3.cfg
+#fi
