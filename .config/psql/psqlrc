@@ -1,0 +1,18 @@
+-- Don't log these commands
+\set QUIET 1
+
+
+\setenv PAGER less
+\set PROMPT1 '%M:%> %n@%/%R%#%x '
+\set PROMPT2 '»» '
+\set HISTSIZE 2000
+\set HISTFILE ~/.config/psql/psql_history-:DBNAME
+
+
+\x auto
+--\pset null '¤'
+\timing
+--\set PROMPT1 '%M:%[%033[1;31m%]%>%[%033[0m%] %n@%/%R%#%x '
+\set QUIET 0
+
+-- vim: set ft=sql :
