@@ -17,9 +17,9 @@ set send_charset="utf-8"
 auto_view text/html application/pdf image/* application/msword
 # Enriched format first, then plain to prevent attachment view errors
 # https://gitlab.com/muttmua/mutt/-/wikis/MuttFaq/Attachment#why-cant-i-see-attachments-in-some-multipartalternative-emails
-alternative_order text/enriched text/plain text/html
+#alternative_order text/enriched text/plain text/html
 # Do plaintext last, optionally
-#alternative_order text/enriched text/html text/plain
+alternative_order text/html text/enriched text/plain
 # Handle ical/calendar events
 auto_view text/calendar application/ics
 
@@ -29,7 +29,7 @@ bind index "\Ca" 'imap-fetch-mail'
 # https://github.com/millermedeiros/gh-markdown-cli
 macro compose md "F mdown \ny^T^Utext/html; charset=utf-8\n" "Convert message from Markdown to HTML"
 # Hotkey return to Inbox
-macro index <home> "<change-folder>=INBOX<enter>" "Return to Inbox"
+macro index <Esc>h "<change-folder>=INBOX<enter>" "Return to Inbox"
 
 # Sidebar Settings
 bind index,pager B sidebar-toggle-visible
@@ -91,7 +91,7 @@ mono header bold "^([o|O]rganization):"
 color header brightblue default "^(Message-ID):"
 mono header bold "^(Message-ID):"
 ## Display the extra custom headers
-unignore organization: message-id:
+unignore organization:
 # Highlight web addresses
 color body brightgreen default "(http|https|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
