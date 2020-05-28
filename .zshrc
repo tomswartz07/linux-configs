@@ -27,14 +27,12 @@ setopt auto_continue
 zstyle :compinstall filename '/home/tom/.zshrc'
 
 autoload -Uz compinit
-compinit
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 # End of lines added by compinstall
 autoload -U promptinit
 promptinit
 autoload -U colors
 colors
-autoload -U compinit
-compinit
 zmodload -i zsh/complist
 autoload -Uz history-beginning-search-menu
 zle -N history-beginning-search-menu
