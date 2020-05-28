@@ -49,6 +49,8 @@ set swapfile
 set directory=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
 set backup
 set backupdir=$TMPDIR,~/.vim/tmp,~/tmp,/tmp,/var/tmp
+" Set non-$HOME dir vim support files
+set viminfofile=~/.vim/.viminfo
 
 " New and better diff settings
 if has("patch-8.1.0360")
