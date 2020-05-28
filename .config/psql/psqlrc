@@ -2,17 +2,28 @@
 \set QUIET 1
 
 
+-- Set the pager program (don't use `more`)
 \setenv PAGER less
+
+--\set PROMPT1 '%M:%[%033[1;31m%]%>%[%033[0m%] %n@%/%R%#%x '
 \set PROMPT1 '%M:%> %n@%/%R%#%x '
 \set PROMPT2 '»» '
+
+-- History file settings
 \set HISTSIZE 2000
 \set HISTFILE ~/.config/psql/psql_history-:DBNAME
 
 
+-- Automatically format if cols too wide
 \x auto
+
+-- Set Null char output to differentiate it from empty string
 --\pset null '¤'
+
+-- Always show query time
 \timing
---\set PROMPT1 '%M:%[%033[1;31m%]%>%[%033[0m%] %n@%/%R%#%x '
+
+-- Reset command logging
 \set QUIET 0
 
 -- vim: set ft=sql :
