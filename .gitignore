@@ -6,8 +6,10 @@ dwb/default/*
 .vim/tmp/*
 .vim/.net*
 !.vim/tmp/
+.vim/.viminf*
 */mpd/database
 */mpd/log
 */mpd/pid
 */mpd/state
 */mpd/*.sql
+*/liferea/*
