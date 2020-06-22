@@ -5,8 +5,10 @@
 -- Set the pager program (don't use `more`)
 \setenv PAGER less
 
---\set PROMPT1 '%M:%[%033[1;31m%]%>%[%033[0m%] %n@%/%R%#%x '
-\set PROMPT1 '%M:%> %n@%/%R%#%x '
+-- Info on prompt custom vars:
+-- https://www.postgresql.org/docs/9.3/app-psql.html#APP-PSQL-PROMPTING
+--\set PROMPT1 '%M:%> %n@%/%R%#%x '
+\set PROMPT1 '%[%033[1;32m%]%M%[%033[0m%]:%[%033[1;33m%]%>%[%033[0m%] %[%033[1;36m%]%n%[%033[0m%]@%[%033[4;33m%]%/%[%033[0m%]%R%#%x '
 \set PROMPT2 '»» '
 
 -- History file settings
