@@ -13,6 +13,7 @@ general {
         color_bad = "#e5786d"
         color_separator = "#88b8f6"
         interval = 5
+        output_format = i3bar
 }
 
 #order += "ipv6"
@@ -37,7 +38,7 @@ order += "tztime utc"
 
 cpu_temperature 0 {
         format = "❄ %degrees°C"
-        max_threshold = 70 # 158°F
+        max_threshold = 73 # 164°F
         path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input"
 }
 
@@ -89,7 +90,7 @@ path_exists VPN {
 }
 
 tztime local {
-        format = "%a %d %b %Y %H.%M"
+        format = "%a %d %b %Y %H.%M %Z"
 }
 
 tztime utc {

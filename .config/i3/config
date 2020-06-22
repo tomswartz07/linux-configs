@@ -234,7 +234,7 @@ exec x11vnc
 exec --no-startup-id caffeine
 #exec --no-startup-id mopidy
 exec --no-startup-id xdotool key --clearmodifiers Num_Lock
-exec --no-startup-id solaar --restart-on-wake-up -t
+exec --no-startup-id solaar --restart-on-wake-up -w hide
 exec --no-startup-id redshift-gtk
 exec --no-startup-id thunar --daemon
 exec --no-startup-id udiskie -2
