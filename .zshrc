@@ -98,6 +98,9 @@ alias ttyd_tmux='ttyd -R tmux attach -t "Server"'
 # Show the biggest files in this directory
 alias dusize="sudo du -hs ** | sort -hr | head -10"
 
+# Get fail2ban info
+alias f2bstats="sudo awk '(\$(NF-1) = /Ban/){print \$NF}' /var/log/fail2ban.log | sort | uniq -c | sort -n"
+
 # Aliases and exports for Bosh, because it sucks
 alias bosh="/usr/bin/bosh"
 if [[ -e "$HOME/git/bosh-deployment/deployments/vbox/state.json" ]]; then
@@ -229,14 +232,14 @@ elif [ -d /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 fi
 
 # K8s completion
-if which kubectl >/dev/null 2>&1 ; then
-        source <(kubectl completion zsh)
-fi
+#if which kubectl >/dev/null 2>&1 ; then
+#        source <(kubectl completion zsh)
+#fi
 
 # Vault completion
-if which vault >/dev/null 2>&1 ; then
-        complete -o nospace -C /usr/bin/vault vault
-fi
+#if which vault >/dev/null 2>&1 ; then
+#        complete -o nospace -C /usr/bin/vault vault
+#fi
 
 # Print out sysinfo on shell start
 #if which archey3 >/dev/null 2>&1 ; then
