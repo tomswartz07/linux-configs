@@ -184,9 +184,9 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Capture Screenshot
-bindsym $mod+Print exec scrot
-bindsym $mod+Shift+Print exec scrot -u
-bindsym --release $mod+Pause exec --no-startup-id scrot -s
+bindsym $mod+End exec scrot
+bindsym $mod+Shift+End exec scrot -u
+bindsym --release $mod+Home exec --no-startup-id scrot -s
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
