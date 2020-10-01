@@ -1,0 +1,17 @@
+# may/14/2020 21:36:07 by RouterOS 6.45.3
+# software id = 2JVL-PT9V
+#
+# model = RB750Gr3
+# serial number = 8B00097C4555
+/ip firewall nat
+add action=masquerade chain=srcnat comment="defconf: masquerade" ipsec-policy=out,none out-interface-list=WAN
+add action=masquerade chain=srcnat out-interface=modem
+add action=dst-nat chain=dstnat comment="SSH to PiHole" dst-port=922 in-interface=modem log=yes log-prefix="ssh: " protocol=tcp to-addresses=10.0.0.5 to-ports=22
+add action=dst-nat chain=dstnat comment="Web Server" disabled=yes dst-port=8081 in-interface=modem log=yes log-prefix=webserver protocol=tcp to-addresses=10.0.0.1 to-ports=80
+add action=dst-nat chain=dstnat disabled=yes dst-port=8080 in-interface=modem protocol=tcp to-addresses=10.0.0.5 to-ports=80
+add action=dst-nat chain=dstnat comment="Factorio Server" disabled=yes dst-port=34197 protocol=udp to-addresses=10.0.0.2 to-ports=34197
+add action=masquerade chain=srcnat comment="masq. vpn traffic" src-address=192.168.89.0/24
+add action=dst-nat chain=dstnat comment="Rogue DNS ReWrite dst-nat udp" dst-address=!10.0.0.5 dst-port=53 in-interface=bridge1 log=yes log-prefix=pihole-udp protocol=udp src-address=!10.0.0.5 to-addresses=10.0.0.5 to-ports=53
+add action=dst-nat chain=dstnat comment="Rogue DNS ReWrite dst-nat tcp" dst-address=!10.0.0.5 dst-port=53 in-interface=bridge1 log=yes log-prefix=pihole-tcp protocol=tcp src-address=!10.0.0.5 to-addresses=10.0.0.5 to-ports=53
+add action=masquerade chain=srcnat comment="Rogue DNS ReWrite masquerade udp" dst-address=10.0.0.5 dst-port=53 protocol=udp src-address=10.0.0.0/24
+add action=masquerade chain=srcnat comment="Rogue DNS ReWrite masquerade tcp" dst-address=10.0.0.5 dst-port=53 protocol=tcp src-address=10.0.0.0/24
