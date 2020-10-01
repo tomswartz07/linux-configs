@@ -1,0 +1,13 @@
+/home/pi/irclogs/*/*.log {
+  su pi pi
+  rotate 2
+  compress
+  daily
+  copytruncate
+  notifempty
+  missingok
+  postrotate
+    scp -r /home/pi/irclogs/* tom@10.0.0.2:irclogs/.
+  endscript
+ sharedscripts 
+}
