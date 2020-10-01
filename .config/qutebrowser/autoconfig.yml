@@ -12,7 +12,7 @@ settings:
         Ctrl+Shift+P: tab-pin
   content.notifications:
     https://www.reddit.com: false
-  statusbar.hide:
-    global: false
+  statusbar.show:
+    global: in-mode
   tabs.background:
     global: true
