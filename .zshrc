@@ -101,6 +101,10 @@ alias dusize="sudo du -hs ** | sort -hr | head -10"
 # Get fail2ban info
 alias f2bstats="sudo awk '(\$(NF-1) = /Ban/){print \$NF}' /var/log/fail2ban.log | sort | uniq -c | sort -n"
 
+# Play a sound, useful for headless notification
+# of long-running processes
+alias ding="paplay /usr/share/sounds/freedesktop/stereo/complete.oga"
+
 # Aliases and exports for Bosh, because it sucks
 alias bosh="/usr/bin/bosh"
 if [[ -e "$HOME/git/bosh-deployment/deployments/vbox/state.json" ]]; then
