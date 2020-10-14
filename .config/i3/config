@@ -171,8 +171,8 @@ bindsym $mod+b exec dwb
 # Multimedia Keys
 #bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Speaker 2dB+ unmute
 #bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Speaker 2dB- unmute
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_04_00.0.analog-stereo +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_04_00.0.analog-stereo -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume alsa_output.pci-0000_05_00.0.analog-stereo +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume alsa_output.pci-0000_05_00.0.analog-stereo -5%
 bindsym XF86AudioMute exec amixer -c 3 -q set Speaker toggle
 bindsym XF86AudioPlay exec mpc -q toggle
 bindsym XF86AudioStop exec mpc -q stop
