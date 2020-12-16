@@ -31,7 +31,7 @@
         <outline title="Wondermark" text="Wondermark" description="Wondermark" type="rss" id="sgfeiea" sortColumn="time" xmlUrl="http://feeds.feedburner.com/wondermark" htmlUrl="http://wondermark.com" updateInterval="-1" collapsed="true"/>
         <outline title="xkcd" text="xkcd" description="xkcd" type="atom" id="tbhwxsq" sortColumn="time" xmlUrl="https://xkcd.com/atom.xml" htmlUrl="https://xkcd.com/" updateInterval="-1" collapsed="true"/>
       </outline>
-      <outline title="Music Blogs" text="Music Blogs" description="Music Blogs" type="folder" id="gwophvj" sortColumn="time" collapsed="true">
+      <outline title="Music Blogs" text="Music Blogs" description="Music Blogs" type="folder" id="gwophvj" sortColumn="time" expanded="true">
         <outline title="Chromeo Diary" text="Chromeo Diary" description="Chromeo Diary" type="rss" id="ospahkg" sortColumn="time" xmlUrl="http://diary.chromeo.net/rss" htmlUrl="https://diary.chromeo.net/" updateInterval="-1" collapsed="true"/>
         <outline title="Gorilla vs. Bear" text="Gorilla vs. Bear" description="Gorilla vs. Bear" type="rss" id="ebewraw" sortColumn="time" xmlUrl="https://www.gorillavsbear.net/category/mp3/feed/" htmlUrl="https://www.gorillavsbear.net" updateInterval="-1" html5Extract="true" collapsed="true"/>
         <outline title="KEXP" text="KEXP" description="KEXP" type="rss" id="vdjpavp" sortColumn="time" xmlUrl="https://www.omnycontent.com/d/playlist/bad5d079-8dcb-4630-8770-aa090049131d/32b2ac38-5a48-4300-9fa6-aa40002038b5/4ac1c451-4315-4096-ab9b-aa40002038c4/podcast.rss" htmlUrl="https://www.kexp.org/podcasts/song-of-the-day" updateInterval="-1" collapsed="true"/>
@@ -39,7 +39,7 @@
         <outline title="This Song Is Sick" text="This Song Is Sick" description="This Song Is Sick" type="rss" id="euudpiy" sortColumn="time" xmlUrl="https://thissongissick.com/feed/" htmlUrl="https://thissongissick.com" updateInterval="-1" collapsed="true"/>
         <outline title="Punknews.org" text="Punknews.org" description="Punknews.org" type="rss" id="unheyyu" sortColumn="time" xmlUrl="https://static.punknews.org/feeds/punknews.rdf" htmlUrl="https://www.punknews.org" updateInterval="-1" collapsed="true"/>
       </outline>
-      <outline title="News" text="News" description="News" type="folder" id="cbiomyg" sortColumn="time" expanded="true">
+      <outline title="News" text="News" description="News" type="folder" id="cbiomyg" sortColumn="time" collapsed="true">
         <outline title="Discover Master Feed" text="Discover Master Feed" description="Discover Master Feed" type="rss" id="jtwiftc" sortColumn="time" viewMode="2" xmlUrl="http://feeds.feedburner.com/DiscoverMag" htmlUrl="https://www.discovermagazine.com/rss/all" updateInterval="-1" collapsed="true"/>
         <outline title="Science News" text="Science News" description="Science News" type="rss" id="qerkghb" sortColumn="time" xmlUrl="https://www.sciencenews.org/feed" htmlUrl="https://www.sciencenews.org" updateInterval="-1" ignoreComments="true" collapsed="true"/>
         <outline title="Boing Boing" text="Boing Boing" description="Boing Boing" type="rss" id="kxgiyev" sortColumn="time" xmlUrl="https://boingboing.net/feed" htmlUrl="https://boingboing.net" updateInterval="-1" collapsed="true"/>
@@ -63,6 +63,7 @@
         <outline title="Yogesh Sharma: Life with Open Source" text="Yogesh Sharma: Life with Open Source" description="Yogesh Sharma: Life with Open Source" type="rss" id="rqyscne" sortColumn="time" loadItemLink="true" xmlUrl="https://blog.catprosystems.com/post/index.xml" htmlUrl="https://blog.catprosystems.com/post/" updateInterval="-1" collapsed="true"/>
         <outline title="GitHub Status - Incident History" text="GitHub Status - Incident History" description="GitHub Status - Incident History" type="rss" id="upujtkv" sortColumn="time" xmlUrl="https://www.githubstatus.com/history.rss" htmlUrl="https://www.githubstatus.com" updateInterval="-1" collapsed="true"/>
         <outline title="GitHub Feed: tomswartz07" text="GitHub Feed: tomswartz07" description="GitHub Feed: tomswartz07" type="atom" id="mclrdfl" sortColumn="time" xmlUrl="https://github.com/tomswartz07.private.atom?token=AAEOJTSJPYSVUUWMO7KBFLV4PQJOI" htmlUrl="https://github.com/tomswartz07.private.atom?token=AAEOJTSJPYSVUUWMO7KBFLV4PQJOI" updateInterval="-1" cacheLimit="unlimited" markAsRead="true" collapsed="true"/>
+        <outline title="Wolfram Blog" text="Wolfram Blog" description="Wolfram Blog" type="rss" id="voiwyld" sortColumn="time" xmlUrl="https://blog.wolfram.com/feed/rss/" htmlUrl="https://blog.wolfram.com" updateInterval="-1" collapsed="true"/>
         <outline title="Penn Manor Technology Blog" text="Penn Manor Technology Blog" description="Penn Manor Technology Blog" type="rss" id="ntqdsos" sortColumn="time" loadItemLink="true" xmlUrl="https://technology.pennmanor.net/feed/" htmlUrl="https://technology.pennmanor.net" updateInterval="-1" collapsed="true"/>
         <outline title="Mobile" text="Mobile" description="Mobile" type="folder" id="duuwppi" sortColumn="time" expanded="true">
           <outline title="Android Developers Blog" text="Android Developers Blog" description="Android Developers Blog" type="atom" id="stycbov" sortColumn="time" xmlUrl="http://feeds.feedburner.com/blogspot/hsDu" htmlUrl="http://feeds.feedburner.com/blogspot/hsDu" updateInterval="-1" collapsed="true"/>
@@ -77,7 +78,6 @@
         <outline title="OZ9AEC Website" text="OZ9AEC Website" description="OZ9AEC Website" type="rss" id="durjgws" sortColumn="time" xmlUrl="https://oz9aec.net/feed" htmlUrl="https://oz9aec.net" updateInterval="-1" collapsed="true"/>
         <outline title="Planet PostgreSQL" text="Planet PostgreSQL" description="Planet PostgreSQL" type="rss" id="glwmeth" sortColumn="time" loadItemLink="true" xmlUrl="https://planet.postgresql.org/rss20.xml" htmlUrl="https://planet.postgresql.org" updateInterval="-1" html5Extract="true" collapsed="true"/>
       </outline>
-      <outline title="Wolfram Blog" text="Wolfram Blog" description="Wolfram Blog" type="rss" id="voiwyld" sortColumn="time" xmlUrl="https://blog.wolfram.com/feed/rss/" htmlUrl="https://blog.wolfram.com" updateInterval="-1" collapsed="true"/>
     </outline>
     <outline title="Unread" text="Unread" description="Unread" type="vfolder" id="ewividb" sortColumn="time" matchType="any" collapsed="true">
       <outline type="rule" text="Read status" rule="unread" value="" additive="true"/>
