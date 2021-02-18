@@ -1,35 +1,35 @@
 {
-  "service": {
-    "nat": {
-      "rule": {
-        "1": {
-          "description": "DNS Redirect to PiHole",
-            "destination": {
-              "port": "53"
-            },
-            "inbound-interface": "eth1",
-            "inside-address": {
-              "address": "10.0.0.6"
-            },
-            "log": "disable",
-            "protocol": "tcp_udp",
-            "source": {
-              "address": "!10.0.0.6"
-            },
-            "type": "destination"
-        },
-          "5500": {
-            "description": "Translate DNS to Internal",
-            "destination": {
-              "address": "10.0.0.6",
-              "port": "53"
-            },
-            "log": "disable",
-            "outbound-interface": "eth1",
-            "protocol": "tcp_udp",
-            "type": "masquerade"
-          }
-      }
+    "service": {
+        "nat": {
+            "rule": {
+                "1": {
+                    "description": "DNS Redirect to PiHole",
+                    "destination": {
+                        "port": "53"
+                    },
+                    "inbound-interface": "eth1",
+                    "inside-address": {
+                        "address": "10.0.0.6"
+                    },
+                    "log": "disable",
+                    "protocol": "tcp_udp",
+                    "source": {
+                        "address": "!10.0.0.6"
+                    },
+                    "type": "destination"
+                },
+                "5500": {
+                    "description": "Translate DNS to Internal",
+                    "destination": {
+                        "address": "10.0.0.6",
+                        "port": "53"
+                    },
+                    "log": "disable",
+                    "outbound-interface": "eth1",
+                    "protocol": "tcp_udp",
+                    "type": "masquerade"
+                }
+            }
+        }
     }
-  }
 }
