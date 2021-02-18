@@ -20,7 +20,7 @@ general {
 order += "disk /"
 order += "disk /home"
 order += "disk /mnt/Storage"
-order += "disk /mnt/Teradrive"
+order += "disk /mnt/synology"
 order += "run_watch SSH"
 order += "run_watch nginx"
 order += "path_exists fail2ban"
@@ -120,15 +120,15 @@ disk "/home" {
         threshold_type = percentage_free
 }
 
-disk "/mnt/Teradrive" {
-        format = "Teradrive: %free"
+disk "/mnt/Storage" {
+        format = "Storage: %free"
         low_threshold = 30
         threshold_type = percentage_free
 }
 
-disk "/mnt/Storage" {
-        format = "Storage: %free"
-        low_threshold = 30
+disk "/mnt/synology" {
+        format = "NAS: %free"
+        low_threshold = 20
         threshold_type = percentage_free
 }
 
