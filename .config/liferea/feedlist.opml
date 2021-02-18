@@ -5,12 +5,12 @@
   </head>
   <body>
     <outline title="Magrathea" text="Magrathea" description="Magrathea" type="folder" id="iashrnq" sortColumn="time" viewMode="2" expanded="true">
-      <outline title="Comics" text="Comics" description="Comics" type="folder" id="bjhtens" sortColumn="time" collapsed="true">
+      <outline title="Comics" text="Comics" description="Comics" type="folder" id="bjhtens" sortColumn="time" expanded="true">
         <outline title="Finished Runs" text="Finished Runs" description="Finished Runs" type="folder" id="oibacwm" sortColumn="time" collapsed="true">
           <outline title="Jaula de mariposas" text="Jaula de mariposas" description="Jaula de mariposas" type="rss" id="xubrbty" sortColumn="time" xmlUrl="http://chiisao.tumblr.com/rss" htmlUrl="https://chiisao.tumblr.com/" updateInterval="-1" collapsed="true"/>
           <outline title="Abstruse Goose" text="Abstruse Goose" description="Abstruse Goose" type="rss" id="tutqgky" sortColumn="time" xmlUrl="https://abstrusegoose.com/feed.xml" htmlUrl="https://abstrusegoose.com" updateInterval="-1" collapsed="true"/>
           <outline title="Hark, A Vagrant!" text="Hark, A Vagrant!" description="Hark, A Vagrant!" type="rss" id="nwbhvor" sortColumn="time" xmlUrl="http://www.harkavagrant.com/rssfeed.php" htmlUrl="http://www.harkavagrant.com" updateInterval="-1" collapsed="true"/>
-          <outline title="Brown Sharpie" text="Brown Sharpie" description="Brown Sharpie" type="html5" id="eltuiiw" sortColumn="time" xmlUrl="http://brownsharpie.courtneygibbons.org/feed/" htmlUrl="http://brownsharpie.courtneygibbons.org" updateInterval="-1" collapsed="true"/>
+          <outline title="Brown Sharpie" text="Brown Sharpie" description="Brown Sharpie" type="rss" id="eltuiiw" sortColumn="time" xmlUrl="http://brownsharpie.courtneygibbons.org/feed/" htmlUrl="https://brownsharpie.courtneygibbons.org" updateInterval="-1" collapsed="true"/>
           <outline title="A Softer World" text="A Softer World" description="A Softer World" type="rss" id="itcdaht" sortColumn="time" xmlUrl="https://asofterworld.com/rssfeed.php" htmlUrl="http://www.asofterworld.com" updateInterval="-1" html5Extract="true" collapsed="true"/>
         </outline>
         <outline title="Buttersafe - Updated Tuesdays and Thursdays" text="Buttersafe - Updated Tuesdays and Thursdays" description="Buttersafe - Updated Tuesdays and Thursdays" type="rss" id="yoapucv" sortColumn="time" loadItemLink="true" xmlUrl="http://feeds.feedburner.com/buttersafe" htmlUrl="http://www.buttersafe.com" updateInterval="-1" html5Extract="true" collapsed="true"/>
@@ -52,7 +52,7 @@
       </outline>
       <outline title="Technology" text="Technology" description="Technology" type="folder" id="yrukkkp" sortColumn="time" expanded="true">
         <outline title="Krebs on Security" text="Krebs on Security" description="Krebs on Security" type="rss" id="hjmyeqs" sortColumn="time" xmlUrl="https://krebsonsecurity.com/feed/" htmlUrl="https://krebsonsecurity.com" updateInterval="-1" collapsed="true"/>
-        <outline title="Arch Linux: Recent news updates" text="Arch Linux: Recent news updates" description="Arch Linux: Recent news updates" type="rss" id="crqykmi" sortColumn="time" xmlUrl="https://www.archlinux.org/feeds/news/" htmlUrl="https://www.archlinux.org/news/" updateInterval="-1" collapsed="true"/>
+        <outline title="Arch Linux: Recent news updates" text="Arch Linux: Recent news updates" description="Arch Linux: Recent news updates" type="rss" id="crqykmi" sortColumn="time" xmlUrl="https://archlinux.org/feeds/news/" htmlUrl="https://archlinux.org/news/" updateInterval="-1" collapsed="true"/>
         <outline title="Blog &#x2013; Hackaday" text="Blog &#x2013; Hackaday" description="Blog &#x2013; Hackaday" type="rss" id="jdeuvsu" sortColumn="time" xmlUrl="https://hackaday.com/blog/feed/" htmlUrl="https://hackaday.com" updateInterval="-1" collapsed="true"/>
         <outline title="Clients From Hell" text="Clients From Hell" description="Clients From Hell" type="rss" id="kmbasdq" sortColumn="time" xmlUrl="https://clientsfromhell.net/feed/" htmlUrl="https://clientsfromhell.net" updateInterval="-1" collapsed="true"/>
         <outline title="Jessie Frazelle's Blog" text="Jessie Frazelle's Blog" description="Jessie Frazelle's Blog" type="rss" id="uyfhgpa" sortColumn="time" xmlUrl="https://blog.jessfraz.com/index.xml" htmlUrl="https://blog.jessfraz.com/" updateInterval="-1" collapsed="true"/>
@@ -69,7 +69,7 @@
           <outline title="Android Developers Blog" text="Android Developers Blog" description="Android Developers Blog" type="atom" id="stycbov" sortColumn="time" xmlUrl="http://feeds.feedburner.com/blogspot/hsDu" htmlUrl="http://feeds.feedburner.com/blogspot/hsDu" updateInterval="-1" collapsed="true"/>
           <outline title="Android Central" text="Android Central" description="Android Central" type="rss" id="oprlvgo" sortColumn="time" xmlUrl="http://feeds2.feedburner.com/androidcentral?format=xml" htmlUrl="https://www.androidcentral.com/" updateInterval="-1" collapsed="true"/>
         </outline>
-        <outline title="Open Source" text="Open Source" description="Open Source" type="folder" id="gdpjmet" sortColumn="time" collapsed="true">
+        <outline title="Open Source" text="Open Source" description="Open Source" type="folder" id="gdpjmet" sortColumn="time" expanded="true">
           <outline title="Ubuntu Geek" text="Ubuntu Geek" description="Ubuntu Geek" type="rss" id="ruubcoy" sortColumn="time" xmlUrl="http://feeds.feedburner.com/UbuntuGeek" htmlUrl="http://www.ubuntugeek.com" updateInterval="-1" collapsed="true"/>
           <outline title="Omg! Ubuntu!" text="Omg! Ubuntu!" description="Omg! Ubuntu!" type="rss" id="urbqrov" sortColumn="time" xmlUrl="http://feeds.feedburner.com/d0od" htmlUrl="https://www.omgubuntu.co.uk" updateInterval="-1" collapsed="true"/>
           <outline title="Liferea Blog" text="Liferea Blog" description="Liferea Blog" type="atom" id="uqdhpie" sortColumn="time" xmlUrl="http://feeds.feedburner.com/LifereaBlog" htmlUrl="http://feeds.feedburner.com/LifereaBlog" updateInterval="-1" collapsed="true"/>
