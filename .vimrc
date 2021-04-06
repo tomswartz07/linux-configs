@@ -106,7 +106,10 @@ nnoremap <Leader>w :set diffopt+=iwhite<CR>
 " Toggle line wrapping
 nnoremap <Leader>W :set wrap!<CR>
 " Toggle spell check
-nnoremap <Leader>s :set spell!<CR>
+nnoremap <Leader>s :set invspell<CR>
+" Toggle basic english and standard spell check
+nmap ;ss :set invspell spelllang=en-basic<CR>
+nmap  ;s :set invspell spelllang=en<CR>
 " Use pop-up window for spell check: hit <C-c> to select option
 nnoremap z= ea<C-X><C-S>
 " Create a new tab
