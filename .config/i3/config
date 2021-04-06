@@ -231,8 +231,8 @@ exec parcellite
 exec unclutter -noevents
 exec volti
 exec x11vnc
-exec --no-startup-id caffeine
-#exec --no-startup-id mopidy
+#exec --no-startup-id caffeine
+exec --no-startup-id mpd
 exec --no-startup-id xdotool key --clearmodifiers Num_Lock
 exec --no-startup-id solaar --restart-on-wake-up -w hide
 exec --no-startup-id redshift-gtk
