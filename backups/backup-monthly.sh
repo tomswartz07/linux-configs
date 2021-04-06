@@ -3,9 +3,9 @@
 # Backup Cron Job to rsync files to and from NAS
 
 RSYNC_BIN=/usr/bin/rsync
-RSYNC_OPTIONS="--recursive -a --times --perms --owner --group --update --checksum --links --compress --protect-args"
-BACKUP_DIR=/mnt/synology/magrathea
-MAIL_BACKUP_DIR=/mnt/synology/mail
+RSYNC_OPTIONS="-v --progress --recursive -a --times --perms --owner --group --update --checksum --links --compress --protect-args"
+BACKUP_DIR=/mnt/newnas/home/magrathea
+MAIL_BACKUP_DIR=/mnt/newnas/home/mail
 
 if [ -d ${BACKUP_DIR} ]; then
         # Mail Backup
@@ -15,5 +15,5 @@ if [ -d ${BACKUP_DIR} ]; then
 fi
 
 if [ -d /mnt/Storage/Music ]; then
-        ${RSYNC_BIN} -a ~/Music /mnt/Storage/Music
+        ${RSYNC_BIN} -a -v --progress /mnt/Storage/Music/ /mnt/newnas/music
 fi

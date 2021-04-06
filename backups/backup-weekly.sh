@@ -3,8 +3,8 @@
 # Backup Cron Job to rsync files to and from NAS
 
 RSYNC_BIN=/usr/bin/rsync
-RSYNC_OPTIONS="--recursive -a --delete --times --perms --owner --group --update --checksum --links --compress --protect-args"
-BACKUP_DIR=/mnt/synology/magrathea
+RSYNC_OPTIONS="-v --recursive -a --delete --times --perms --owner --group --update --checksum --links --compress --protect-args"
+BACKUP_DIR=/mnt/newnas/home/magrathea
 
 if [ -d ${BACKUP_DIR} ]; then
         # Documents

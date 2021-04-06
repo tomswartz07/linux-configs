@@ -21,6 +21,7 @@ order += "disk /"
 order += "disk /home"
 order += "disk /mnt/Storage"
 order += "disk /mnt/synology"
+order += "disk /mnt/newnas/home"
 order += "run_watch SSH"
 order += "run_watch nginx"
 order += "path_exists fail2ban"
@@ -127,7 +128,13 @@ disk "/mnt/Storage" {
 }
 
 disk "/mnt/synology" {
-        format = "NAS: %free"
+        format = "DS416: %free"
+        low_threshold = 15
+        threshold_type = percentage_free
+}
+
+disk "/mnt/newnas/home" {
+        format = "DS1821: %free"
         low_threshold = 20
         threshold_type = percentage_free
 }
