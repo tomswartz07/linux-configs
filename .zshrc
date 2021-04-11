@@ -106,20 +106,20 @@ alias f2bstats="sudo awk '(\$(NF-1) = /Ban/){print \$NF}' /var/log/fail2ban.log 
 alias ding="paplay /usr/share/sounds/freedesktop/stereo/complete.oga"
 
 # Aliases and exports for Bosh, because it sucks
-alias bosh="/usr/bin/bosh"
-if [[ -e "$HOME/git/bosh-deployment/deployments/vbox/state.json" ]]; then
-        export BOSH_CLIENT=admin
-        export BOSH_ENVIRONMENT=vbox
-        export BOSH_CLIENT_SECRET=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /admin_password)
-        export BOSH_CA_CERT=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /director_ssl/ca)
-        export CF_STEMCELL_VERSION=$(bosh int ~/git/cf-deployment/cf-deployment.yml --path /stemcells/alias=default/version)
-        export CREDHUB_CLIENT=credhub-admin
-        export CREDHUB_SERVER=https://192.168.50.6:8844/
-        export CREDHUB_SECRET=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /credhub_admin_client_secret)
-        export CREDHUB_CA_CERT="$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /credhub_tls/ca)\n$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /uaa_ssl/ca)"
-        alias bosh_save="vboxmanage controlvm $(bosh int ~/git/bosh-deployment/deployments/vbox/state.json --path /current_vm_cid) savestate"
-        alias bosh_up="vboxmanage startvm $(bosh int ~/git/bosh-deployment/deployments/vbox/state.json --path /current_vm_cid) --type headless"
-fi
+#alias bosh="/usr/bin/bosh"
+#if [[ -e "$HOME/git/bosh-deployment/deployments/vbox/state.json" ]]; then
+#        export BOSH_CLIENT=admin
+#        export BOSH_ENVIRONMENT=vbox
+#        export BOSH_CLIENT_SECRET=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /admin_password)
+#        export BOSH_CA_CERT=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /director_ssl/ca)
+#        export CF_STEMCELL_VERSION=$(bosh int ~/git/cf-deployment/cf-deployment.yml --path /stemcells/alias=default/version)
+#        export CREDHUB_CLIENT=credhub-admin
+#        export CREDHUB_SERVER=https://192.168.50.6:8844/
+#        export CREDHUB_SECRET=$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /credhub_admin_client_secret)
+#        export CREDHUB_CA_CERT="$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /credhub_tls/ca)\n$(bosh int ~/git/bosh-deployment/deployments/vbox/creds.yml --path /uaa_ssl/ca)"
+#        alias bosh_save="vboxmanage controlvm $(bosh int ~/git/bosh-deployment/deployments/vbox/state.json --path /current_vm_cid) savestate"
+#        alias bosh_up="vboxmanage startvm $(bosh int ~/git/bosh-deployment/deployments/vbox/state.json --path /current_vm_cid) --type headless"
+#fi
 
 # Watch a .tex file and compile it when you write to it
 function pdflatex-watch() { while true; do inotifywait -e modify "$1"; pdflatex -interaction=nonstopmode "$1"; done;}
@@ -236,9 +236,9 @@ elif [ -d /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 fi
 
 # K8s completion
-#if which kubectl >/dev/null 2>&1 ; then
-#        source <(kubectl completion zsh)
-#fi
+if which kubectl >/dev/null 2>&1 ; then
+        source <(kubectl completion zsh)
+fi
 
 # Vault completion
 #if which vault >/dev/null 2>&1 ; then
