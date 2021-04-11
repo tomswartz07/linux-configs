@@ -82,16 +82,20 @@ color header brightblue default "^(From|To|Subject|Cc|Date):"
 mono header bold "^(From|To|Subject|Cc|Date|[u|U]ser-[a|A]gent|[x|X]-[m|M]ailer):"
 # Highlight certain header info
 ## X-Mailer and User-Agent
-color header brightblue default "^([u|U]ser-[a|A]gent|[x|X]-[m|M]ailer):"
+color header blue default "^([u|U]ser-[a|A]gent|[x|X]-[m|M]ailer):"
 mono header bold "^([u|U]ser-[a|A]gent|[x|X]-[m|M]ailer):"
 ## Organization Header
-color header brightblue default "^([o|O]rganization):"
+color header blue default "^([o|O]rganization):"
 mono header bold "^([o|O]rganization):"
 ## Message-ID
-color header brightblue default "^(Message-ID):"
+color header blue default "^(Message-ID):"
 mono header bold "^(Message-ID):"
-## Display the extra custom headers
-unignore organization:
+## Content Type
+color header blue default "^(Content-Type):"
+mono header bold "^(Content-Type):"
+## X- Headers
+color header blue default "^([x|X]-)"
+mono header bold "^([x|X]-)"
 # Highlight web addresses
 color body brightgreen default "(http|https|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
@@ -111,6 +115,15 @@ color index brightyellow default "~F"
 color compose header green default
 color compose security_none red default
 
+# Display the extra custom headers
+unignore organization:
+unignore x-
+unignore user-agent
+unignore posted-to
+unignore content-type
+# Set some custom headers
+my_hdr X-Hack-The-Planet: Yes
+my_hdr X-Acid-Burn: Yes
 
 # Encryption settings. Suck one, NSA.
 set pgp_use_gpg_agent=no
