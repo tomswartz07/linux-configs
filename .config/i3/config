@@ -240,7 +240,7 @@ exec --no-startup-id thunar --daemon
 exec --no-startup-id udiskie -2
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
-exec --no-startup-id liferea
+#exec --no-startup-id liferea
 exec --no-startup-id seahorse --no-window
 exec --no-startup-id gpg-agent --homedir /home/tom/.gnupg --use-standard-socket --daemon
 exec --no-startup-id conky --config=.config/conky/conky.conf

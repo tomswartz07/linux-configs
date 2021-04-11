@@ -5,7 +5,7 @@
   </head>
   <body>
     <outline title="Magrathea" text="Magrathea" description="Magrathea" type="folder" id="iashrnq" sortColumn="time" viewMode="2" expanded="true">
-      <outline title="Comics" text="Comics" description="Comics" type="folder" id="bjhtens" sortColumn="time" expanded="true">
+      <outline title="Comics" text="Comics" description="Comics" type="folder" id="bjhtens" sortColumn="time" collapsed="true">
         <outline title="Finished Runs" text="Finished Runs" description="Finished Runs" type="folder" id="oibacwm" sortColumn="time" collapsed="true">
           <outline title="Jaula de mariposas" text="Jaula de mariposas" description="Jaula de mariposas" type="rss" id="xubrbty" sortColumn="time" xmlUrl="http://chiisao.tumblr.com/rss" htmlUrl="https://chiisao.tumblr.com/" updateInterval="-1" collapsed="true"/>
           <outline title="Abstruse Goose" text="Abstruse Goose" description="Abstruse Goose" type="rss" id="tutqgky" sortColumn="time" xmlUrl="https://abstrusegoose.com/feed.xml" htmlUrl="https://abstrusegoose.com" updateInterval="-1" collapsed="true"/>
@@ -31,7 +31,7 @@
         <outline title="Wondermark" text="Wondermark" description="Wondermark" type="rss" id="sgfeiea" sortColumn="time" xmlUrl="http://feeds.feedburner.com/wondermark" htmlUrl="http://wondermark.com" updateInterval="-1" collapsed="true"/>
         <outline title="xkcd" text="xkcd" description="xkcd" type="atom" id="tbhwxsq" sortColumn="time" xmlUrl="https://xkcd.com/atom.xml" htmlUrl="https://xkcd.com/" updateInterval="-1" collapsed="true"/>
       </outline>
-      <outline title="Music Blogs" text="Music Blogs" description="Music Blogs" type="folder" id="gwophvj" sortColumn="time" expanded="true">
+      <outline title="Music Blogs" text="Music Blogs" description="Music Blogs" type="folder" id="gwophvj" sortColumn="time" collapsed="true">
         <outline title="Chromeo Diary" text="Chromeo Diary" description="Chromeo Diary" type="rss" id="ospahkg" sortColumn="time" xmlUrl="http://diary.chromeo.net/rss" htmlUrl="https://diary.chromeo.net/" updateInterval="-1" collapsed="true"/>
         <outline title="Gorilla vs. Bear" text="Gorilla vs. Bear" description="Gorilla vs. Bear" type="rss" id="ebewraw" sortColumn="time" xmlUrl="https://www.gorillavsbear.net/category/mp3/feed/" htmlUrl="https://www.gorillavsbear.net" updateInterval="-1" html5Extract="true" collapsed="true"/>
         <outline title="KEXP" text="KEXP" description="KEXP" type="rss" id="vdjpavp" sortColumn="time" xmlUrl="https://www.omnycontent.com/d/playlist/bad5d079-8dcb-4630-8770-aa090049131d/32b2ac38-5a48-4300-9fa6-aa40002038b5/4ac1c451-4315-4096-ab9b-aa40002038c4/podcast.rss" htmlUrl="https://www.kexp.org/podcasts/song-of-the-day" updateInterval="-1" collapsed="true"/>
@@ -65,11 +65,11 @@
         <outline title="GitHub Feed: tomswartz07" text="GitHub Feed: tomswartz07" description="GitHub Feed: tomswartz07" type="atom" id="mclrdfl" sortColumn="time" xmlUrl="https://github.com/tomswartz07.private.atom?token=AAEOJTSJPYSVUUWMO7KBFLV4PQJOI" htmlUrl="https://github.com/tomswartz07.private.atom?token=AAEOJTSJPYSVUUWMO7KBFLV4PQJOI" updateInterval="-1" cacheLimit="unlimited" markAsRead="true" collapsed="true"/>
         <outline title="Wolfram Blog" text="Wolfram Blog" description="Wolfram Blog" type="rss" id="voiwyld" sortColumn="time" xmlUrl="https://blog.wolfram.com/feed/" htmlUrl="https://blog.wolfram.com" updateInterval="-1" collapsed="true"/>
         <outline title="Penn Manor Technology Blog" text="Penn Manor Technology Blog" description="Penn Manor Technology Blog" type="rss" id="ntqdsos" sortColumn="time" loadItemLink="true" xmlUrl="https://technology.pennmanor.net/feed/" htmlUrl="https://technology.pennmanor.net" updateInterval="-1" collapsed="true"/>
-        <outline title="Mobile" text="Mobile" description="Mobile" type="folder" id="duuwppi" sortColumn="time" expanded="true">
+        <outline title="Mobile" text="Mobile" description="Mobile" type="folder" id="duuwppi" sortColumn="time" collapsed="true">
           <outline title="Android Developers Blog" text="Android Developers Blog" description="Android Developers Blog" type="atom" id="stycbov" sortColumn="time" xmlUrl="http://feeds.feedburner.com/blogspot/hsDu" htmlUrl="http://feeds.feedburner.com/blogspot/hsDu" updateInterval="-1" collapsed="true"/>
           <outline title="Android Central" text="Android Central" description="Android Central" type="rss" id="oprlvgo" sortColumn="time" xmlUrl="http://feeds2.feedburner.com/androidcentral?format=xml" htmlUrl="https://www.androidcentral.com/" updateInterval="-1" collapsed="true"/>
         </outline>
-        <outline title="Open Source" text="Open Source" description="Open Source" type="folder" id="gdpjmet" sortColumn="time" expanded="true">
+        <outline title="Open Source" text="Open Source" description="Open Source" type="folder" id="gdpjmet" sortColumn="time" collapsed="true">
           <outline title="Ubuntu Geek" text="Ubuntu Geek" description="Ubuntu Geek" type="rss" id="ruubcoy" sortColumn="time" xmlUrl="http://feeds.feedburner.com/UbuntuGeek" htmlUrl="http://www.ubuntugeek.com" updateInterval="-1" collapsed="true"/>
           <outline title="Omg! Ubuntu!" text="Omg! Ubuntu!" description="Omg! Ubuntu!" type="rss" id="urbqrov" sortColumn="time" xmlUrl="http://feeds.feedburner.com/d0od" htmlUrl="https://www.omgubuntu.co.uk" updateInterval="-1" collapsed="true"/>
           <outline title="Liferea Blog" text="Liferea Blog" description="Liferea Blog" type="atom" id="uqdhpie" sortColumn="time" xmlUrl="http://feeds.feedburner.com/LifereaBlog" htmlUrl="http://feeds.feedburner.com/LifereaBlog" updateInterval="-1" collapsed="true"/>
@@ -79,7 +79,7 @@
         <outline title="Planet PostgreSQL" text="Planet PostgreSQL" description="Planet PostgreSQL" type="rss" id="glwmeth" sortColumn="time" loadItemLink="true" xmlUrl="https://planet.postgresql.org/rss20.xml" htmlUrl="https://planet.postgresql.org" updateInterval="-1" html5Extract="true" collapsed="true"/>
       </outline>
     </outline>
-    <outline title="Unread" text="Unread" description="Unread" type="vfolder" id="ewividb" sortColumn="time" matchType="any" collapsed="true">
+    <outline title="Unread" text="Unread" description="Unread" type="vfolder" id="ewividb" sortColumn="time" matchType="any" unreadOnly="false" collapsed="true">
       <outline type="rule" text="Read status" rule="unread" value="" additive="true"/>
     </outline>
   </body>
