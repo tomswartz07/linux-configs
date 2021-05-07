@@ -8,7 +8,7 @@ set message_cachedir="~/.mutt/cache/crunchy"
 set folder=imaps://imap.gmail.com/
 set spoolfile=+INBOX
 set postponed="~/.mutt/postponed-crunchy"
-mailboxes =INBOX "=[Gmail]/Sent Mail" "=[Gmail]/Starred"
+mailboxes =INBOX "=[Gmail]/Sent Mail" "=[Gmail]/Starred" =Bugzilla
 set alias_file="~/.mutt/aliases-crunchy"
 source "~/.mutt/aliases-crunchy"
 #set record=+"[Gmail]/Sent Mail"

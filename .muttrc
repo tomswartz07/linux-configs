@@ -33,6 +33,10 @@ macro index <Esc>h "<change-folder>=INBOX<enter>" "Return to Inbox"
 
 # Sidebar Settings
 bind index,pager B sidebar-toggle-visible
+bind index,pager "\C<TAB>" sidebar-next-new
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
 set sidebar_divider_char="│"
 set sidebar_format="%B%* %N%!"
 
