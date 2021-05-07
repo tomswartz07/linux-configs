@@ -34,35 +34,27 @@ tmux select-layout -t Server:6 "2232,273x80,0,0[273x40,0,0,5,273x39,0,41,6]" > /
 tmux new-window -n postgres -t Server:7 -c /home/tom
 sleep 0.2
 tmux send-keys -t Server:7.0 "ssh pihole" Enter
-tmux select-layout -t Server:7 "647c,273x80,0,0[273x40,0,0{136x40,0,0,7,136x40,137,0[136x20,137,0,8,136x19,137,21,10]},273x39,0,41{136x39,0,41,12,136x39,137,41[136x19,137,41,13,136x19,137,61,14]}]" > /dev/null
+tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
 tmux split-window -t Server:7 -c /home/tom
 sleep 0.2
 tmux send-keys -t Server:7.1 "ssh pihole" Enter
-tmux select-layout -t Server:7 "647c,273x80,0,0[273x40,0,0{136x40,0,0,7,136x40,137,0[136x20,137,0,8,136x19,137,21,10]},273x39,0,41{136x39,0,41,12,136x39,137,41[136x19,137,41,13,136x19,137,61,14]}]" > /dev/null
+tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
 tmux split-window -t Server:7 -c /home/tom
 sleep 0.2
 tmux send-keys -t Server:7.2 "ssh clusterpi00" Enter
-tmux select-layout -t Server:7 "647c,273x80,0,0[273x40,0,0{136x40,0,0,7,136x40,137,0[136x20,137,0,8,136x19,137,21,10]},273x39,0,41{136x39,0,41,12,136x39,137,41[136x19,137,41,13,136x19,137,61,14]}]" > /dev/null
+tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
 tmux split-window -t Server:7 -c /home/tom
 sleep 0.2
 tmux send-keys -t Server:7.3 "ssh clusterpi00" Enter
-tmux select-layout -t Server:7 "647c,273x80,0,0[273x40,0,0{136x40,0,0,7,136x40,137,0[136x20,137,0,8,136x19,137,21,10]},273x39,0,41{136x39,0,41,12,136x39,137,41[136x19,137,41,13,136x19,137,61,14]}]" > /dev/null
+tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
 tmux split-window -t Server:7 -c /home/tom
 sleep 0.2
 tmux send-keys -t Server:7.4 "ssh pihole" Enter
-tmux select-layout -t Server:7 "647c,273x80,0,0[273x40,0,0{136x40,0,0,7,136x40,137,0[136x20,137,0,8,136x19,137,21,10]},273x39,0,41{136x39,0,41,12,136x39,137,41[136x19,137,41,13,136x19,137,61,14]}]" > /dev/null
+tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
 tmux split-window -t Server:7 -c /home/tom
 sleep 0.2
 tmux send-keys -t Server:7.5 "ssh clusterpi00" Enter
-tmux select-layout -t Server:7 "647c,273x80,0,0[273x40,0,0{136x40,0,0,7,136x40,137,0[136x20,137,0,8,136x19,137,21,10]},273x39,0,41{136x39,0,41,12,136x39,137,41[136x19,137,41,13,136x19,137,61,14]}]" > /dev/null
-tmux split-window -t Server:7 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:7.6 "ssh pihole" Enter
-tmux select-layout -t Server:7 "e357,273x80,0,0[273x40,0,0{136x40,0,0,7,136x40,137,0[136x20,137,0{68x20,137,0,27,67x20,206,0,30},136x19,137,21{68x19,137,21,28,67x19,206,21,29}]},273x39,0,41{136x39,0,41,24,136x39,137,41[136x19,137,41,25,136x19,137,61,26]}]" > /dev/null
-tmux split-window -t Server:7 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:7.7 "ssh clusterpi00" Enter
-tmux select-layout -t Server:7 "e357,273x80,0,0[273x40,0,0{136x40,0,0,7,136x40,137,0[136x20,137,0{68x20,137,0,27,67x20,206,0,30},136x19,137,21{68x19,137,21,28,67x19,206,21,29}]},273x39,0,41{136x39,0,41,24,136x39,137,41[136x19,137,41,25,136x19,137,61,26]}]" > /dev/null
+tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
 tmux new-window -n htop -t Server:8 -c /home/tom
 sleep 0.2
 tmux send-keys -t Server:8.0 "ssh clusterpi00" Enter
