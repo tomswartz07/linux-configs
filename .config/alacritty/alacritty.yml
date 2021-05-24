@@ -253,9 +253,9 @@ colors:
   # search and vi mode.
   #
   # By default, these will use the opposing primary color.
-  #line_indicator:
-  #  foreground: None
-  #  background: None
+  line_indicator:
+    foreground: '#1d1f21'
+    background: '#e9ff5e'
 
   # Selection colors
   #
@@ -487,7 +487,7 @@ hints:
       enabled: true
       mods: None
     binding:
-      key: x
+      key: X
       mods: Control|Shift
 
 # Mouse bindings
