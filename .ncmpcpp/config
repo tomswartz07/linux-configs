@@ -297,7 +297,7 @@ execute_on_song_change = "~/git/linux-configs/now-playing.sh"
 ## Note: You can specify third character which will
 ## be used to build 'empty' part of progressbar.
 ##
-progressbar_look = "█▶ "
+progressbar_look = "█ "
 #
 #default_place_to_search_in = "database" (database/playlist)
 #
