@@ -141,7 +141,8 @@ disk "/mnt/newnas/home" {
 
 volume master {
         format = "♪ %volume"
-        device = "pulse:alsa_output.pci-0000_05_00.0.analog-stereo"
+        #device = "pulse:alsa_output.pci-0000_05_00.0.analog-stereo"
+        device = "pulse:alsa_output.pci-0000_05_00.0.pro-output-0"
         #device = "pulse:alsa_output.pci-0000_00_14.2.analog-surround-40"
 #       mixer = "master"
 #       mixer_idx = 0
