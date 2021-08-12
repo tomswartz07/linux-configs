@@ -13,6 +13,6 @@ if [ -d ${BACKUP_DIR} ]; then
         ${RSYNC_BIN} ${RSYNC_OPTIONS} /home/tom/Documents ${BACKUP_DIR}
         ${RSYNC_BIN} ${RSYNC_OPTIONS} /home/tom/KiCAD ${BACKUP_DIR}
         # Archive Files
-        ${RSYNC_BIN} ${RSYNC_OPTIONS} /home/tom/pgdumps ${BACKUP_DIR}
+        ${RSYNC_BIN} ${RSYNC_OPTIONS} /mnt/Storage/Backup/pgdumps ${BACKUP_DIR}/pgdumps
         ${RSYNC_BIN} ${RSYNC_OPTIONS} /home/tom/wxtoimg ${BACKUP_DIR}
 fi
