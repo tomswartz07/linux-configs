@@ -166,7 +166,8 @@ bindsym $mod+r mode "resize"
 # Custom Launchers
 bindsym $mod+c exec chromium
 bindsym $mod+m exec thunar
-bindsym $mod+b exec dwb
+bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+n exec --no-startup-id slack
 
 # Multimedia Keys
 #bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Speaker 2dB+ unmute
