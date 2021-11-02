@@ -169,6 +169,10 @@ bindsym $mod+m exec thunar
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+n exec --no-startup-id slack
 
+# Notification Management
+bindsym ctrl+space exec dunstctl close
+bindsym ctrl+shift+space exec dunstctl history-pop
+
 # Multimedia Keys
 #bindsym XF86AudioRaiseVolume exec amixer -c 0 -q set Speaker 2dB+ unmute
 #bindsym XF86AudioLowerVolume exec amixer -c 0 -q set Speaker 2dB- unmute
