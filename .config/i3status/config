@@ -33,7 +33,7 @@ order += "cpu_temperature 0"
 #order += "battery 1"
 order += "load"
 #order += "memory"
-order += "volume master"
+#order += "volume master"
 order += "tztime local"
 order += "tztime utc"
 
@@ -140,7 +140,8 @@ disk "/mnt/newnas/home" {
 }
 
 volume master {
-        format = "♪ %volume"
+        #format = "♪ %volume"
+        format_muted = ""
         #device = "pulse:alsa_output.pci-0000_05_00.0.analog-stereo"
         device = "pulse:alsa_output.pci-0000_05_00.0.pro-output-0"
         #device = "pulse:alsa_output.pci-0000_00_14.2.analog-surround-40"
