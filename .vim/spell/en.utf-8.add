@@ -84,3 +84,5 @@ PiHole
 Draw
 autovacuum
 Kubernetes
+Patroni
+etcd
