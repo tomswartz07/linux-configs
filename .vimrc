@@ -193,6 +193,7 @@ let g:airline#extensions#tabline#left_alt_sep = ''
 "let g:airline#extensions#tabline#right_sep = '◀'
 let g:airline#extensions#tabline#right_alt_sep = ''
 let g:airline#extensions#tabline#close_symbol = 'vim'
+let g:go_gopls_enabled = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol = '✗'
@@ -200,6 +201,7 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_full_redraws = 1
 let g:syntastic_puppet_puppetlint_args = "--no-autoloader_layout-check --no-80chars-check --no-class_inherits_from_params_class-check"
 let g:syntastic_python_pylint_args = "--disable=invalid-name"
+let g:syntastic_python_flake8_args = "--max-complexity=10 --max-line-length=127"
 " Syntastic Checkers
 let g:syntastic_html_checkers = ["w3"]
 let g:syntastic_yaml_checkers = ["yamllint"]
