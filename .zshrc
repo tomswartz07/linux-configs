@@ -50,6 +50,7 @@ fi
 export EDITOR=/usr/bin/vim
 export TERM=rxvt-unicode-256color
 export GPG_TTY=$(tty)
+export PIP_REQUIRE_VIRTUALENV=true # https://docs.python-guide.org/dev/pip-virtualenv/
 #export LESS='-C -M -I -j 10 -# 4'
 if which spruce >/dev/null 2>&1 ; then
         SPRUCE_PATH="/usr/local/bin"
