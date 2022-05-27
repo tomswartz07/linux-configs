@@ -1,17 +1,17 @@
 # Tag name          ;  color
-Voice               ; #00aa7f
-Public Works        ; #c0629f
 Satellite           ; #905353
-Ham                 ; #00aa7f
-Radio Direction Finding; #aaaa00
-Aircraft            ; #aaffff
-Data                ; #00ffff
-Transportation      ; #5bc03f
-Digital/DMR         ; #aa55ff
-TRS                 ; #ff510c
-Untagged            ; #c0c0c0
-Schuylkill County   ; #eae788
+Public Works        ; #c0629f
 Utilities           ; #4d5fc0
+Untagged            ; #c0c0c0
+Radio Direction Finding; #aaaa00
+Digital/DMR         ; #aa55ff
+Ham                 ; #00aa7f
+Data                ; #00ffff
+Aircraft            ; #aaffff
+Schuylkill County   ; #eae788
+Voice               ; #00aa7f
+Transportation      ; #5bc03f
+TRS                 ; #ff510c
 
 # Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
      1490000; WONN-FM                  ; AM                  ;      10000; Voice
@@ -44,8 +44,12 @@ Utilities           ; #4d5fc0
     18068000; Start of 17m Band        ; Demod Off           ;          0; Ham
     18168000; End of 17m Band          ; Demod Off           ;          0; Ham
     21000000; Start of 15m Band        ; Demod Off           ;          0; Ham
+    21094600; 15m WSPR Dial            ; USB                 ;       2700; Data,Ham
+    21096100; 15m WSPR TX              ; USB                 ;       2700; Data,Ham
     21450000; End of 15m Band          ; Demod Off           ;          0; Ham
     24890000; Start of 12m Band        ; Demod Off           ;          0; Ham
+    24924600; 12m WSPR Dial            ; USB                 ;       2700; Data,Ham
+    24926100; 12m WSPR TX              ; USB                 ;        100; Data,Ham
     24990000; End of 12m Band          ; Demod Off           ;          0; Ham
     26965000; CB Channel 01            ; AM                  ;      10000; Voice
     26975000; CB Channel 02            ; AM                  ;      10000; Voice
@@ -114,6 +118,8 @@ Utilities           ; #4d5fc0
     45700000; West Earl Municipal PD (Low); Narrow FM           ;      10000; Voice
     50000000; Start of 6m Band         ; Demod Off           ;          0; Ham
     50185000; 6m QRP Phone             ; LSB                 ;       2700; Ham,Voice
+    50293000; 6m WSPR Dial             ; USB                 ;       2700; Data,Ham
+    50294500; 6m WSPR TX               ; USB                 ;       2700; Data,Ham
     52525000; 6m National Call         ; Narrow FM           ;      10000; Ham
     53330000; K3CX Honey Brook         ; AM                  ;      46400; Ham,Voice
     53850000; N3TJJ Rawlinsville       ; Narrow FM           ;       6600; Ham
@@ -156,7 +162,8 @@ Utilities           ; #4d5fc0
    144275000; Strange Beeper (25 Min Intervals); Narrow FM           ;      10000; Ham
    144285000; 2m QRP Voice             ; Narrow FM           ;      10000; Ham,Voice
    144390000; APRS                     ; Narrow FM           ;      10000; Data
-   144489000; WSPR Net Dial            ; Narrow FM           ;      10000; Data,Ham
+   144489000; 2m WSPR Dial             ; USB                 ;      10000; Data,Ham
+   144490500; 2m WSPR TX               ; USB                 ;      10000; Data,Ham
    144990000; APRS?                    ; Narrow FM           ;       5000; Data
    145110000; W3ND Harrisburg          ; Narrow FM           ;      10000; Ham,Voice
    145150000; K3TI Reading             ; Narrow FM           ;      10000; Digital/DMR,Ham
@@ -414,6 +421,8 @@ Utilities           ; #4d5fc0
    410076200; Strange AFSK?            ; Narrow FM           ;      20000; Untagged
    420000000; Start of 70cm Band       ; Demod Off           ;       5000; Ham
    432100000; 70cm Calling             ; Narrow FM           ;      10000; Ham
+   432300000; 70cm WSPR Dial           ; USB                 ;       2700; Data,Ham
+   432301500; 70cm WSPR TX             ; USB                 ;       2700; Data,Ham
    433960000; ISM 433 Devices          ; Narrow FM           ;       5000; Data,Utilities
    436795000; SO-50                    ; Narrow FM           ;      10000; Satellite,Voice
    441475000; N3FYI Input              ; Narrow FM           ;      10000; Voice
