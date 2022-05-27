@@ -8,7 +8,6 @@ BACKUP_DIR=/mnt/newnas/home/magrathea
 
 if [ -d ${BACKUP_DIR} ]; then
         # Documents
-        ${RSYNC_BIN} ${RSYNC_OPTIONS} /home/tom/Android ${BACKUP_DIR}
         ${RSYNC_BIN} ${RSYNC_OPTIONS} /home/tom/Arduino ${BACKUP_DIR}
         ${RSYNC_BIN} ${RSYNC_OPTIONS} /home/tom/Documents ${BACKUP_DIR}
         ${RSYNC_BIN} ${RSYNC_OPTIONS} /home/tom/KiCAD ${BACKUP_DIR}

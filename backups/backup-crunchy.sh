@@ -4,7 +4,7 @@
 
 RSYNC_BIN=/usr/bin/rsync
 BACKUP_DIR=/mnt/newnas/crunchy
-RSYNC_OPTIONS="-v --progress -a --recursive --delete-before --times --perms --owner --group --update --checksum --links --compress --protect-args"
+RSYNC_OPTIONS="-v -a --recursive --delete-before --times --perms --owner --group --update --checksum --links --compress --protect-args"
 
 if [ -d ${BACKUP_DIR} ]; then
         ${RSYNC_BIN} ${RSYNC_OPTIONS} /mnt/Storage/Backup/crunchy/ ${BACKUP_DIR}
