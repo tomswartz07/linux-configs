@@ -139,6 +139,7 @@ EXEC 01;32
 .md 03;32
 .markdown 03;32
 .yml 00;32
+.yaml 00;32
 #  LaTeX files
 .tex 00;32
 .cls 04;32
