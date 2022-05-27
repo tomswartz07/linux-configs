@@ -15,7 +15,7 @@ source "~/.mutt/aliases-crunchy"
 #fcc-hook ~A ="[Gmail]/Sent Mail"
 
 # Securely source the password file
-source "gpg --textmode -d ~/.mutt/password-crunchy.gpg |"
+set imap_pass=`pass show email/crunchy`
 
 # Service Specific Macros
 macro index,pager ga "<save-message>=[Gmail]/All Mail<enter>" "Archive message"
