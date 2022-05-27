@@ -1,8 +1,8 @@
 #
 # /home/tom/.nvidia-settings-rc
 #
-# Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Wed Oct 21 14:59:56 2020
+# Configuration file for nvidia-settings - the NVIDIA Settings utility
+# Generated on Wed May 25 10:18:13 2022
 #
 
 # ConfigProperties:
@@ -11,11 +11,10 @@ RcFileLocale = C
 DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = Yes
-ShowQuitDialog = No
 UpdateRulesOnProfileNameChange = Yes
-Timer = Memory_Used_(GPU_0),Yes,3000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
 
 # Attributes:
 
