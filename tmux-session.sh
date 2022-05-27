@@ -29,7 +29,7 @@ tmux send-keys -t Server:6.0 "ssh clusterpi02" Enter
 tmux select-layout -t Server:6 "2232,273x80,0,0[273x40,0,0,5,273x39,0,41,6]" > /dev/null
 tmux split-window -t Server:6 -c /home/tom
 sleep 0.2
-tmux send-keys -t Server:6.1 "ssh clusterpi03" Enter
+tmux send-keys -t Server:6.1 "ssh clusterpi06" Enter
 tmux select-layout -t Server:6 "2232,273x80,0,0[273x40,0,0,5,273x39,0,41,6]" > /dev/null
 tmux new-window -n postgres -t Server:7 -c /home/tom
 sleep 0.2
@@ -57,19 +57,19 @@ tmux send-keys -t Server:7.5 "ssh clusterpi00" Enter
 tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
 tmux new-window -n htop -t Server:8 -c /home/tom
 sleep 0.2
-tmux send-keys -t Server:8.0 "ssh clusterpi00" Enter
+tmux send-keys -t Server:8.0 "ssh clusterpi01" Enter
 tmux select-layout -t Server:8 "6882,273x80,0,0{136x80,0,0[136x40,0,0,15,136x39,0,41,16],136x80,137,0[136x40,137,0,17,136x39,137,41,18]}" > /dev/null
 tmux split-window -t Server:8 -c /home/tom
 sleep 0.2
-tmux send-keys -t Server:8.1 "ssh clusterpi02" Enter
+tmux send-keys -t Server:8.1 "ssh clusterpi03" Enter
 tmux select-layout -t Server:8 "6882,273x80,0,0{136x80,0,0[136x40,0,0,15,136x39,0,41,16],136x80,137,0[136x40,137,0,17,136x39,137,41,18]}" > /dev/null
 tmux split-window -t Server:8 -c /home/tom
 sleep 0.2
-tmux send-keys -t Server:8.2 "ssh clusterpi01" Enter
+tmux send-keys -t Server:8.2 "ssh clusterpi02" Enter
 tmux select-layout -t Server:8 "6882,273x80,0,0{136x80,0,0[136x40,0,0,15,136x39,0,41,16],136x80,137,0[136x40,137,0,17,136x39,137,41,18]}" > /dev/null
 tmux split-window -t Server:8 -c /home/tom
 sleep 0.2
-tmux send-keys -t Server:8.3 "ssh clusterpi03" Enter
+tmux send-keys -t Server:8.3 "ssh clusterpi04" Enter
 tmux select-layout -t Server:8 "6882,273x80,0,0{136x80,0,0[136x40,0,0,15,136x39,0,41,16],136x80,137,0[136x40,137,0,17,136x39,137,41,18]}" > /dev/null
 tmux new-window -n covid -t Server:9 -c /home/tom
 sleep 0.2
