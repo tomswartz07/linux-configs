@@ -82,6 +82,14 @@ if has("gui_running")
     set guifont=Hack\ 8
 endif
 
+" NeoVim Specific Directories
+if has('nvim')
+        set viminfofile=~/.config/nvim/.viminfo
+        set directory=$TMPDIR,~/.config/nvim/tmp,~/tmp,/tmp,/var/tmp
+        set backupdir=$TMPDIR,~/.config/nvim/tmp,~/tmp,/tmp,/var/tmp
+        set undodir=$TMPDIR,~/.config/nvim/tmp,~/tmp,/tmp,/var/tmp
+endif
+
 " Make tabs and trailing whitespace visible, use <Leader>+l to toggle
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 

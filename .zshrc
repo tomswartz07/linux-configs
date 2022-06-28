@@ -87,8 +87,9 @@ alias pacman='sudo pacman'
 # Requires https://github.com/defunkt/gist
 alias gist='gist -c -p'
 
+# Remap NeoVim to vim because muscle memory
 # Add the -O flag to open files in vsplits with Vim
-alias vim='vim -O'
+alias vim='nvim -O'
 
 # Fancy ls
 alias ls='ls --color -lhSAv --group-directories-first'
