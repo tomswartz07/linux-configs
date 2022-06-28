@@ -2,7 +2,7 @@
 # /home/tom/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
-# Generated on Wed May 25 10:18:13 2022
+# Generated on Wed Jun  8 09:17:58 2022
 #
 
 # ConfigProperties:
@@ -28,42 +28,36 @@ magrathea:0.0/FSAAAppControlled=1
 magrathea:0.0/LogAnisoAppControlled=1
 magrathea:0.0/OpenGLImageSettings=1
 magrathea:0.0/FSAAAppEnhanced=0
+magrathea:0.0/AllowGSYNC=1
+magrathea:0.0/AllowVRR=1
+magrathea:0.0/ShowGSYNCVisualIndicator=0
+magrathea:0.0/ShowVRRVisualIndicator=0
 magrathea:0.0/ShowGraphicsVisualIndicator=0
-magrathea:0[DPY:DVI-D-0]/RedBrightness=0.000000
-magrathea:0[DPY:DVI-D-0]/GreenBrightness=0.000000
-magrathea:0[DPY:DVI-D-0]/BlueBrightness=0.000000
-magrathea:0[DPY:DVI-D-0]/RedContrast=0.000000
-magrathea:0[DPY:DVI-D-0]/GreenContrast=0.000000
-magrathea:0[DPY:DVI-D-0]/BlueContrast=0.000000
-magrathea:0[DPY:DVI-D-0]/RedGamma=1.000000
-magrathea:0[DPY:DVI-D-0]/GreenGamma=1.000000
-magrathea:0[DPY:DVI-D-0]/BlueGamma=1.000000
 magrathea:0[DPY:DVI-D-0]/Dithering=0
 magrathea:0[DPY:DVI-D-0]/DitheringMode=0
 magrathea:0[DPY:DVI-D-0]/DitheringDepth=0
-magrathea:0[DPY:DVI-D-0]/DigitalVibrance=0
 magrathea:0[DPY:DVI-D-0]/ColorSpace=0
 magrathea:0[DPY:DVI-D-0]/ColorRange=0
 magrathea:0[DPY:DVI-D-0]/SynchronousPaletteUpdates=0
-magrathea:0[DPY:HDMI-0]/RedBrightness=0.000000
-magrathea:0[DPY:HDMI-0]/GreenBrightness=0.000000
-magrathea:0[DPY:HDMI-0]/BlueBrightness=0.000000
-magrathea:0[DPY:HDMI-0]/RedContrast=0.000000
-magrathea:0[DPY:HDMI-0]/GreenContrast=0.000000
-magrathea:0[DPY:HDMI-0]/BlueContrast=0.000000
-magrathea:0[DPY:HDMI-0]/RedGamma=1.000000
-magrathea:0[DPY:HDMI-0]/GreenGamma=1.000000
-magrathea:0[DPY:HDMI-0]/BlueGamma=1.000000
 magrathea:0[DPY:HDMI-0]/Dithering=0
 magrathea:0[DPY:HDMI-0]/DitheringMode=0
 magrathea:0[DPY:HDMI-0]/DitheringDepth=0
-magrathea:0[DPY:HDMI-0]/DigitalVibrance=0
 magrathea:0[DPY:HDMI-0]/ColorSpace=0
 magrathea:0[DPY:HDMI-0]/ColorRange=0
 magrathea:0[DPY:HDMI-0]/SynchronousPaletteUpdates=0
+magrathea:0[DPY:DP-0]/RedBrightness=0.000000
+magrathea:0[DPY:DP-0]/GreenBrightness=0.000000
+magrathea:0[DPY:DP-0]/BlueBrightness=0.000000
+magrathea:0[DPY:DP-0]/RedContrast=0.000000
+magrathea:0[DPY:DP-0]/GreenContrast=0.000000
+magrathea:0[DPY:DP-0]/BlueContrast=0.000000
+magrathea:0[DPY:DP-0]/RedGamma=1.000000
+magrathea:0[DPY:DP-0]/GreenGamma=1.000000
+magrathea:0[DPY:DP-0]/BlueGamma=1.000000
 magrathea:0[DPY:DP-0]/Dithering=0
 magrathea:0[DPY:DP-0]/DitheringMode=0
 magrathea:0[DPY:DP-0]/DitheringDepth=0
+magrathea:0[DPY:DP-0]/DigitalVibrance=0
 magrathea:0[DPY:DP-0]/ColorSpace=0
 magrathea:0[DPY:DP-0]/ColorRange=0
 magrathea:0[DPY:DP-0]/SynchronousPaletteUpdates=0
