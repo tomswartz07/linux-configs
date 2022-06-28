@@ -216,7 +216,7 @@ bar {
 #       position top
         mode dock
         tray_output primary
-        font pango:Hack 10
+        font pango:Hack 8
         colors {
                 background #080808
                 statusline #D3D7CF
@@ -251,7 +251,7 @@ exec --no-startup-id dunst
 #exec --no-startup-id liferea
 exec --no-startup-id seahorse --no-window
 exec --no-startup-id gpg-agent --homedir /home/tom/.gnupg --use-standard-socket --daemon
-exec --no-startup-id conky --config=.config/conky/conky.conf
+exec --no-startup-id conky
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec xautolock -time 9 -locker '~/git/linux-configs/screenlock/screen.sh ~/git/linux-configs/screenlock/key-256.png'
 
