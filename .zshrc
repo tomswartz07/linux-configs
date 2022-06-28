@@ -242,6 +242,16 @@ if which kubectl >/dev/null 2>&1 ; then
         source <(kubectl completion zsh)
 fi
 
+# GCloud CLI shit
+# Needed because of:
+# https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
+#
+# However, they enabled a 'nag' output which breaks practically anything using kubectl:
+# https://stackoverflow.com/questions/72274548/how-to-remove-warning-in-kubectl-with-gcp-auth-plugin
+if [ -f /opt/google-cloud-sdk/bin/gke-gcloud-auth-plugin ]; then
+        export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+fi
+
 # Vault completion
 #if which vault >/dev/null 2>&1 ; then
 #        complete -o nospace -C /usr/bin/vault vault
