@@ -29,4 +29,7 @@ set signature="~/.mutt/.signature-crunchy"
 # Import the rest of the options
 source "~/.muttrc"
 
+# Disable top posting for this account
+unset sig_on_top
+
 # vim: set ft=muttrc:
