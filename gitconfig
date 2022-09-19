@@ -4,6 +4,7 @@
         signingkey = CC2A1A93
 [push]
         default = current
+        autosetupremote = true
 [help]
         autocorrect = 10
 [color]
