@@ -289,9 +289,9 @@ execute_on_song_change = "~/git/linux-configs/now-playing.sh"
 #
 #seek_time = "1"
 #
-#autocenter_mode = "no"
+autocenter_mode = "yes"
 #
-#centered_cursor = "no"
+centered_cursor = "yes"
 #
 ##
 ## Note: You can specify third character which will
