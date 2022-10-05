@@ -27,6 +27,13 @@ bindsym $mod+y border 1pixel
 
 # Disable Titlebars and set window borders to 1 pixel.
 default_border pixel 1
+default_floating_border pixel 1
+
+# Hide container borders adjacent to the screen edges
+hide_edge_borders smart
+
+# TEMP WORKAROUND for bug: https://github.com/i3/i3/issues/5149
+for_window [all] border pixel 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
