@@ -41,7 +41,7 @@ set autoread
 set noshowmode
 set scrolloff=5 " Keep 5 lines above/below while scrolling
 set shortmess+=I " No splash screen, I know how to quit vim
-set synmaxcol=180 " Stop trying syntax formatting on long lines
+set synmaxcol=200 " Stop trying syntax formatting on long lines
 colorscheme wombat
 
 " Write swap and backup files in the event of a crash or accident
