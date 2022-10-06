@@ -232,11 +232,10 @@ fi
 if [ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh -o -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
         if [ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
                 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-                ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
         elif [ -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
                 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-                ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
         fi
+        ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
         ZSH_HIGHLIGHT_STYLES[path]='none'
         ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
         ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
