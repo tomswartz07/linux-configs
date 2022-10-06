@@ -243,6 +243,19 @@ if [ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.z
         ZSH_HIGHLIGHT_STYLES[globbing]='none'
 fi
 
+# Autocompletion (FISH-like)
+# Requires zsh-autosuggestions package
+# https://github.com/zsh-users/zsh-autosuggestions
+if [ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh -o -e /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+        if [ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+                source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+        elif [ -e /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+                source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+        fi
+        bindkey '^p' autosuggest-accept
+        bindkey '^i' autosuggest-toggle
+fi
+
 # K8s completion
 if which kubectl >/dev/null 2>&1 ; then
         source <(kubectl completion zsh)
