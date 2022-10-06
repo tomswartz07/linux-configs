@@ -229,12 +229,18 @@ fi
 # Highlight brackets
 # Requires zsh-syntax-highlighting package
 # https://github.com/zsh-users/zsh-syntax-highlighting
-if [ -d /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-        source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-        ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets)
-elif [ -d /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-        source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-        ZSH_HIGHLIGHT_HIGHLIGHTERS=(brackets)
+if [ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh -o -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+        if [ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+                source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        elif [ -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+                source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        fi
+        ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+        ZSH_HIGHLIGHT_STYLES[path]='none'
+        ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+        ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=cyan'
+        ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=cyan'
+        ZSH_HIGHLIGHT_STYLES[globbing]='none'
 fi
 
 # K8s completion
