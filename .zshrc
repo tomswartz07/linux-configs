@@ -252,8 +252,8 @@ if [ -e /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh -o -e
         elif [ -e /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
                 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
         fi
-        bindkey '^p' autosuggest-accept
-        bindkey '^i' autosuggest-toggle
+        bindkey '^I'   complete-word       # tab          | complete
+        bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
 fi
 
 # K8s completion
