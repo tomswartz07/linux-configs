@@ -25,74 +25,14 @@ tmux send-keys -t Server:5.0 "echo zsh" Enter
 tmux select-layout -t Server:5 "b5e1,273x80,0,0,4" > /dev/null
 tmux new-window -n apps -t Server:6 -c /home/tom
 sleep 0.2
-tmux send-keys -t Server:6.0 "ssh clusterpi02" Enter
+tmux send-keys -t Server:6.0 "ssh -t clusterpi02 tmux attach" Enter
 tmux select-layout -t Server:6 "2232,273x80,0,0[273x40,0,0,5,273x39,0,41,6]" > /dev/null
-tmux split-window -t Server:6 -c /home/tom
+tmux new-window -n zsh -t Server:7 -c /home/tom
 sleep 0.2
-tmux send-keys -t Server:6.1 "ssh clusterpi06" Enter
-tmux select-layout -t Server:6 "2232,273x80,0,0[273x40,0,0,5,273x39,0,41,6]" > /dev/null
-tmux new-window -n postgres -t Server:7 -c /home/tom
+tmux send-keys -t Server:7.0 "echo -zsh" Enter
+tmux select-layout -t Server:7 "d1ea,731x108,0,0,23" > /dev/null
+tmux new-window -n zsh -t Server:8 -c /home/tom
 sleep 0.2
-tmux send-keys -t Server:7.0 "ssh pihole" Enter
-tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
-tmux split-window -t Server:7 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:7.1 "ssh pihole" Enter
-tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
-tmux split-window -t Server:7 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:7.2 "ssh clusterpi00" Enter
-tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
-tmux split-window -t Server:7 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:7.3 "ssh clusterpi00" Enter
-tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
-tmux split-window -t Server:7 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:7.4 "ssh pihole" Enter
-tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
-tmux split-window -t Server:7 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:7.5 "ssh clusterpi00" Enter
-tmux select-layout -t Server:7 "bf7e,273x80,0,0[273x20,0,0{136x20,0,0,7,136x20,137,0,41},273x19,0,21{136x19,0,21,37,136x19,137,21,42},273x39,0,41[273x19,0,41,38,273x19,0,61,39]]" > /dev/null
-tmux new-window -n htop -t Server:8 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:8.0 "ssh clusterpi01" Enter
-tmux select-layout -t Server:8 "6882,273x80,0,0{136x80,0,0[136x40,0,0,15,136x39,0,41,16],136x80,137,0[136x40,137,0,17,136x39,137,41,18]}" > /dev/null
-tmux split-window -t Server:8 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:8.1 "ssh clusterpi03" Enter
-tmux select-layout -t Server:8 "6882,273x80,0,0{136x80,0,0[136x40,0,0,15,136x39,0,41,16],136x80,137,0[136x40,137,0,17,136x39,137,41,18]}" > /dev/null
-tmux split-window -t Server:8 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:8.2 "ssh clusterpi02" Enter
-tmux select-layout -t Server:8 "6882,273x80,0,0{136x80,0,0[136x40,0,0,15,136x39,0,41,16],136x80,137,0[136x40,137,0,17,136x39,137,41,18]}" > /dev/null
-tmux split-window -t Server:8 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:8.3 "ssh clusterpi04" Enter
-tmux select-layout -t Server:8 "6882,273x80,0,0{136x80,0,0[136x40,0,0,15,136x39,0,41,16],136x80,137,0[136x40,137,0,17,136x39,137,41,18]}" > /dev/null
-tmux new-window -n covid -t Server:9 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:9.0 "while true; do clear; date; python ~/git/covid19-pa/covid.py; sleep 600; done" Enter
-tmux select-layout -t Server:9 "a900,273x80,0,0[273x9,0,0{136x9,0,0,19,136x9,137,0,24},273x70,0,10,20]" > /dev/null
-tmux split-window -t Server:9 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:9.1 "bc" Enter
-tmux select-layout -t Server:9 "a900,273x80,0,0[273x9,0,0{136x9,0,0,19,136x9,137,0,24},273x70,0,10,20]" > /dev/null
-tmux split-window -t Server:9 -c /home/tom/git/covid19-pa
-sleep 0.2
-tmux send-keys -t Server:9.2 "echo -zsh" Enter
-tmux select-layout -t Server:9 "a900,273x80,0,0[273x9,0,0{136x9,0,0,19,136x9,137,0,24},273x70,0,10,20]" > /dev/null
-tmux new-window -n covid -t Server:10 -c /home/tom/git/nytimes-covid19-data
-sleep 0.2
-tmux send-keys -t Server:10.0 "echo -zsh" Enter
-tmux select-layout -t Server:10 "db20,273x80,0,0,21" > /dev/null
-tmux new-window -n zsh -t Server:11 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:11.0 "echo -zsh" Enter
-tmux select-layout -t Server:11 "5b27,273x80,0,0,18" > /dev/null
-tmux new-window -t Server:12 -c /home/tom
-sleep 0.2
-tmux send-keys -t Server:12.0 "echo -zsh" Enter
-tmux select-layout -t Server:12 "5b27,273x80,0,0,56" > /dev/null
+tmux send-keys -t Server:8.0 "echo -zsh" Enter
+tmux select-layout -t Server:8 "d1ef,731x108,0,0,28" > /dev/null
 tmux -2u att
