@@ -51,6 +51,8 @@ export EDITOR=/usr/bin/vim
 export TERM=rxvt-unicode-256color
 export GPG_TTY=$(tty)
 export PIP_REQUIRE_VIRTUALENV=true # https://docs.python-guide.org/dev/pip-virtualenv/
+export VIRTUAL_ENV_DISABLE_PROMPT=0 # Disable venv from modifying prompt, we use custom format later
+export ZLE_RPROMPT_INDENT=0 # Don't add a space to the right side of prompt
 #export LESS='-C -M -I -j 10 -# 4'
 if which spruce >/dev/null 2>&1 ; then
         SPRUCE_PATH="/usr/local/bin"
@@ -215,15 +217,20 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+# Function for virtualenv info
+function virtualenv_info {
+        [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`')'
+}
+
 setopt prompt_subst
 PROMPT="┌──[%n@%m]──[%*]
 └─▶ %~:%# "
 
 # Add extra notification if this is a SSH session
 if [[ -z "$SSH_CLIENT" ]]; then
-        RPROMPT='${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
+        RPROMPT='${vcs_info_msg_0_}${vim_mode}%{$fg_bold[magenta]%}$(virtualenv_info)%{$reset_color%}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
 else
-        RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}${vim_mode}%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
+        RPROMPT='%{$fg_bold[blue]%}[SSH]%{$reset_color%}${vcs_info_msg_0_}${vim_mode}$(virtualenv_info)%(?..%{$fg[red]%}[Error: %?]%{$reset_color%})%f'
 fi
 
 # Highlight brackets
