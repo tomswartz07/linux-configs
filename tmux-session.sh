@@ -26,7 +26,7 @@ tmux select-layout -t Server:5 "b5e1,273x80,0,0,4" > /dev/null
 tmux new-window -n apps -t Server:6 -c /home/tom
 sleep 0.2
 tmux send-keys -t Server:6.0 "ssh -t clusterpi02 tmux attach" Enter
-tmux select-layout -t Server:6 "2232,273x80,0,0[273x40,0,0,5,273x39,0,41,6]" > /dev/null
+tmux select-layout -t Server:6 "a372,731x108,0,0,5" > /dev/null
 tmux new-window -n zsh -t Server:7 -c /home/tom
 sleep 0.2
 tmux send-keys -t Server:7.0 "echo -zsh" Enter
