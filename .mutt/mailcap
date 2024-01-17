@@ -1,6 +1,9 @@
-text/html; w3m -dump -v -F -I %{charset} -T text/html %s; copiousoutput; needsterminal
+text/html; w3m -dump -cols 100 -graph -v -F -I %{charset} -T text/html %s; copiousoutput; needsterminal
 application/pdf; pdftotext %s -; copiousoutput;
 # Catimg is provided by https://github.com/tomswartz07/catimg-PKGBUILD
 image/*; catimg -r2 %s; needsterminal;
 # Doc view provided by antiword
 application/msword; antiword %s; copiousoutput;
+# Calendar view by https://github.com/dmedvinsky/mutt-ics
+text/calendar; mutt-ics; copiousoutput
+application/ics; mutt-ics; copiousoutput
