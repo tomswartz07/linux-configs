@@ -246,8 +246,9 @@ exec parcellite
 exec unclutter -noevents
 exec volti
 exec x11vnc
-#exec --no-startup-id caffeine
+exec --no-startup-id caffeine
 exec --no-startup-id mpd
+exec --no-startup-id mpdscribble --verbose 2 --conf ~/.mpdscribble/mpdscribble.conf
 exec --no-startup-id xdotool key --clearmodifiers Num_Lock
 exec --no-startup-id solaar --restart-on-wake-up -w hide
 exec --no-startup-id redshift-gtk
@@ -257,6 +258,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 #exec --no-startup-id liferea
 exec --no-startup-id seahorse --no-window
+# xsettings allows Dark themes
+exec --no-startup-id /usr/lib/gsd-xsettings
 exec --no-startup-id gpg-agent --homedir /home/tom/.gnupg --use-standard-socket --daemon
 exec --no-startup-id conky
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
