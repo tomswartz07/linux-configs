@@ -2,7 +2,7 @@
 # /home/tom/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
-# Generated on Wed Jun  8 09:17:58 2022
+# Generated on Tue Dec 12 20:14:53 2023
 #
 
 # ConfigProperties:
@@ -12,9 +12,9 @@ DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = Yes
 UpdateRulesOnProfileNameChange = Yes
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = Memory_Used_(GPU_0),Yes,3000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 
 # Attributes:
 
@@ -33,31 +33,15 @@ magrathea:0.0/AllowVRR=1
 magrathea:0.0/ShowGSYNCVisualIndicator=0
 magrathea:0.0/ShowVRRVisualIndicator=0
 magrathea:0.0/ShowGraphicsVisualIndicator=0
-magrathea:0[DPY:DVI-D-0]/Dithering=0
-magrathea:0[DPY:DVI-D-0]/DitheringMode=0
-magrathea:0[DPY:DVI-D-0]/DitheringDepth=0
-magrathea:0[DPY:DVI-D-0]/ColorSpace=0
-magrathea:0[DPY:DVI-D-0]/ColorRange=0
-magrathea:0[DPY:DVI-D-0]/SynchronousPaletteUpdates=0
 magrathea:0[DPY:HDMI-0]/Dithering=0
 magrathea:0[DPY:HDMI-0]/DitheringMode=0
 magrathea:0[DPY:HDMI-0]/DitheringDepth=0
 magrathea:0[DPY:HDMI-0]/ColorSpace=0
 magrathea:0[DPY:HDMI-0]/ColorRange=0
 magrathea:0[DPY:HDMI-0]/SynchronousPaletteUpdates=0
-magrathea:0[DPY:DP-0]/RedBrightness=0.000000
-magrathea:0[DPY:DP-0]/GreenBrightness=0.000000
-magrathea:0[DPY:DP-0]/BlueBrightness=0.000000
-magrathea:0[DPY:DP-0]/RedContrast=0.000000
-magrathea:0[DPY:DP-0]/GreenContrast=0.000000
-magrathea:0[DPY:DP-0]/BlueContrast=0.000000
-magrathea:0[DPY:DP-0]/RedGamma=1.000000
-magrathea:0[DPY:DP-0]/GreenGamma=1.000000
-magrathea:0[DPY:DP-0]/BlueGamma=1.000000
 magrathea:0[DPY:DP-0]/Dithering=0
 magrathea:0[DPY:DP-0]/DitheringMode=0
 magrathea:0[DPY:DP-0]/DitheringDepth=0
-magrathea:0[DPY:DP-0]/DigitalVibrance=0
 magrathea:0[DPY:DP-0]/ColorSpace=0
 magrathea:0[DPY:DP-0]/ColorRange=0
 magrathea:0[DPY:DP-0]/SynchronousPaletteUpdates=0
@@ -67,3 +51,32 @@ magrathea:0[DPY:DP-1]/DitheringDepth=0
 magrathea:0[DPY:DP-1]/ColorSpace=0
 magrathea:0[DPY:DP-1]/ColorRange=0
 magrathea:0[DPY:DP-1]/SynchronousPaletteUpdates=0
+magrathea:0[DPY:HDMI-1]/Dithering=0
+magrathea:0[DPY:HDMI-1]/DitheringMode=0
+magrathea:0[DPY:HDMI-1]/DitheringDepth=0
+magrathea:0[DPY:HDMI-1]/ColorSpace=0
+magrathea:0[DPY:HDMI-1]/ColorRange=0
+magrathea:0[DPY:HDMI-1]/SynchronousPaletteUpdates=0
+magrathea:0[DPY:DP-2]/RedBrightness=0.000000
+magrathea:0[DPY:DP-2]/GreenBrightness=0.000000
+magrathea:0[DPY:DP-2]/BlueBrightness=0.000000
+magrathea:0[DPY:DP-2]/RedContrast=0.000000
+magrathea:0[DPY:DP-2]/GreenContrast=0.000000
+magrathea:0[DPY:DP-2]/BlueContrast=0.000000
+magrathea:0[DPY:DP-2]/RedGamma=1.000000
+magrathea:0[DPY:DP-2]/GreenGamma=1.000000
+magrathea:0[DPY:DP-2]/BlueGamma=1.000000
+magrathea:0[DPY:DP-2]/Dithering=0
+magrathea:0[DPY:DP-2]/DitheringMode=0
+magrathea:0[DPY:DP-2]/DitheringDepth=0
+magrathea:0[DPY:DP-2]/DigitalVibrance=0
+magrathea:0[DPY:DP-2]/ColorSpace=0
+magrathea:0[DPY:DP-2]/ColorRange=0
+magrathea:0[DPY:DP-2]/SynchronousPaletteUpdates=0
+magrathea:0[DPY:DP-3]/Dithering=0
+magrathea:0[DPY:DP-3]/DitheringMode=0
+magrathea:0[DPY:DP-3]/DitheringDepth=0
+magrathea:0[DPY:DP-3]/ColorSpace=0
+magrathea:0[DPY:DP-3]/ColorRange=0
+magrathea:0[DPY:DP-3]/SynchronousPaletteUpdates=0
+[GPU:0]/GPUPowerMizerMode=2
