@@ -6,6 +6,8 @@ SAVEHIST=1000000
 setopt append_history
 setopt extended_history
 setopt hist_ignore_all_dups
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
 setopt hist_no_store
 setopt hist_reduce_blanks
 setopt inc_append_history_time
@@ -39,7 +41,9 @@ zle -N history-beginning-search-menu
 
 # Export Env Variables
 REPORTTIME=5
-PATH="/opt/android-sdk/platform-tools:${PATH}"
+if [[ -d "/opt/android-sdk/platform-tools" ]]; then
+        PATH="/opt/android-sdk/platform-tools:${PATH}"
+fi
 if which ruby >/dev/null 2>&1 ; then
         PATH=$(ruby -e "puts Gem.user_dir")/bin:${PATH}
         RUBY_PATH="$(ruby -e "puts Gem.user_dir")/bin"
@@ -53,6 +57,8 @@ export GPG_TTY=$(tty)
 export PIP_REQUIRE_VIRTUALENV=true # https://docs.python-guide.org/dev/pip-virtualenv/
 export VIRTUAL_ENV_DISABLE_PROMPT=0 # Disable venv from modifying prompt, we use custom format later
 export ZLE_RPROMPT_INDENT=0 # Don't add a space to the right side of prompt
+export MANGOHUD=1 # Enable MangoHUD on Vulkan games (including Steam)
+export DOCKER_API_VERSION=1.43 # Temporary workaround for lagging Synology server
 #export LESS='-C -M -I -j 10 -# 4'
 if which spruce >/dev/null 2>&1 ; then
         SPRUCE_PATH="/usr/local/bin"
@@ -276,6 +282,9 @@ fi
 # https://stackoverflow.com/questions/72274548/how-to-remove-warning-in-kubectl-with-gcp-auth-plugin
 if [ -f /opt/google-cloud-sdk/bin/gke-gcloud-auth-plugin ]; then
         export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+fi
+if [ -f /opt/google-cloud-cli/bin/gcloud ]; then
+        PATH="/opt/google-cloud-cli/bin:${PATH}"
 fi
 
 # Vault completion
